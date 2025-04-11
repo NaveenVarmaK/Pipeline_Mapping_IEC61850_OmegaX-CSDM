@@ -1,0 +1,4 @@
+id,timestamp,device,s4mmet1.envtmp.mag.f,s2mmet1.envtmp.mag.f,s3mmet1.envtmp.mag.f,s5mmet1.envtmp.mag.f,tmpcntmmet1.envtmp.mag.f,tmppctmmet1.envtmp.mag.f,s2mmet1.poainsol1.mag.f,s3mmet1.poainsol1.mag.f,s4mmet1.poainsol1.mag.f,s5mmet1.poainsol1.mag.f,tmpcntmmet1.poainsol1.mag.f,tmppctmmet1.poainsol1.mag.f,s4pvstmp1.tmp.mag.f,s2pvstmp1.tmp.mag.f,s3pvstmp1.tmp.mag.f,s5pvstmp1.tmp.mag.f,tmpcntpvstmp1.tmp.mag.f,tmppctpvstmp1.tmp.mag.f
+3265684,12/30/2024 1:43,NARB_ECP001_S3_METEOSTA001,0,0,0,0,0,0,-0.350240082,0.480153412,0.020163619,0.210958901,13,100,3.106131098,1.954508781,4.546503544,0.651162001,13,100
+3265893,12/30/2024 1:33,NARB_ECP001_S3_METEOSTA001,0,0,0,0,0,0,-0.220606491,0.438095093,0.07226698,0.152733185,12,100,3.143430533,1.523221493,4.303104401,0.540426377,12,100
+3265894,12/30/2024 1:43,NARB_ECP001_S3_METEOSTA001,0,0,0,0,0,0,-0.315205902,0.522181213,0.109644832,0.244488881,13,100,3.218140948,2.197907925,4.96498394,0.569949014,13,100
