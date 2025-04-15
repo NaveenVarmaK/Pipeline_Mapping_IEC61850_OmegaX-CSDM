@@ -1,0 +1,71 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "json",
+  "dataset_size": 90419,
+  "description": "",
+  "download_checksums": {
+    "/export/home/kalidindi/LLM-Pipeline_Mapping_IEC61850_OmegaX-CSDM/LLM-Training/../LLM-Training/Generated_Input_TrainingData/rml_instruction_data.jsonl": {
+      "num_bytes": 93602,
+      "checksum": null
+    }
+  },
+  "download_size": 93602,
+  "features": {
+    "instruction": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "input": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "output": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "token_count": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "input_ids": {
+      "feature": {
+        "dtype": "int32",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "attention_mask": {
+      "feature": {
+        "dtype": "int8",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "labels": {
+      "feature": {
+        "dtype": "int64",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 184021,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 90419,
+      "num_examples": 2,
+      "dataset_name": "json"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
