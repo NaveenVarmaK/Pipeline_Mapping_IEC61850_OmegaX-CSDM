@@ -1,0 +1,4 @@
+id,device,timestamp,s4mmet1.envtmp.mag.f,s2mmet1.envtmp.mag.f,s3mmet1.envtmp.mag.f,s5mmet1.envtmp.mag.f,tmpcntmmet1.envtmp.mag.f,tmppctmmet1.envtmp.mag.f,s2mmet1.poainsol1.mag.f,s3mmet1.poainsol1.mag.f,s4mmet1.poainsol1.mag.f,s5mmet1.poainsol1.mag.f,tmpcntmmet1.poainsol1.mag.f,tmppctmmet1.poainsol1.mag.f,s4pvstmp1.tmp.mag.f,s2pvstmp1.tmp.mag.f,s3pvstmp1.tmp.mag.f,s5pvstmp1.tmp.mag.f,tmpcntpvstmp1.tmp.mag.f,tmppctpvstmp1.tmp.mag.f
+2950219,METEOSTA001,2024-11-01T20:13:20,0,0,0,0,0,0,-1.886169434,-0.684463501,-1.107828943,0.308784463,15,79.84999593,,,,,0,
+2950220,METEOSTA001,2024-11-02T06:13:20,0,0,0,0,0,0,-1.886184692,-0.66343689,-1.197218025,0.3074584,15,100,,,,,0,
+2950271,METEOSTA002,2024-11-01T00:13:20,0,0,0,0,0,0,-0.030003866,0.922520936,0.428210795,0.241993683,11,100,,,,,0,

@@ -7,7 +7,7 @@ tokenizer = AutoTokenizer.from_pretrained("./results")
 model.eval()
 
 # Load your CSV file
-csv_path = "data.csv"  # <- update with your file path
+csv_path = "../LLM-Training/Examples/Test_Meteosta_New_dataset.csv"  # <- update with your file path
 df = pd.read_csv(csv_path)
 
 # Convert CSV to string input format
