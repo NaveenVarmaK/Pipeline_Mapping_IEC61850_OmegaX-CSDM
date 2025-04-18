@@ -12,8 +12,8 @@ def tokenize_function(examples):
 	prompt =f"### Instruction:\n{examples['instruction']}\n\n### Input:\n{examples['input']}\n\n### Response:\n"
 	response = examples["output"]
 	
-	prompt_ids = tokenizer(prompt, truncation=True, max_length=512, padding='max_length')
-	response_ids = tokenizer(response, truncation=True, max_length=512, padding='max_length')
+	prompt_ids = tokenizer(prompt, truncation=True, max_length=15000, padding='max_length')
+	response_ids = tokenizer(response, truncation=True, max_length=20000, padding='max_length')
 
 	input_ids= prompt_ids["input_ids"] + response_ids["input_ids"]
 	attention_mask = prompt_ids["attention_mask"]+ response_ids["attention_mask"]
