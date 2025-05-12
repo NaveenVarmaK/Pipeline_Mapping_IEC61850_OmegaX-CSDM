@@ -64,7 +64,7 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/{{ inverter_id }}/{{ date }}/{{ row.property_id }}_DP_{{ '{{id}}' }}";
+        rr:template "narb:DataCollection/{{ inverter_id }}/{{ date }}/{{ row.property_id }}_DP_{{ '{id}' }}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -79,7 +79,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/{{ inverter_id }}/{{ date }}/{{ row.property_id }}_DP_{{ '{{id}}' }}_PV{{ '{{id}}' }}";
+            rr:template "narb:DataCollection/{{ inverter_id }}/{{ date }}/{{ row.property_id }}_DP_{{ '{id}' }}_PV{{ '{id}' }}";
             rr:column "id"
         ];
     ];
@@ -110,7 +110,7 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/{{ inverter_id }}/{{ date }}/{{ row.property_id }}_DP_{{ '{{id}}' }}_PV{{ '{{id}}' }}";
+        rr:template "narb:DataCollection/{{ inverter_id }}/{{ date }}/{{ row.property_id }}_DP_{{ '{id}' }}_PV{{ '{id}' }}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
