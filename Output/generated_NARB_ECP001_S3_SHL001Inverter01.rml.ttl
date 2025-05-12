@@ -18,7 +18,7 @@
 # The Data Collection of the Device
 <#DataCollection_NARB_ECP001_S3_SHL001Inverter01>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";  # Link to the input CSV file
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";  # Link to the input CSV file
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
@@ -39,7 +39,7 @@
 # Technical Context
 <#TCNARB_ECP001_S3_SHL001Inverter01>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";  # Link to the input CSV file
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";  # Link to the input CSV file
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
@@ -60,11 +60,11 @@
 # DataPoint for s2dinv1encltmpmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s2dinv1encltmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1encltmpmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1encltmpmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -79,7 +79,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1encltmpmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1encltmpmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -106,11 +106,11 @@
 # PropertyValues for s2dinv1encltmpmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s2dinv1encltmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1encltmpmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1encltmpmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -128,11 +128,11 @@
 # DataPoint for s3dinv1encltmpmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s3dinv1encltmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1encltmpmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1encltmpmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -147,7 +147,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1encltmpmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1encltmpmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -174,11 +174,11 @@
 # PropertyValues for s3dinv1encltmpmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s3dinv1encltmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1encltmpmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1encltmpmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -196,11 +196,11 @@
 # DataPoint for s4dinv1encltmpmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s4dinv1encltmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1encltmpmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1encltmpmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -215,7 +215,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1encltmpmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1encltmpmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -242,11 +242,11 @@
 # PropertyValues for s4dinv1encltmpmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s4dinv1encltmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1encltmpmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1encltmpmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -264,11 +264,11 @@
 # DataPoint for s5dinv1encltmpmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s5dinv1encltmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1encltmpmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1encltmpmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -283,7 +283,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1encltmpmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1encltmpmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -310,11 +310,11 @@
 # PropertyValues for s5dinv1encltmpmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s5dinv1encltmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1encltmpmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1encltmpmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -332,11 +332,11 @@
 # DataPoint for tmpcntdinv1encltmpmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmpcntdinv1encltmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1encltmpmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1encltmpmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -351,7 +351,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1encltmpmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1encltmpmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -378,11 +378,11 @@
 # PropertyValues for tmpcntdinv1encltmpmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmpcntdinv1encltmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1encltmpmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1encltmpmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -400,11 +400,11 @@
 # DataPoint for tmppctdinv1encltmpmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmppctdinv1encltmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1encltmpmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1encltmpmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -419,7 +419,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1encltmpmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1encltmpmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -446,11 +446,11 @@
 # PropertyValues for tmppctdinv1encltmpmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmppctdinv1encltmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1encltmpmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1encltmpmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -468,11 +468,11 @@
 # DataPoint for s4dinv1heatsinktmpmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s4dinv1heatsinktmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1heatsinktmpmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1heatsinktmpmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -487,7 +487,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1heatsinktmpmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1heatsinktmpmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -514,11 +514,11 @@
 # PropertyValues for s4dinv1heatsinktmpmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s4dinv1heatsinktmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1heatsinktmpmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1heatsinktmpmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -536,11 +536,11 @@
 # DataPoint for s2dinv1heatsinktmpmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s2dinv1heatsinktmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1heatsinktmpmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1heatsinktmpmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -555,7 +555,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1heatsinktmpmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1heatsinktmpmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -582,11 +582,11 @@
 # PropertyValues for s2dinv1heatsinktmpmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s2dinv1heatsinktmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1heatsinktmpmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1heatsinktmpmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -604,11 +604,11 @@
 # DataPoint for s3dinv1heatsinktmpmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s3dinv1heatsinktmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1heatsinktmpmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1heatsinktmpmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -623,7 +623,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1heatsinktmpmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1heatsinktmpmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -650,11 +650,11 @@
 # PropertyValues for s3dinv1heatsinktmpmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s3dinv1heatsinktmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1heatsinktmpmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1heatsinktmpmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -672,11 +672,11 @@
 # DataPoint for s5dinv1heatsinktmpmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s5dinv1heatsinktmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1heatsinktmpmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1heatsinktmpmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -691,7 +691,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1heatsinktmpmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1heatsinktmpmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -718,11 +718,11 @@
 # PropertyValues for s5dinv1heatsinktmpmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s5dinv1heatsinktmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1heatsinktmpmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1heatsinktmpmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -740,11 +740,11 @@
 # DataPoint for tmpcntdinv1heatsinktmpmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmpcntdinv1heatsinktmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1heatsinktmpmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1heatsinktmpmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -759,7 +759,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1heatsinktmpmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1heatsinktmpmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -786,11 +786,11 @@
 # PropertyValues for tmpcntdinv1heatsinktmpmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmpcntdinv1heatsinktmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1heatsinktmpmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1heatsinktmpmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -808,11 +808,11 @@
 # DataPoint for tmppctdinv1heatsinktmpmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmppctdinv1heatsinktmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1heatsinktmpmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1heatsinktmpmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -827,7 +827,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1heatsinktmpmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1heatsinktmpmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -854,11 +854,11 @@
 # PropertyValues for tmppctdinv1heatsinktmpmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmppctdinv1heatsinktmpmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1heatsinktmpmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1heatsinktmpmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -876,11 +876,11 @@
 # DataPoint for s4mmdc1ampmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s4mmdc1ampmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1ampmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1ampmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -895,7 +895,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1ampmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1ampmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -922,11 +922,11 @@
 # PropertyValues for s4mmdc1ampmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s4mmdc1ampmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1ampmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1ampmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -944,11 +944,11 @@
 # DataPoint for s2mmdc1ampmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s2mmdc1ampmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1ampmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1ampmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -963,7 +963,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1ampmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1ampmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -990,11 +990,11 @@
 # PropertyValues for s2mmdc1ampmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s2mmdc1ampmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1ampmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1ampmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1012,11 +1012,11 @@
 # DataPoint for s3mmdc1ampmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s3mmdc1ampmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1ampmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1ampmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1031,7 +1031,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1ampmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1ampmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -1058,11 +1058,11 @@
 # PropertyValues for s3mmdc1ampmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s3mmdc1ampmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1ampmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1ampmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1080,11 +1080,11 @@
 # DataPoint for s5mmdc1ampmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s5mmdc1ampmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1ampmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1ampmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1099,7 +1099,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1ampmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1ampmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -1126,11 +1126,11 @@
 # PropertyValues for s5mmdc1ampmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s5mmdc1ampmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1ampmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1ampmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1148,11 +1148,11 @@
 # DataPoint for tmpcntmmdc1ampmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmdc1ampmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1ampmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1ampmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1167,7 +1167,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1ampmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1ampmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -1194,11 +1194,11 @@
 # PropertyValues for tmpcntmmdc1ampmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmdc1ampmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1ampmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1ampmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1216,11 +1216,11 @@
 # DataPoint for tmppctmmdc1ampmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmppctmmdc1ampmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1ampmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1ampmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1235,7 +1235,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1ampmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1ampmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -1262,11 +1262,11 @@
 # PropertyValues for tmppctmmdc1ampmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmppctmmdc1ampmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1ampmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1ampmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1284,11 +1284,11 @@
 # DataPoint for s4mmdc1volmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s4mmdc1volmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1volmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1volmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1303,7 +1303,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1volmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1volmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -1330,11 +1330,11 @@
 # PropertyValues for s4mmdc1volmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s4mmdc1volmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1volmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1volmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1352,11 +1352,11 @@
 # DataPoint for s2mmdc1volmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s2mmdc1volmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1volmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1volmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1371,7 +1371,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1volmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1volmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -1398,11 +1398,11 @@
 # PropertyValues for s2mmdc1volmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s2mmdc1volmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1volmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1volmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1420,11 +1420,11 @@
 # DataPoint for s3mmdc1volmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s3mmdc1volmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1volmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1volmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1439,7 +1439,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1volmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1volmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -1466,11 +1466,11 @@
 # PropertyValues for s3mmdc1volmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s3mmdc1volmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1volmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1volmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1488,11 +1488,11 @@
 # DataPoint for s5mmdc1volmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s5mmdc1volmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1volmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1volmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1507,7 +1507,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1volmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1volmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -1534,11 +1534,11 @@
 # PropertyValues for s5mmdc1volmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s5mmdc1volmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1volmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1volmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1556,11 +1556,11 @@
 # DataPoint for tmpcntmmdc1volmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmdc1volmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1volmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1volmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1575,7 +1575,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1volmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1volmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -1602,11 +1602,11 @@
 # PropertyValues for tmpcntmmdc1volmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmdc1volmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1volmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1volmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1624,11 +1624,11 @@
 # DataPoint for tmppctmmdc1volmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmppctmmdc1volmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1volmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1volmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1643,7 +1643,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1volmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1volmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -1670,11 +1670,11 @@
 # PropertyValues for tmppctmmdc1volmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmppctmmdc1volmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1volmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1volmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1692,11 +1692,11 @@
 # DataPoint for s4mmdc1wattmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s4mmdc1wattmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1wattmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1wattmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1711,7 +1711,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1wattmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1wattmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -1738,11 +1738,11 @@
 # PropertyValues for s4mmdc1wattmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s4mmdc1wattmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1wattmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1wattmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1760,11 +1760,11 @@
 # DataPoint for s2mmdc1wattmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s2mmdc1wattmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1wattmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1wattmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1779,7 +1779,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1wattmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1wattmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -1806,11 +1806,11 @@
 # PropertyValues for s2mmdc1wattmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s2mmdc1wattmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1wattmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1wattmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1828,11 +1828,11 @@
 # DataPoint for s3mmdc1wattmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s3mmdc1wattmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1wattmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1wattmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1847,7 +1847,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1wattmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1wattmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -1874,11 +1874,11 @@
 # PropertyValues for s3mmdc1wattmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s3mmdc1wattmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1wattmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1wattmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1896,11 +1896,11 @@
 # DataPoint for s5mmdc1wattmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s5mmdc1wattmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1wattmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1wattmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1915,7 +1915,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1wattmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1wattmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -1942,11 +1942,11 @@
 # PropertyValues for s5mmdc1wattmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s5mmdc1wattmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1wattmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1wattmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1964,11 +1964,11 @@
 # DataPoint for tmpcntmmdc1wattmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmdc1wattmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1wattmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1wattmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -1983,7 +1983,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1wattmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1wattmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -2010,11 +2010,11 @@
 # PropertyValues for tmpcntmmdc1wattmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmdc1wattmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1wattmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1wattmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -2032,11 +2032,11 @@
 # DataPoint for tmppctmmdc1wattmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmppctmmdc1wattmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1wattmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1wattmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -2051,7 +2051,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1wattmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1wattmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -2078,11 +2078,11 @@
 # PropertyValues for tmppctmmdc1wattmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmppctmmdc1wattmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1wattmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1wattmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -2100,11 +2100,11 @@
 # DataPoint for s4mmxu1totwmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s4mmxu1totwmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmxu1totwmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmxu1totwmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -2119,7 +2119,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmxu1totwmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmxu1totwmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -2146,11 +2146,11 @@
 # PropertyValues for s4mmxu1totwmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s4mmxu1totwmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmxu1totwmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmxu1totwmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -2168,11 +2168,11 @@
 # DataPoint for s2mmxu1totwmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s2mmxu1totwmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmxu1totwmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmxu1totwmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -2187,7 +2187,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmxu1totwmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmxu1totwmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -2214,11 +2214,11 @@
 # PropertyValues for s2mmxu1totwmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s2mmxu1totwmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmxu1totwmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmxu1totwmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -2236,11 +2236,11 @@
 # DataPoint for s3mmxu1totwmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s3mmxu1totwmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmxu1totwmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmxu1totwmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -2255,7 +2255,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmxu1totwmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmxu1totwmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -2282,11 +2282,11 @@
 # PropertyValues for s3mmxu1totwmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s3mmxu1totwmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmxu1totwmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmxu1totwmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -2304,11 +2304,11 @@
 # DataPoint for s5mmxu1totwmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s5mmxu1totwmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmxu1totwmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmxu1totwmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -2323,7 +2323,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmxu1totwmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmxu1totwmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -2350,11 +2350,11 @@
 # PropertyValues for s5mmxu1totwmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s5mmxu1totwmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmxu1totwmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmxu1totwmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -2372,11 +2372,11 @@
 # DataPoint for tmpcntmmxu1totwmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmxu1totwmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmxu1totwmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmxu1totwmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -2391,7 +2391,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmxu1totwmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmxu1totwmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -2418,11 +2418,11 @@
 # PropertyValues for tmpcntmmxu1totwmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmxu1totwmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmxu1totwmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmxu1totwmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -2440,11 +2440,11 @@
 # DataPoint for tmppctmmxu1totwmagf
 <#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmppctmmxu1totwmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmxu1totwmagf_DP_{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmxu1totwmagf_DP_{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;
@@ -2459,7 +2459,7 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmxu1totwmagf_DP_{{id}}_PV{{id}}";
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmxu1totwmagf_DP_{id}_PV{id}";
             rr:column "id"
         ];
     ];
@@ -2486,11 +2486,11 @@
 # PropertyValues for tmppctmmxu1totwmagf
 <#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmppctmmxu1totwmagf>
     rml:logicalSource [
-        rml:source "Resources/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "tata:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmxu1totwmagf_DP_{{id}}_PV{{id}}";
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmxu1totwmagf_DP_{id}_PV{id}";
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:type;

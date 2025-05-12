@@ -8,7 +8,7 @@ from jinja2 import Environment, FileSystemLoader
 from Resources.CSV_Header_Dictionary import MEASUREMENTS, UNIT_TO_QUDT, get_qudt_unit
 
 # Step 1: Load CSV and parse headers
-csv_path = 'Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv'  # Path to your actual CSV file
+csv_path = 'C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv'  # Path to your actual CSV file
 
 with open(csv_path, newline='') as csvfile:
     reader = csv.reader(csvfile)
