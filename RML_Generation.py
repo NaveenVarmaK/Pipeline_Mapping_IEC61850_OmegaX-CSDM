@@ -8,7 +8,9 @@ from jinja2 import Environment, FileSystemLoader
 from Resources.CSV_Header_Dictionary import MEASUREMENTS, UNIT_TO_QUDT, get_qudt_unit
 
 # Step 1: Load CSV and parse headers
-csv_path = 'C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv'  # Path to your actual CSV file
+# csv_path = 'Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv'  # Path to your actual CSV file
+
+csv_path = 'Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv'
 
 with open(csv_path, newline='') as csvfile:
     reader = csv.reader(csvfile)
@@ -83,7 +85,7 @@ context = {
     "inverter_id": device_id,  # Dynamically set from CSV filename
     "date": "20241101",
     "csv_path": csv_path,
-    "base_uri": "https://w3id.org/omega-x/ontology/KG/NarbonneDataSets",
+    "base_uri": "https://w3id.org/omega-x/ontology/KG/MeteostationDataSets",
     "properties": properties
 }
 
@@ -93,7 +95,7 @@ template = env.get_template('Jinja_RML-Template_PerDevice.j2')
 output = template.render(context)
 
 # Step 5: Save to file
-output_filename = f'../OmegaX-Pipeline/Output/generated_{device_id}.rml.ttl'
+output_filename = f'../OmegaX-Pipeline/Output/RML/generated_{device_id}.rml.ttl'
 with open(output_filename, 'w') as f:
     f.write(output)
 
