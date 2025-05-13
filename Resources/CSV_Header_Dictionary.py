@@ -15,7 +15,10 @@ STAT_NODES = {
 # Device types dictionary
 DEVICE_TYPES = {
     "dinv": {"description": "Standard Inverter"},
-    "inv": {"description": "Inverter"}
+    "inv": {"description": "Inverter"},
+    # "mmet": {"description": "Meteorological measurements"},
+    # "pvstmp": {"description": "PV temperature (Back of panel)"},
+    # "sang": {"description": "Angle supervision"},
 }
 
 # Logical nodes dictionary
@@ -31,6 +34,26 @@ LOGICAL_NODES = {
         "type": "LPHD",
         "description": "Physical device"
     },
+    # "mmet": {
+    #     "class": "MMET",
+    #     "type": "sxMMET_STD",
+    #     "description": "Meteorological measurements"
+    # },
+    # "pvstmp": {
+    #     "class":"STMP",
+    #     "type":"sxSTMP_STD",
+    #     "description":"PV temperature (Back of panel)",
+    #     # "unit":"DEG_C"
+    # },
+    # "sang" : {
+    #     "class":"SANG",
+    #     "type":"SANG_EXT",
+    #     "description":"Angle supervision"
+    # },
+    #
+
+
+
 
     # DER control logical nodes
     "dpmc": {
@@ -545,6 +568,10 @@ MEASUREMENTS = {
         "description": "Phase to ground/phase to neutral real powers P",
         "unit": "W",
         "enum_kind": "WYE_STD"
+    },
+    "tmp": {
+        "description": "Temperature",
+        "unit": "DEG_C",
     },
 
 }
