@@ -1,0 +1,2506 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix qual: <https://w3id.org/omega-x/ontology/Quality/> .
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix prop: <https://w3id.org/omega-x/ontology/Property/> .
+@prefix ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/> .
+@prefix eds: <https://w3id.org/omega-x/ontology/EnergyDataSet/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix solar: <https://w3id.org/omega-x/ontology/Renewables/> .
+@prefix role: <https://w3id.org/omega-x/ontology/EnergyRole/>.
+@prefix narb:  <https://w3id.org/omega-x/ontology/KG/NarbonneDataSets/> .
+
+# --------------------------------------------------------------------------
+# The Data Collection of the Device
+<#DataCollection_NARB_ECP001_S3_SHL001Inverter01>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";  # Link to the input CSV file
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+    ];
+     rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection, eds:EnergyDataSet;  # Data Collection
+    ];
+     #includes Technical context
+     rr:predicateObjectMap [
+        rr:predicate eds:includesTechnicalContext;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/TC>
+        ];
+    ].
+
+# Technical Context
+<#TCNARB_ECP001_S3_SHL001Inverter01>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";  # Link to the input CSV file
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/TC>;
+    ];
+        rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object eds:TechnicalContext
+    ];
+    rr:predicateObjectMap [
+        rr:predicate eds:includesEvaluationPoint;
+      rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/NARB_ECP001_S3_SHL001Inverter01>
+        ]
+    ].
+
+
+# DataPoint for s2dinv1encltmpmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s2dinv1encltmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1encltmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1encltmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2dinv1encltmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s2dinv1encltmpmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s2dinv1encltmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1encltmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2dinv1.encltmp.mag.f";
+            rr:condition "[s2dinv1.encltmp.mag.f != 'NULL' && s2dinv1.encltmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s3dinv1encltmpmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s3dinv1encltmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1encltmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1encltmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3dinv1encltmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s3dinv1encltmpmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s3dinv1encltmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1encltmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3dinv1.encltmp.mag.f";
+            rr:condition "[s3dinv1.encltmp.mag.f != 'NULL' && s3dinv1.encltmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s4dinv1encltmpmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s4dinv1encltmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1encltmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1encltmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4dinv1encltmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s4dinv1encltmpmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s4dinv1encltmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1encltmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4dinv1.encltmp.mag.f";
+            rr:condition "[s4dinv1.encltmp.mag.f != 'NULL' && s4dinv1.encltmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s5dinv1encltmpmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s5dinv1encltmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1encltmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1encltmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5dinv1encltmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s5dinv1encltmpmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s5dinv1encltmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1encltmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5dinv1.encltmp.mag.f";
+            rr:condition "[s5dinv1.encltmp.mag.f != 'NULL' && s5dinv1.encltmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmpcntdinv1encltmpmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmpcntdinv1encltmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1encltmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1encltmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntdinv1encltmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for tmpcntdinv1encltmpmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmpcntdinv1encltmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1encltmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntdinv1.encltmp.mag.f";
+            rr:condition "[tmpcntdinv1.encltmp.mag.f != 'NULL' && tmpcntdinv1.encltmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmppctdinv1encltmpmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmppctdinv1encltmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1encltmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1encltmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctdinv1encltmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for tmppctdinv1encltmpmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmppctdinv1encltmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1encltmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctdinv1.encltmp.mag.f";
+            rr:condition "[tmppctdinv1.encltmp.mag.f != 'NULL' && tmppctdinv1.encltmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s4dinv1heatsinktmpmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s4dinv1heatsinktmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1heatsinktmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1heatsinktmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4dinv1heatsinktmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s4dinv1heatsinktmpmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s4dinv1heatsinktmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4dinv1heatsinktmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4dinv1.heatsinktmp.mag.f";
+            rr:condition "[s4dinv1.heatsinktmp.mag.f != 'NULL' && s4dinv1.heatsinktmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s2dinv1heatsinktmpmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s2dinv1heatsinktmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1heatsinktmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1heatsinktmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2dinv1heatsinktmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s2dinv1heatsinktmpmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s2dinv1heatsinktmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2dinv1heatsinktmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2dinv1.heatsinktmp.mag.f";
+            rr:condition "[s2dinv1.heatsinktmp.mag.f != 'NULL' && s2dinv1.heatsinktmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s3dinv1heatsinktmpmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s3dinv1heatsinktmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1heatsinktmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1heatsinktmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3dinv1heatsinktmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s3dinv1heatsinktmpmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s3dinv1heatsinktmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3dinv1heatsinktmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3dinv1.heatsinktmp.mag.f";
+            rr:condition "[s3dinv1.heatsinktmp.mag.f != 'NULL' && s3dinv1.heatsinktmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s5dinv1heatsinktmpmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s5dinv1heatsinktmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1heatsinktmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1heatsinktmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5dinv1heatsinktmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s5dinv1heatsinktmpmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s5dinv1heatsinktmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5dinv1heatsinktmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5dinv1.heatsinktmp.mag.f";
+            rr:condition "[s5dinv1.heatsinktmp.mag.f != 'NULL' && s5dinv1.heatsinktmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmpcntdinv1heatsinktmpmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmpcntdinv1heatsinktmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1heatsinktmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1heatsinktmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntdinv1heatsinktmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for tmpcntdinv1heatsinktmpmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmpcntdinv1heatsinktmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntdinv1heatsinktmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntdinv1.heatsinktmp.mag.f";
+            rr:condition "[tmpcntdinv1.heatsinktmp.mag.f != 'NULL' && tmpcntdinv1.heatsinktmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmppctdinv1heatsinktmpmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmppctdinv1heatsinktmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1heatsinktmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1heatsinktmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctdinv1heatsinktmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for tmppctdinv1heatsinktmpmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmppctdinv1heatsinktmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctdinv1heatsinktmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctdinv1.heatsinktmp.mag.f";
+            rr:condition "[tmppctdinv1.heatsinktmp.mag.f != 'NULL' && tmppctdinv1.heatsinktmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s4mmdc1ampmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s4mmdc1ampmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1ampmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1ampmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4mmdc1ampmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/A>
+        ];
+    ].
+
+# PropertyValues for s4mmdc1ampmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s4mmdc1ampmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1ampmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4mmdc1.amp.mag.f";
+            rr:condition "[s4mmdc1.amp.mag.f != 'NULL' && s4mmdc1.amp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s2mmdc1ampmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s2mmdc1ampmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1ampmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1ampmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2mmdc1ampmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/A>
+        ];
+    ].
+
+# PropertyValues for s2mmdc1ampmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s2mmdc1ampmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1ampmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2mmdc1.amp.mag.f";
+            rr:condition "[s2mmdc1.amp.mag.f != 'NULL' && s2mmdc1.amp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s3mmdc1ampmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s3mmdc1ampmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1ampmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1ampmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3mmdc1ampmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/A>
+        ];
+    ].
+
+# PropertyValues for s3mmdc1ampmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s3mmdc1ampmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1ampmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3mmdc1.amp.mag.f";
+            rr:condition "[s3mmdc1.amp.mag.f != 'NULL' && s3mmdc1.amp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s5mmdc1ampmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s5mmdc1ampmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1ampmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1ampmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5mmdc1ampmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/A>
+        ];
+    ].
+
+# PropertyValues for s5mmdc1ampmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s5mmdc1ampmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1ampmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5mmdc1.amp.mag.f";
+            rr:condition "[s5mmdc1.amp.mag.f != 'NULL' && s5mmdc1.amp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmpcntmmdc1ampmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmdc1ampmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1ampmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1ampmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntmmdc1ampmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/A>
+        ];
+    ].
+
+# PropertyValues for tmpcntmmdc1ampmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmdc1ampmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1ampmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntmmdc1.amp.mag.f";
+            rr:condition "[tmpcntmmdc1.amp.mag.f != 'NULL' && tmpcntmmdc1.amp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmppctmmdc1ampmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmppctmmdc1ampmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1ampmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1ampmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctmmdc1ampmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/A>
+        ];
+    ].
+
+# PropertyValues for tmppctmmdc1ampmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmppctmmdc1ampmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1ampmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctmmdc1.amp.mag.f";
+            rr:condition "[tmppctmmdc1.amp.mag.f != 'NULL' && tmppctmmdc1.amp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s4mmdc1volmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s4mmdc1volmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1volmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1volmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4mmdc1volmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/V>
+        ];
+    ].
+
+# PropertyValues for s4mmdc1volmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s4mmdc1volmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1volmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4mmdc1.vol.mag.f";
+            rr:condition "[s4mmdc1.vol.mag.f != 'NULL' && s4mmdc1.vol.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s2mmdc1volmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s2mmdc1volmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1volmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1volmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2mmdc1volmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/V>
+        ];
+    ].
+
+# PropertyValues for s2mmdc1volmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s2mmdc1volmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1volmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2mmdc1.vol.mag.f";
+            rr:condition "[s2mmdc1.vol.mag.f != 'NULL' && s2mmdc1.vol.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s3mmdc1volmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s3mmdc1volmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1volmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1volmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3mmdc1volmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/V>
+        ];
+    ].
+
+# PropertyValues for s3mmdc1volmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s3mmdc1volmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1volmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3mmdc1.vol.mag.f";
+            rr:condition "[s3mmdc1.vol.mag.f != 'NULL' && s3mmdc1.vol.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s5mmdc1volmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s5mmdc1volmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1volmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1volmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5mmdc1volmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/V>
+        ];
+    ].
+
+# PropertyValues for s5mmdc1volmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s5mmdc1volmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1volmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5mmdc1.vol.mag.f";
+            rr:condition "[s5mmdc1.vol.mag.f != 'NULL' && s5mmdc1.vol.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmpcntmmdc1volmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmdc1volmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1volmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1volmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntmmdc1volmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/V>
+        ];
+    ].
+
+# PropertyValues for tmpcntmmdc1volmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmdc1volmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1volmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntmmdc1.vol.mag.f";
+            rr:condition "[tmpcntmmdc1.vol.mag.f != 'NULL' && tmpcntmmdc1.vol.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmppctmmdc1volmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmppctmmdc1volmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1volmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1volmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctmmdc1volmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/V>
+        ];
+    ].
+
+# PropertyValues for tmppctmmdc1volmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmppctmmdc1volmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1volmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctmmdc1.vol.mag.f";
+            rr:condition "[tmppctmmdc1.vol.mag.f != 'NULL' && tmppctmmdc1.vol.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s4mmdc1wattmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s4mmdc1wattmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1wattmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1wattmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4mmdc1wattmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W>
+        ];
+    ].
+
+# PropertyValues for s4mmdc1wattmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s4mmdc1wattmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmdc1wattmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4mmdc1.watt.mag.f";
+            rr:condition "[s4mmdc1.watt.mag.f != 'NULL' && s4mmdc1.watt.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s2mmdc1wattmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s2mmdc1wattmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1wattmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1wattmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2mmdc1wattmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W>
+        ];
+    ].
+
+# PropertyValues for s2mmdc1wattmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s2mmdc1wattmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmdc1wattmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2mmdc1.watt.mag.f";
+            rr:condition "[s2mmdc1.watt.mag.f != 'NULL' && s2mmdc1.watt.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s3mmdc1wattmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s3mmdc1wattmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1wattmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1wattmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3mmdc1wattmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W>
+        ];
+    ].
+
+# PropertyValues for s3mmdc1wattmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s3mmdc1wattmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmdc1wattmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3mmdc1.watt.mag.f";
+            rr:condition "[s3mmdc1.watt.mag.f != 'NULL' && s3mmdc1.watt.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s5mmdc1wattmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s5mmdc1wattmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1wattmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1wattmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5mmdc1wattmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W>
+        ];
+    ].
+
+# PropertyValues for s5mmdc1wattmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s5mmdc1wattmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmdc1wattmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5mmdc1.watt.mag.f";
+            rr:condition "[s5mmdc1.watt.mag.f != 'NULL' && s5mmdc1.watt.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmpcntmmdc1wattmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmdc1wattmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1wattmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1wattmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntmmdc1wattmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W>
+        ];
+    ].
+
+# PropertyValues for tmpcntmmdc1wattmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmdc1wattmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmdc1wattmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntmmdc1.watt.mag.f";
+            rr:condition "[tmpcntmmdc1.watt.mag.f != 'NULL' && tmpcntmmdc1.watt.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmppctmmdc1wattmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmppctmmdc1wattmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1wattmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1wattmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctmmdc1wattmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W>
+        ];
+    ].
+
+# PropertyValues for tmppctmmdc1wattmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmppctmmdc1wattmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmdc1wattmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctmmdc1.watt.mag.f";
+            rr:condition "[tmppctmmdc1.watt.mag.f != 'NULL' && tmppctmmdc1.watt.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s4mmxu1totwmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s4mmxu1totwmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmxu1totwmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmxu1totwmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4mmxu1totwmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W>
+        ];
+    ].
+
+# PropertyValues for s4mmxu1totwmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s4mmxu1totwmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s4mmxu1totwmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4mmxu1.totw.mag.f";
+            rr:condition "[s4mmxu1.totw.mag.f != 'NULL' && s4mmxu1.totw.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s2mmxu1totwmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s2mmxu1totwmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmxu1totwmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmxu1totwmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2mmxu1totwmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W>
+        ];
+    ].
+
+# PropertyValues for s2mmxu1totwmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s2mmxu1totwmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s2mmxu1totwmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2mmxu1.totw.mag.f";
+            rr:condition "[s2mmxu1.totw.mag.f != 'NULL' && s2mmxu1.totw.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s3mmxu1totwmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s3mmxu1totwmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmxu1totwmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmxu1totwmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3mmxu1totwmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W>
+        ];
+    ].
+
+# PropertyValues for s3mmxu1totwmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s3mmxu1totwmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s3mmxu1totwmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3mmxu1.totw.mag.f";
+            rr:condition "[s3mmxu1.totw.mag.f != 'NULL' && s3mmxu1.totw.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s5mmxu1totwmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_s5mmxu1totwmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmxu1totwmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmxu1totwmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5mmxu1totwmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W>
+        ];
+    ].
+
+# PropertyValues for s5mmxu1totwmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_s5mmxu1totwmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/s5mmxu1totwmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5mmxu1.totw.mag.f";
+            rr:condition "[s5mmxu1.totw.mag.f != 'NULL' && s5mmxu1.totw.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmpcntmmxu1totwmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmxu1totwmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmxu1totwmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmxu1totwmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntmmxu1totwmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W>
+        ];
+    ].
+
+# PropertyValues for tmpcntmmxu1totwmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmpcntmmxu1totwmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmpcntmmxu1totwmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntmmxu1.totw.mag.f";
+            rr:condition "[tmpcntmmxu1.totw.mag.f != 'NULL' && tmpcntmmxu1.totw.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmppctmmxu1totwmagf
+<#DataPoint_NARB_ECP001_S3_SHL001Inverter01_tmppctmmxu1totwmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmxu1totwmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmxu1totwmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctmmxu1totwmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W>
+        ];
+    ].
+
+# PropertyValues for tmppctmmxu1totwmagf
+<#PropertyValues_NARB_ECP001_S3_SHL001Inverter01_tmppctmmxu1totwmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/NARB_ECP001_S3_SHL001Inverter01.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/NARB_ECP001_S3_SHL001Inverter01/20241101/tmppctmmxu1totwmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctmmxu1.totw.mag.f";
+            rr:condition "[tmppctmmxu1.totw.mag.f != 'NULL' && tmppctmmxu1.totw.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].

@@ -1,0 +1,1282 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix qual: <https://w3id.org/omega-x/ontology/Quality/> .
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix prop: <https://w3id.org/omega-x/ontology/Property/> .
+@prefix ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/> .
+@prefix eds: <https://w3id.org/omega-x/ontology/EnergyDataSet/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix solar: <https://w3id.org/omega-x/ontology/Renewables/> .
+@prefix role: <https://w3id.org/omega-x/ontology/EnergyRole/>.
+@prefix narb:  <https://w3id.org/omega-x/ontology/KG/NarbonneDataSets/> .
+
+# --------------------------------------------------------------------------
+# The Data Collection of the Device
+<#DataCollection_DataSet_meteostat_10min_202502241716>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";  # Link to the input CSV file
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+    ];
+     rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection, eds:EnergyDataSet;  # Data Collection
+    ];
+     #includes Technical context
+     rr:predicateObjectMap [
+        rr:predicate eds:includesTechnicalContext;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101/TC>
+        ];
+    ].
+
+# Technical Context
+<#TCDataSet_meteostat_10min_202502241716>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";  # Link to the input CSV file
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101/TC>;
+    ];
+        rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object eds:TechnicalContext
+    ];
+    rr:predicateObjectMap [
+        rr:predicate eds:includesEvaluationPoint;
+      rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataSet_meteostat_10min_202502241716>
+        ]
+    ].
+
+
+# DataPoint for s4mmet1envtmpmagf
+<#DataPoint_DataSet_meteostat_10min_202502241716_s4mmet1envtmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1envtmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1envtmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4mmet1envtmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s4mmet1envtmpmagf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_s4mmet1envtmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1envtmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4mmet1.envtmp.mag.f";
+            rr:condition "[s4mmet1.envtmp.mag.f != 'NULL' && s4mmet1.envtmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s2mmet1envtmpmagf
+<#DataPoint_DataSet_meteostat_10min_202502241716_s2mmet1envtmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1envtmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1envtmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2mmet1envtmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s2mmet1envtmpmagf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_s2mmet1envtmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1envtmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2mmet1.envtmp.mag.f";
+            rr:condition "[s2mmet1.envtmp.mag.f != 'NULL' && s2mmet1.envtmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s3mmet1envtmpmagf
+<#DataPoint_DataSet_meteostat_10min_202502241716_s3mmet1envtmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1envtmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1envtmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3mmet1envtmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s3mmet1envtmpmagf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_s3mmet1envtmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1envtmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3mmet1.envtmp.mag.f";
+            rr:condition "[s3mmet1.envtmp.mag.f != 'NULL' && s3mmet1.envtmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s5mmet1envtmpmagf
+<#DataPoint_DataSet_meteostat_10min_202502241716_s5mmet1envtmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1envtmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1envtmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5mmet1envtmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s5mmet1envtmpmagf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_s5mmet1envtmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1envtmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5mmet1.envtmp.mag.f";
+            rr:condition "[s5mmet1.envtmp.mag.f != 'NULL' && s5mmet1.envtmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmpcntmmet1envtmpmagf
+<#DataPoint_DataSet_meteostat_10min_202502241716_tmpcntmmet1envtmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1envtmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1envtmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntmmet1envtmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for tmpcntmmet1envtmpmagf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_tmpcntmmet1envtmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1envtmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntmmet1.envtmp.mag.f";
+            rr:condition "[tmpcntmmet1.envtmp.mag.f != 'NULL' && tmpcntmmet1.envtmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmppctmmet1envtmpmagf
+<#DataPoint_DataSet_meteostat_10min_202502241716_tmppctmmet1envtmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1envtmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1envtmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctmmet1envtmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for tmppctmmet1envtmpmagf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_tmppctmmet1envtmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1envtmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctmmet1.envtmp.mag.f";
+            rr:condition "[tmppctmmet1.envtmp.mag.f != 'NULL' && tmppctmmet1.envtmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s2mmet1poainsol1magf
+<#DataPoint_DataSet_meteostat_10min_202502241716_s2mmet1poainsol1magf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1poainsol1magf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1poainsol1magf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2mmet1poainsol1magf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W/M2>
+        ];
+    ].
+
+# PropertyValues for s2mmet1poainsol1magf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_s2mmet1poainsol1magf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1poainsol1magf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2mmet1.poainsol1.mag.f";
+            rr:condition "[s2mmet1.poainsol1.mag.f != 'NULL' && s2mmet1.poainsol1.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s3mmet1poainsol1magf
+<#DataPoint_DataSet_meteostat_10min_202502241716_s3mmet1poainsol1magf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1poainsol1magf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1poainsol1magf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3mmet1poainsol1magf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W/M2>
+        ];
+    ].
+
+# PropertyValues for s3mmet1poainsol1magf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_s3mmet1poainsol1magf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1poainsol1magf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3mmet1.poainsol1.mag.f";
+            rr:condition "[s3mmet1.poainsol1.mag.f != 'NULL' && s3mmet1.poainsol1.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s4mmet1poainsol1magf
+<#DataPoint_DataSet_meteostat_10min_202502241716_s4mmet1poainsol1magf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1poainsol1magf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1poainsol1magf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4mmet1poainsol1magf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W/M2>
+        ];
+    ].
+
+# PropertyValues for s4mmet1poainsol1magf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_s4mmet1poainsol1magf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1poainsol1magf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4mmet1.poainsol1.mag.f";
+            rr:condition "[s4mmet1.poainsol1.mag.f != 'NULL' && s4mmet1.poainsol1.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s5mmet1poainsol1magf
+<#DataPoint_DataSet_meteostat_10min_202502241716_s5mmet1poainsol1magf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1poainsol1magf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1poainsol1magf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5mmet1poainsol1magf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W/M2>
+        ];
+    ].
+
+# PropertyValues for s5mmet1poainsol1magf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_s5mmet1poainsol1magf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1poainsol1magf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5mmet1.poainsol1.mag.f";
+            rr:condition "[s5mmet1.poainsol1.mag.f != 'NULL' && s5mmet1.poainsol1.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmpcntmmet1poainsol1magf
+<#DataPoint_DataSet_meteostat_10min_202502241716_tmpcntmmet1poainsol1magf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1poainsol1magf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1poainsol1magf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntmmet1poainsol1magf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W/M2>
+        ];
+    ].
+
+# PropertyValues for tmpcntmmet1poainsol1magf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_tmpcntmmet1poainsol1magf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1poainsol1magf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntmmet1.poainsol1.mag.f";
+            rr:condition "[tmpcntmmet1.poainsol1.mag.f != 'NULL' && tmpcntmmet1.poainsol1.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmppctmmet1poainsol1magf
+<#DataPoint_DataSet_meteostat_10min_202502241716_tmppctmmet1poainsol1magf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1poainsol1magf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1poainsol1magf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctmmet1poainsol1magf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/W/M2>
+        ];
+    ].
+
+# PropertyValues for tmppctmmet1poainsol1magf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_tmppctmmet1poainsol1magf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1poainsol1magf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctmmet1.poainsol1.mag.f";
+            rr:condition "[tmppctmmet1.poainsol1.mag.f != 'NULL' && tmppctmmet1.poainsol1.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s4pvstmp1tmpmagf
+<#DataPoint_DataSet_meteostat_10min_202502241716_s4pvstmp1tmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4pvstmp1tmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4pvstmp1tmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4pvstmp1tmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s4pvstmp1tmpmagf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_s4pvstmp1tmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4pvstmp1tmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4pvstmp1.tmp.mag.f";
+            rr:condition "[s4pvstmp1.tmp.mag.f != 'NULL' && s4pvstmp1.tmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s2pvstmp1tmpmagf
+<#DataPoint_DataSet_meteostat_10min_202502241716_s2pvstmp1tmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2pvstmp1tmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2pvstmp1tmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2pvstmp1tmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s2pvstmp1tmpmagf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_s2pvstmp1tmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2pvstmp1tmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2pvstmp1.tmp.mag.f";
+            rr:condition "[s2pvstmp1.tmp.mag.f != 'NULL' && s2pvstmp1.tmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s3pvstmp1tmpmagf
+<#DataPoint_DataSet_meteostat_10min_202502241716_s3pvstmp1tmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3pvstmp1tmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3pvstmp1tmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3pvstmp1tmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s3pvstmp1tmpmagf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_s3pvstmp1tmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3pvstmp1tmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3pvstmp1.tmp.mag.f";
+            rr:condition "[s3pvstmp1.tmp.mag.f != 'NULL' && s3pvstmp1.tmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for s5pvstmp1tmpmagf
+<#DataPoint_DataSet_meteostat_10min_202502241716_s5pvstmp1tmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5pvstmp1tmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5pvstmp1tmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5pvstmp1tmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for s5pvstmp1tmpmagf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_s5pvstmp1tmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5pvstmp1tmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5pvstmp1.tmp.mag.f";
+            rr:condition "[s5pvstmp1.tmp.mag.f != 'NULL' && s5pvstmp1.tmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmpcntpvstmp1tmpmagf
+<#DataPoint_DataSet_meteostat_10min_202502241716_tmpcntpvstmp1tmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntpvstmp1tmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntpvstmp1tmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntpvstmp1tmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for tmpcntpvstmp1tmpmagf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_tmpcntpvstmp1tmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntpvstmp1tmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntpvstmp1.tmp.mag.f";
+            rr:condition "[tmpcntpvstmp1.tmp.mag.f != 'NULL' && tmpcntpvstmp1.tmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# DataPoint for tmppctpvstmp1tmpmagf
+<#DataPoint_DataSet_meteostat_10min_202502241716_tmppctpvstmp1tmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctpvstmp1tmpmagf_DP_{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctpvstmp1tmpmagf_DP_{id}_PV{id}";
+            rr:column "id"
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctpvstmp1tmpmagf>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant <http://qudt.org/vocab/unit/DEG_C>
+        ];
+    ].
+
+# PropertyValues for tmppctpvstmp1tmpmagf
+<#PropertyValues_DataSet_meteostat_10min_202502241716_tmppctpvstmp1tmpmagf>
+    rml:logicalSource [
+        rml:source "Input_CSV_Datasets/DataSet_meteostat_10min_202502241716.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctpvstmp1tmpmagf_DP_{id}_PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:PropertyValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctpvstmp1.tmp.mag.f";
+            rr:condition "[tmppctpvstmp1.tmp.mag.f != 'NULL' && tmppctpvstmp1.tmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].

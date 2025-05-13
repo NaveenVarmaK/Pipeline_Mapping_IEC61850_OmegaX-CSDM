@@ -1,0 +1,723 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix qual: <https://w3id.org/omega-x/ontology/Quality/> .
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix prop: <https://w3id.org/omega-x/ontology/Property/> .
+@prefix ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/> .
+@prefix eds: <https://w3id.org/omega-x/ontology/EnergyDataSet/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix solar: <https://w3id.org/omega-x/ontology/Renewables/> .
+@prefix role: <https://w3id.org/omega-x/ontology/EnergyRole/>.
+@prefix narb:  <https://w3id.org/omega-x/ontology/KG/NarbonneDataSets/> .
+
+<https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataCollection>;
+		rdf:type <https://w3id.org/omega-x/ontology/EnergyDataSet/EnergyDataSet>;
+		eds:includesTechnicalContext <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101/TC>.
+
+<https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101/TC> rdf:type <https://w3id.org/omega-x/ontology/EnergyDataSet/TechnicalContext>;
+		eds:includesEvaluationPoint <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataSet_meteostat_10min_202502241716>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1envtmpmagf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1envtmpmagf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1envtmpmagf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1envtmpmagf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1envtmpmagf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1envtmpmagf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1envtmpmagf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1envtmpmagf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1envtmpmagf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1envtmpmagf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1envtmpmagf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1envtmpmagf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1envtmpmagf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1envtmpmagf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1envtmpmagf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1envtmpmagf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1envtmpmagf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1envtmpmagf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1envtmpmagf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1envtmpmagf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1envtmpmagf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1envtmpmagf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1envtmpmagf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1envtmpmagf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1envtmpmagf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1envtmpmagf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1envtmpmagf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1envtmpmagf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1envtmpmagf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1envtmpmagf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1envtmpmagf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1envtmpmagf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1envtmpmagf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1envtmpmagf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1envtmpmagf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1envtmpmagf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1envtmpmagf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1envtmpmagf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1envtmpmagf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1envtmpmagf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1envtmpmagf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1envtmpmagf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1envtmpmagf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1envtmpmagf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5mmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1envtmpmagf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1envtmpmagf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1envtmpmagf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1envtmpmagf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1envtmpmagf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1envtmpmagf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntmmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1envtmpmagf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1envtmpmagf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntmmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1envtmpmagf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1envtmpmagf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntmmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1envtmpmagf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1envtmpmagf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntmmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1envtmpmagf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1envtmpmagf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1envtmpmagf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1envtmpmagf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1envtmpmagf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1envtmpmagf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctmmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1envtmpmagf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1envtmpmagf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctmmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1envtmpmagf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1envtmpmagf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctmmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1envtmpmagf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1envtmpmagf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctmmet1envtmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1envtmpmagf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1envtmpmagf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1envtmpmagf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1envtmpmagf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1poainsol1magf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1poainsol1magf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1poainsol1magf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1poainsol1magf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1poainsol1magf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1poainsol1magf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1poainsol1magf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1poainsol1magf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1poainsol1magf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "-1.886169434"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1poainsol1magf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "-1.886184692"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1poainsol1magf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "-0.030003866"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2mmet1poainsol1magf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "-0.287185669"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1poainsol1magf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1poainsol1magf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1poainsol1magf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1poainsol1magf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1poainsol1magf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1poainsol1magf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1poainsol1magf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1poainsol1magf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1poainsol1magf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "-0.684463501"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1poainsol1magf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "-0.66343689"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1poainsol1magf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0.922520936"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3mmet1poainsol1magf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0.553726196"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1poainsol1magf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1poainsol1magf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1poainsol1magf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1poainsol1magf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1poainsol1magf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1poainsol1magf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1poainsol1magf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1poainsol1magf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1poainsol1magf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "-1.107828943"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1poainsol1magf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "-1.197218025"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1poainsol1magf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0.428210795"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4mmet1poainsol1magf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0.006816362"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1poainsol1magf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1poainsol1magf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1poainsol1magf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1poainsol1magf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1poainsol1magf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1poainsol1magf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1poainsol1magf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1poainsol1magf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5mmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1poainsol1magf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0.308784463"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1poainsol1magf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0.3074584"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1poainsol1magf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0.241993683"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5mmet1poainsol1magf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0.186857993"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1poainsol1magf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1poainsol1magf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntmmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1poainsol1magf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1poainsol1magf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntmmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1poainsol1magf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1poainsol1magf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntmmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1poainsol1magf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1poainsol1magf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntmmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1poainsol1magf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "15"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1poainsol1magf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "15"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1poainsol1magf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "11"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntmmet1poainsol1magf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "14"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1poainsol1magf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1poainsol1magf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctmmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1poainsol1magf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1poainsol1magf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctmmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1poainsol1magf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1poainsol1magf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctmmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1poainsol1magf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1poainsol1magf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctmmet1poainsol1magf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/W/M2>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1poainsol1magf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "79.84999593"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1poainsol1magf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "100"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1poainsol1magf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "100"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctmmet1poainsol1magf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "100"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4pvstmp1tmpmagf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4pvstmp1tmpmagf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4pvstmp1tmpmagf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4pvstmp1tmpmagf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4pvstmp1tmpmagf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4pvstmp1tmpmagf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4pvstmp1tmpmagf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4pvstmp1tmpmagf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s4pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4pvstmp1tmpmagf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4pvstmp1tmpmagf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4pvstmp1tmpmagf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s4pvstmp1tmpmagf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2pvstmp1tmpmagf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2pvstmp1tmpmagf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2pvstmp1tmpmagf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2pvstmp1tmpmagf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2pvstmp1tmpmagf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2pvstmp1tmpmagf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2pvstmp1tmpmagf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2pvstmp1tmpmagf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s2pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2pvstmp1tmpmagf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2pvstmp1tmpmagf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2pvstmp1tmpmagf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s2pvstmp1tmpmagf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3pvstmp1tmpmagf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3pvstmp1tmpmagf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3pvstmp1tmpmagf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3pvstmp1tmpmagf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3pvstmp1tmpmagf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3pvstmp1tmpmagf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3pvstmp1tmpmagf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3pvstmp1tmpmagf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s3pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3pvstmp1tmpmagf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3pvstmp1tmpmagf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3pvstmp1tmpmagf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s3pvstmp1tmpmagf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5pvstmp1tmpmagf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5pvstmp1tmpmagf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5pvstmp1tmpmagf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5pvstmp1tmpmagf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5pvstmp1tmpmagf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5pvstmp1tmpmagf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5pvstmp1tmpmagf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5pvstmp1tmpmagf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/s5pvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5pvstmp1tmpmagf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5pvstmp1tmpmagf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5pvstmp1tmpmagf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/s5pvstmp1tmpmagf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntpvstmp1tmpmagf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntpvstmp1tmpmagf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntpvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntpvstmp1tmpmagf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntpvstmp1tmpmagf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntpvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntpvstmp1tmpmagf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntpvstmp1tmpmagf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntpvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntpvstmp1tmpmagf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntpvstmp1tmpmagf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmpcntpvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntpvstmp1tmpmagf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntpvstmp1tmpmagf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntpvstmp1tmpmagf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmpcntpvstmp1tmpmagf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>;
+		ets:value "0"^^xsd:double.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctpvstmp1tmpmagf_DP_2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctpvstmp1tmpmagf_DP_2950219_PV2950219>;
+		ets:dataTime "2024-11-01T20:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctpvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctpvstmp1tmpmagf_DP_2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctpvstmp1tmpmagf_DP_2950220_PV2950220>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctpvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctpvstmp1tmpmagf_DP_2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctpvstmp1tmpmagf_DP_2950271_PV2950271>;
+		ets:dataTime "2024-11-01T00:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctpvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctpvstmp1tmpmagf_DP_2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/DataPoint>;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/DataCollection/DataSet_meteostat_10min_202502241716/20241101>;
+		ets:hasDataValue <narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctpvstmp1tmpmagf_DP_2950280_PV2950280>;
+		ets:dataTime "2024-11-02T06:13:20"^^xsd:dateTime;
+		prop:isAboutProperty <https://w3id.org/omega-x/ontology/KG/MeteostationDataSets/tmppctpvstmp1tmpmagf>;
+		prop:hasUnit <http://qudt.org/vocab/unit/DEG_C>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctpvstmp1tmpmagf_DP_2950219_PV2950219> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctpvstmp1tmpmagf_DP_2950220_PV2950220> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctpvstmp1tmpmagf_DP_2950271_PV2950271> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
+<narb:DataCollection/DataSet_meteostat_10min_202502241716/20241101/tmppctpvstmp1tmpmagf_DP_2950280_PV2950280> rdf:type <https://w3id.org/omega-x/ontology/EventTimeSeries/PropertyValue>.
+
