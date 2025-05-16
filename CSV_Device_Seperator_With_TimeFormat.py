@@ -1,8 +1,11 @@
 import pandas as pd
 import re
 import os
+import logging
+import time
 from datetime import datetime
 import dateutil.parser
+from tqdm import tqdm
 
 
 def extract_device_name(header):
@@ -51,19 +54,52 @@ def create_clean_column_name(header):
 def standardize_datetime(time_series, format='%Y-%m-%dT%H:%M:%S'):
     """
     Convert various datetime formats to the standard ISO 8601 format: 2024-11-02T06:13:20
+    Handles:
+    - Standard datetime strings
+    - Unix timestamps (seconds or milliseconds)
+    - Scientific notation (e.g., 1.73E+12 for milliseconds)
     """
     standardized = []
 
     for time_str in time_series:
         try:
-            # Try to parse the datetime using dateutil (handles most formats)
+            # Handle scientific notation timestamps (unix time in milliseconds)
+            if isinstance(time_str, str) and ('e' in time_str.lower() or 'E' in time_str):
+                try:
+                    # Convert from scientific notation to a float (milliseconds)
+                    timestamp_ms = float(time_str)
+                    # Convert to seconds if it's in milliseconds (timestamp > 1e11)
+                    if timestamp_ms > 1e11:  # Likely milliseconds
+                        timestamp_sec = timestamp_ms / 1000.0
+                    else:  # Already in seconds
+                        timestamp_sec = timestamp_ms
+
+                    dt = datetime.fromtimestamp(timestamp_sec)
+                    standardized.append(dt.strftime(format))
+                    continue
+                except (ValueError, OverflowError):
+                    pass  # If scientific notation parsing fails, try other methods
+
+            # Handle numeric timestamps (could be seconds or milliseconds)
+            if isinstance(time_str, (int, float)) or (
+                    isinstance(time_str, str) and time_str.replace('.', '', 1).isdigit()):
+                timestamp = float(time_str)
+                # If timestamp is very large (> year 2286), assume it's in milliseconds
+                if timestamp > 10000000000:  # More than 10 billion = likely milliseconds
+                    timestamp = timestamp / 1000.0
+
+                dt = datetime.fromtimestamp(timestamp)
+                standardized.append(dt.strftime(format))
+                continue
+
+            # Try to parse the datetime using dateutil (handles most string formats)
             dt = dateutil.parser.parse(str(time_str))
-            # Format to the desired output format
             standardized.append(dt.strftime(format))
-        except (ValueError, TypeError):
+
+        except (ValueError, TypeError, OverflowError) as e:
             # If parsing fails, keep the original value
             standardized.append(str(time_str))
-            print(f"Warning: Could not parse datetime '{time_str}', keeping original value")
+            print(f"Warning: Could not parse datetime '{time_str}', keeping original value. Error: {str(e)}")
 
     return standardized
 
@@ -83,43 +119,95 @@ def detect_format_type(df):
 
 
 def split_csv_by_device(input_file, output_dir='Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices',
-                        time_col='Time', device_col=None):
+                        time_col='Time', device_col=None, log_level=logging.INFO):
     """
     Split a CSV file by device names extracted from headers or from a device column
     and standardize the time column format to ISO 8601
     """
-    print(f"Reading CSV file: {input_file}")
+    # Setup logging
+    setup_logging(log_level)
+    logger = logging.getLogger(__name__)
+
+    logger.info(f"Reading CSV file: {input_file}")
+    start_time = time.time()
 
     # Create output directory if it doesn't exist
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
+        logger.debug(f"Created output directory: {output_dir}")
 
     # Read the CSV file
-    df = pd.read_csv(input_file)
+    try:
+        df = pd.read_csv(input_file)
+        logger.info(f"Successfully read CSV with {len(df)} rows and {len(df.columns)} columns")
+    except Exception as e:
+        logger.error(f"Error reading CSV file: {str(e)}")
+        raise
 
     # Auto-detect format if device_col is not provided
     if device_col is None:
         format_type, device_col = detect_format_type(df)
-        print(f"Detected format type: {format_type}")
+        logger.info(f"Detected format type: {format_type}")
     else:
         # If device_col is provided, use Format 3
         format_type = "format3" if device_col in df.columns else "format1_2"
-        print(f"Using format type: {format_type}")
+        logger.info(f"Using format type: {format_type}")
 
     # Check if time column exists and standardize it
+    time_columns = [col for col in df.columns if col.lower() in
+                    ['time', 'timestamp', 'timestamp_gmt', 'datetime', 'date']]
+
     if time_col in df.columns:
-        print(f"Standardizing time column format: {time_col}")
-        df[time_col] = standardize_datetime(df[time_col])
+        time_columns = [time_col]  # Use the specified time column
+    elif time_columns:
+        time_col = time_columns[0]  # Use the first detected time column
+        logger.info(f"Using detected time column: {time_col}")
     else:
-        print(f"Warning: Time column '{time_col}' not found in the CSV")
+        logger.warning(f"No time column found matching common patterns or specified name: {time_col}")
+
+    # Standardize all identified time columns
+    for col in time_columns:
+        logger.info(f"Standardizing time column format: {col}")
+        df[col] = standardize_datetime(df[col])
 
     # Process according to the format type
     if format_type == "format3":
         # Format 3: Device names are in a separate column
-        return split_by_device_column(df, device_col, output_dir)
+        devices = split_by_device_column(df, device_col, output_dir)
     else:
         # Format 1 & 2: Device names are embedded in headers
-        return split_by_header_format(df, output_dir)
+        devices = split_by_header_format(df, output_dir)
+
+    elapsed_time = time.time() - start_time
+    logger.info(f"Total processing time: {elapsed_time:.2f} seconds")
+
+    return devices
+
+
+def setup_logging(log_level=logging.INFO):
+    """
+    Set up logging configuration
+    """
+    # Create logs directory if it doesn't exist
+    log_dir = 'logs'
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+
+    # Define log file with timestamp
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    log_file = os.path.join(log_dir, f'csv_splitter_{timestamp}.log')
+
+    # Configure logging
+    logging.basicConfig(
+        level=log_level,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(log_file),
+            logging.StreamHandler()  # Also output to console
+        ]
+    )
+
+    return logging.getLogger(__name__)
 
 
 def split_by_device_column(df, device_col, output_dir):
