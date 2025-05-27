@@ -12,75 +12,120 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix solar: <https://w3id.org/omega-x/ontology/Renewables/> .
 @prefix role: <https://w3id.org/omega-x/ontology/EnergyRole/>.
-@prefix narb:  <https://w3id.org/omega-x/ontology/KG/NarbonneDataSets/> .
 
 # --------------------------------------------------------------------------
-# The Data Collection of the Device
-<#DataCollection_{{ inverter_id }}>
-    rml:logicalSource [
-        rml:source "{{ csv_path }}";  # Link to the input CSV file
-        rml:referenceFormulation ql:CSV
-    ];
-    rr:subjectMap [
-        rr:constant <{{ base_uri }}/DataCollection/{{ inverter_id }}/{{ date }}>;
-    ];
-     rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:object ets:DataCollection, eds:EnergyDataSet;  # Data Collection
-    ];
-     #includes Technical context
-     rr:predicateObjectMap [
-        rr:predicate eds:includesTechnicalContext;
-        rr:objectMap [
-            rr:constant <{{ base_uri }}/DataCollection/{{ inverter_id }}/{{ date }}/TC>
-        ];
-    ].
-
-# Technical Context
-<#TC{{ inverter_id }}>
-    rml:logicalSource [
-        rml:source "{{ csv_path }}";  # Link to the input CSV file
-        rml:referenceFormulation ql:CSV
-    ];
-    rr:subjectMap [
-        rr:constant <{{ base_uri }}/DataCollection/{{ inverter_id }}/{{ date }}/TC>;
-    ];
-        rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:object eds:TechnicalContext
-    ];
-    rr:predicateObjectMap [
-        rr:predicate eds:includesEvaluationPoint;
-      rr:objectMap [
-            rr:constant <{{ base_uri }}/{{ inverter_id }}>
-        ]
-    ].
-
-{% for row in properties %}
-# DataPoint for {{ row.property_id }}
-<#DataPoint_{{ inverter_id }}_{{ row.property_id }}>
+# The Data Collection of the Device (EnergyDataSet)
+<#DataCollection_{{ device_id }}>
     rml:logicalSource [
         rml:source "{{ csv_path }}";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "narb:DataCollection/{{ inverter_id }}/{{ date }}/{{ row.property_id }}_DP_{{ '{id}' }}";
+        rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ wid }}>;
+        rr:class ets:DataCollection, eds:EnergyDataSet;
     ];
     rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:object ets:DataPoint;
+        rr:predicate eds:includesTechnicalContext;
+        rr:objectMap [
+            rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ wid }}/TC>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate eds:includesEvaluationPoint;
+        rr:objectMap [
+            rr:constant <{{ myprefix }}/{{ device_id }}>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate eds:isExchangedIn;
+        rr:objectMap [
+            rr:constant <{{ myprefix }}/DataCollection/Exchange/{{ wid }}>
+        ];
+    ].
+
+# Technical Context
+<#TC_{{ device_id }}>
+    rml:logicalSource [
+        rml:source "{{ csv_path }}";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ wid }}/TC>;
+        rr:class eds:TechnicalContext;
+    ].
+
+# EvaluationPoint
+<#EvaluationPoint_{{ device_id }}>
+    rml:logicalSource [
+        rml:source "{{ csv_path }}";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <{{ myprefix }}/{{ device_id }}>;
+        rr:class eds:EvaluationPoint;
+    ].
+
+
+{% for row in properties %}
+# Property definition for {{ row.property_id }}
+<#Property_{{ row.property_id }}>
+    rr:subjectMap [
+        rr:constant <{{ myprefix }}/{{ row.property_id }}>;
+        rr:class prop:Property;
+    ].
+
+{% for unit in unique_units %}
+# Unit definition for {{ unit }}
+<#Unit_{{ unit }}>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/{{ unit }}>;
+    ].
+{% endfor %}
+
+
+# DataCollection for Property
+<#DataCollection_{{ device_id }}_{{ row.property_id }}>
+    rml:logicalSource [
+        rml:source "{{ csv_path }}";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:{{ row.unit }}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:{{ row.property }}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ wid }}>
+        ];
+    ].
+
+# DataPoint for {{ row.property_id }}
+<#DataPoint_{{ device_id }}_{{ row.property_id }}>
+    rml:logicalSource [
+        rml:source "{{ csv_path }}";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}/DP{{ '{id}' }}";
+        rr:class ets:DataPoint;
     ];
     rr:predicateObjectMap [
         rr:predicate ets:belongsTo;
         rr:objectMap [
-            rr:constant <{{ base_uri }}/DataCollection/{{ inverter_id }}/{{ date }}>;
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate ets:hasDataValue;
-        rr:objectMap [
-            rr:template "narb:DataCollection/{{ inverter_id }}/{{ date }}/{{ row.property_id }}_DP_{{ '{id}' }}_PV{{ '{id}' }}";
-            rr:column "id"
+            rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ wid }}>;
         ];
     ];
     rr:predicateObjectMap [
@@ -91,30 +136,33 @@
         ];
     ];
     rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}/DP{{ '{id}' }}/DV{{ '{id}' }}";
+        ];
+    ];
+    rr:predicateObjectMap [
         rr:predicate prop:isAboutProperty;
         rr:objectMap [
-            rr:constant <{{ base_uri }}/{{ row.property_id }}>
+            rr:constant "prop:{{ row.property }}";
         ];
     ];
     rr:predicateObjectMap [
         rr:predicate prop:hasUnit;
         rr:objectMap [
-            rr:constant <http://qudt.org/vocab/unit/{{ row.unit }}>
+            rr:constant "unit:{{ row.unit }}";
         ];
     ].
 
-# PropertyValues for {{ row.property_id }}
-<#PropertyValues_{{ inverter_id }}_{{ row.property_id }}>
+# DataValue for {{ row.property_id }}
+<#DataValue_{{ device_id }}_{{ row.property_id }}>
     rml:logicalSource [
         rml:source "{{ csv_path }}";
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "narb:DataCollection/{{ inverter_id }}/{{ date }}/{{ row.property_id }}_DP_{{ '{id}' }}_PV{{ '{id}' }}";
-    ];
-    rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:object ets:PropertyValue;
+        rr:template "{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}/DP{{ '{id}' }}/PV{{ '{id}' }}";
+        rr:class ets:DataValue;
     ];
     rr:predicateObjectMap [
         rr:predicate ets:value;
