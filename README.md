@@ -1,19 +1,15 @@
 # Energy Dataset Processing Pipeline
 
-A comprehensive pipeline for creatinh Knoweldge Grapgh from CSV files tagged with IEC 61850 standard.
+A comprehensive pipeline for creating Knoweldge Graph from CSV files tagged with IEC 61850 standard.
 
-## Background
-Figure depicts an example of 
 
-## 🔄 Pipeline Overview
-![image](https://github.com/user-attachments/assets/d717ad2a-ea9c-4ccb-9373-0023633858e7)
-This pipeline consists of four main steps:
+##  Pipeline Overview
+The pipeline is depicted in Figure ![image](https://github.com/user-attachments/assets/d717ad2a-ea9c-4ccb-9373-0023633858e7).
 
-1. **CSV Device Separation** - Split large CSV files by device and standardize timestamps
-2. **RML Generation** - Generate RML mapping files for each device dataset
-3. **RDF Generation** - Use SDM-RDFizer to convert CSV data to RDF knowledge graphs
-4. **Graph Database Integration** - Query and analyze the generated knowledge graphs
-
+It consists of Three main steps:
+1. **Extract** - Convert time to UTC, extract the list of devices and split  CSV files by device.
+2. **Transform** - Use Jinja template to generate RML mapping files for each device. These mapping files are used in SDM-RDFizer to convert CSV data to RDF knowledge graphs.
+3. **Load** - Store the knoweldge graphs in GrapghDB and query it using SPARQL.
 ## 📋 Prerequisites
 
 ### Required Dependencies
@@ -51,20 +47,10 @@ project/
 └── GraphDBConnector.py
 ```
 
-## 🚀 Step-by-Step Usage Guide
+##  Step-by-Step Usage Guide
 
-### Step 1: CSV Device Separation
-
-The first step processes your raw energy dataset CSV file and splits it by device while standardizing timestamps.
-
-#### Supported CSV Formats
-
-The pipeline supports multiple CSV formats:
-
-- **Format 1**: `s4DINV.EnclTmp.mag.f - 1 - TATA_ECP001_S3_SHL001Inverter01`
-- **Format 2**: `METEOSTA004_s4MMET.POAInsol1.mag.f`
-- **Format 3**: Separate device column
-- **Format 4**: Combined `ts` and `timestamp_gmt` columns
+### Step 1: Extract 
+**CSV Device Separation**: Processes your raw energy dataset CSV file and splits it by device while standardizing timestamps.
 
 #### Command Line Usage
 
@@ -109,9 +95,10 @@ Creates individual CSV files for each device:
 - `INVERTER01_W1.csv`
 - `WEATHER_STATION_W1.csv`
 
-### Step 2: RML Generation
+### Step 2: Transform
+**RML Generation**
 
-Generate RML (R2RML Mapping Language) files that define how CSV data maps to RDF triples.
+Generate RML files that define how CSV data maps to RDF triples. 
 
 #### Usage
 
@@ -139,10 +126,6 @@ output_filename = '../OmegaX-Pipeline/Output/RML/generated_METEOSTA001_W1.rml.tt
 - ✅ Creates QUDT-compliant unit mappings
 - ✅ Profiles execution time and memory usage
 
-#### Required Files
-
-- `Resources/CSV_Header_Dictionary.py` - Contains measurement definitions and units
-- `Jinja_RML-Template_PerDevice.j2` - Jinja2 template for RML generation
 
 #### Output
 
@@ -193,7 +176,7 @@ Creates RDF files:
 - `knowledge_graph_METEOSTA001_W1.ttl`
 - `knowledge_graph_INVERTER01_W1.ttl`
 
-### Step 4: Graph Database Integration
+### Step 3: Load
 
 Load and query the generated knowledge graphs using GraphDB.
 
@@ -239,17 +222,17 @@ graphdb.print_query_results(results)
 - ✅ Formats and displays results
 - ✅ Handles connection errors gracefully
 
-## 🔧 Configuration Files
+## Resources
 
 ### CSV_Header_Dictionary.py
 
-Contains measurement definitions and unit mappings:
+Contains property definitions and unit mappings:
 
 ```python
 MEASUREMENTS = {
     "temp": {
         "description": "Temperature measurement",
-        "qudt_unit": "http://qudt.org/vocab/unit/DEG_C"
+        "qudt_unit": "http://qudt.org/vocab/unit/DEG_C",
     },
     "pow": {
         "description": "Power measurement", 
@@ -273,7 +256,7 @@ The pipeline includes comprehensive performance monitoring:
 - **Progress bars** for long-running operations
 - **Detailed logging** with timestamps
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Common Issues
 
@@ -314,5 +297,7 @@ To extend the pipeline:
 
 This project is licensed under the MIT License. See the [LICENSE](./License) file for details.
 
-## Credit
-This work has been developed by [Electricité De France (EDF)](https://www.edf.fr/) team and partners ([Ecole des mines de Saint-Etienne](https://www.mines-stetienne.fr/) and [Trialog](https://www.trialog.com/fr/accueil/)), in the frame of the European projetc Omega-X [Omega-X website](https://omega-x.eu/), 
+## Acknoweldgment
+[Electricité De France (EDF)](https://www.edf.fr/) team and partners 
+[Ecole des mines de Saint-Etienne](https://www.mines-stetienne.fr/)
+The European projetc Omega-X [Omega-X website](https://omega-x.eu/)
