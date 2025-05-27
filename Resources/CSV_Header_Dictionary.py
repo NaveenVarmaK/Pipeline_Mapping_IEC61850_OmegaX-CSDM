@@ -81,7 +81,7 @@ UNIT_TO_QUDT = {
     "PERCENT": "PERCENT",
     "kW_HR": "KiloW-HR",
     "OHM": "OHM",
-    "W_PER_M2": "W/M2",
+    "W_PER_M2": "W-PER-M2",
     "W_PER_M2_HR": "W.HR/M2",
     "MM": "MM",
     "PA": "PA",
