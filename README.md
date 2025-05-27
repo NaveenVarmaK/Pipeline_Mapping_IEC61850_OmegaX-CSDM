@@ -305,23 +305,6 @@ The pipeline includes comprehensive performance monitoring:
 Check log files in the `logs/` directory for detailed error information:
 - `csv_splitter_YYYYMMDD_HHMMSS.log`
 
-## 📈 Performance Tips
-
-1. **For Large CSV Files**:
-   - Use SSD storage for better I/O performance
-   - Allocate sufficient RAM
-   - Process during off-peak hours
-
-2. **For Multiple Devices**:
-   - Process devices in parallel
-   - Use batch processing scripts
-   - Monitor system resources
-
-3. **For GraphDB Queries**:
-   - Create appropriate indexes
-   - Use LIMIT clauses for testing
-   - Optimize SPARQL queries
-
 ## 🤝 Contributing
 
 To extend the pipeline:
