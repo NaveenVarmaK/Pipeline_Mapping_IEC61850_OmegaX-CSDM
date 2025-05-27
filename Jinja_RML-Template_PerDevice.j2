@@ -22,7 +22,10 @@
     ];
     rr:subjectMap [
         rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ wid }}>;
-        rr:class ets:DataCollection, eds:EnergyDataSet;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection, eds:EnergyDataSet;
     ];
     rr:predicateObjectMap [
         rr:predicate eds:includesTechnicalContext;
@@ -51,7 +54,10 @@
     ];
     rr:subjectMap [
         rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ wid }}/TC>;
-        rr:class eds:TechnicalContext;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object eds:TechnicalContext;
     ].
 
 # EvaluationPoint
@@ -62,28 +68,28 @@
     ];
     rr:subjectMap [
         rr:constant <{{ myprefix }}/{{ device_id }}>;
-        rr:class eds:EvaluationPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object eds:EvaluationPoint;
     ].
-
 
 {% for row in properties %}
 # Property definition for {{ row.property_id }}
 <#Property_{{ row.property_id }}>
+    rml:logicalSource [
+        rml:source "{{ csv_path }}";
+        rml:referenceFormulation ql:CSV
+    ];
     rr:subjectMap [
         rr:constant <{{ myprefix }}/{{ row.property_id }}>;
-        rr:class prop:Property;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
     ].
 
-{% for unit in unique_units %}
-# Unit definition for {{ unit }}
-<#Unit_{{ unit }}>
-    rr:subjectMap [
-        rr:constant <http://qudt.org/vocab/unit/{{ unit }}>;
-    ].
-{% endfor %}
-
-
-# DataCollection for Property
+# DataCollection for Property {{ row.property_id }}
 <#DataCollection_{{ device_id }}_{{ row.property_id }}>
     rml:logicalSource [
         rml:source "{{ csv_path }}";
@@ -91,18 +97,21 @@
     ];
     rr:subjectMap [
         rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}>;
-        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
     ];
     rr:predicateObjectMap [
         rr:predicate ets:hasUnit;
         rr:objectMap [
-            rr:constant "unit:{{ row.unit }}";
+            rr:constant unit:{{ row.unit }};
         ];
     ];
     rr:predicateObjectMap [
         rr:predicate ets:isAboutProperty;
         rr:objectMap [
-            rr:constant "prop:{{ row.property }}";
+            rr:constant prop:{{ row.property }};
         ];
     ];
     rr:predicateObjectMap [
@@ -119,8 +128,11 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}/DP{{ '{id}' }}";
-        rr:class ets:DataPoint;
+        rr:template "{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
     ];
     rr:predicateObjectMap [
         rr:predicate ets:belongsTo;
@@ -138,19 +150,19 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}/DP{{ '{id}' }}/DV{{ '{id}' }}";
+            rr:template "{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}/DP{id}/PV{id}";
         ];
     ];
     rr:predicateObjectMap [
         rr:predicate prop:isAboutProperty;
         rr:objectMap [
-            rr:constant "prop:{{ row.property }}";
+            rr:constant prop:{{ row.property }};
         ];
     ];
     rr:predicateObjectMap [
         rr:predicate prop:hasUnit;
         rr:objectMap [
-            rr:constant "unit:{{ row.unit }}";
+            rr:constant unit:{{ row.unit }};
         ];
     ].
 
@@ -161,8 +173,11 @@
         rml:referenceFormulation ql:CSV
     ];
     rr:subjectMap [
-        rr:template "{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}/DP{{ '{id}' }}/PV{{ '{id}' }}";
-        rr:class ets:DataValue;
+        rr:template "{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
     ];
     rr:predicateObjectMap [
         rr:predicate ets:value;
