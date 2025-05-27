@@ -1,16 +1,12 @@
 # Energy Dataset Processing Pipeline
 
-A comprehensive pipeline for processing energy datasets from CSV files to knowledge graphs, designed for IEC61850 compliant data formats.
+A comprehensive pipeline for creatinh Knoweldge Grapgh from CSV files tagged with IEC 61850 standard.
+
+## Background
+Figure depicts an example of 
 
 ## 🔄 Pipeline Overview
-
-![image](https://github.com/user-attachments/assets/cf52b0af-79f2-4f9d-bbd8-e91ecd102a5c)
-
-![image](https://github.com/user-attachments/assets/143cfc87-1dcf-4153-a7a6-cb57c083a053)
-
 ![image](https://github.com/user-attachments/assets/d717ad2a-ea9c-4ccb-9373-0023633858e7)
-
-
 This pipeline consists of four main steps:
 
 1. **CSV Device Separation** - Split large CSV files by device and standardize timestamps
@@ -313,3 +309,10 @@ To extend the pipeline:
 2. Customize the Jinja2 template for different ontologies
 3. Extend device name extraction patterns
 4. Add new CSV format support
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
+## Credit
+This work has been developed by [Electricité De France (EDF)](https://www.edf.fr/) team and partners ([Ecole des mines de Saint-Etienne](https://www.mines-stetienne.fr/) and [Trialog](https://www.trialog.com/fr/accueil/)), in the frame of the European projetc Omega-X [Omega-X website](https://omega-x.eu/), 
