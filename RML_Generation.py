@@ -10,6 +10,19 @@ from jinja2 import Environment, FileSystemLoader
 from Resources.CSV_Header_Dictionary import MEASUREMENTS, get_qudt_unit
 
 
+def normalize_path_for_rml(path):
+    """Convert Windows paths to proper format for RML"""
+    # Convert to forward slashes and ensure proper escaping
+    normalized = path.replace('\\', '/')
+    # For RML, we often need file:// prefix for local files
+    if not normalized.startswith(('http://', 'https://', 'file://')):
+
+        # Convert to absolute path and add file:// prefix
+        abs_path = os.path.abspath(path).replace('\\', '/')
+        normalized = f"{abs_path}"
+    return normalized
+
+
 def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=None, wid=None):
     """Measure execution time and memory usage for RML generation process"""
 
@@ -25,7 +38,7 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
 
     # Load CSV headers
     csv_load_start = time.time()
-    with open(csv_path, newline='') as csvfile:
+    with open(csv_path, newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
         headers = next(reader)
     csv_load_time = time.time() - csv_load_start
@@ -38,7 +51,7 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
 
         parts = header.lower().split('.')
         result = {
-            "property_id": header.replace('.', '').replace(' ', ''),
+            "property_id": re.sub(r'[^a-zA-Z0-9_]', '_', header.replace('.', '_').replace(' ', '_')),
             "csv_column": header,
             "unit": "UNITLESS",
             "property": f"Property for {header}",  # Default property
@@ -95,11 +108,15 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
     # Get unique units for the template
     unique_units = list(set(prop["unit"] for prop in properties if prop["unit"] != "UNITLESS"))
 
+    # Normalize CSV path for RML
+    normalized_csv_path = normalize_path_for_rml(csv_path)
+
     # Create rendering context
     context_create_start = time.time()
     context = {
         "device_id": device_id,
-        "csv_path": csv_path,
+        "csv_path": normalized_csv_path,  # Use normalized path
+        "csv_path_raw": csv_path,  # Keep original for reference
         "myprefix": myprefix,
         "properties": properties,
         "unique_units": unique_units,
@@ -110,10 +127,11 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
     # Debug: Print properties for verification
     print(f"\nParsed Properties:")
     print(f"{'=' * 80}")
+    print(f"Normalized CSV Path: {normalized_csv_path}")
     for prop in properties[:5]:  # Show first 5 for debugging
         print(f"Property ID: {prop['property_id']}")
         print(f"CSV Column: {prop['csv_column']}")
-        print(f"property: {prop['property']}")
+        print(f"Property: {prop['property']}")
         print(f"Unit: {prop['unit']}")
         print(f"Measurement Type: {prop['measurement_type']}")
         print("-" * 40)
@@ -134,10 +152,11 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
         os.makedirs(output_dir, exist_ok=True)
         output_filename = os.path.join(output_dir, f'generated_{device_id}.rml.ttl')
     else:
-        output_filename = f'../OmegaX-Pipeline/Output/RML/generated_{device_id}.rml.ttl'
-        os.makedirs(os.path.dirname(output_filename), exist_ok=True)
+        output_dir_default = '../OmegaX-Pipeline/Output/RML/'
+        os.makedirs(output_dir_default, exist_ok=True)
+        output_filename = os.path.join(output_dir_default, f'generated_{device_id}.rml.ttl')
 
-    with open(output_filename, 'w') as f:
+    with open(output_filename, 'w', encoding='utf-8') as f:
         f.write(output)
     file_write_time = time.time() - file_write_start
 
@@ -262,6 +281,8 @@ Examples:
         return 1
     except Exception as e:
         print(f"An error occurred: {e}")
+        import traceback
+        traceback.print_exc()
         return 1
 
     return 0
