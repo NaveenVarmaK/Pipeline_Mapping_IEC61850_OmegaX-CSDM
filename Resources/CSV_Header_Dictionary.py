@@ -6,6 +6,13 @@ for use in RML generation with Jinja2 templates.
 # Statistical nodes dictionary
 
 MEASUREMENTS = {
+    "encltmp": {
+        "description": "Enclosure temperature",
+        "unit": "DEG_C",
+        "enum_kind": "MV_EXT",
+        "multiple": True,
+        "property": "EnclosureTemperature"
+    },
     "envtmp": {
         "description": "Air temperature",
         "unit": "DEG_C",
@@ -52,7 +59,7 @@ MEASUREMENTS = {
         "enum_kind": "MV_STD",
         "property": "DCPower"
     },
-    "TotW": {
+    "totw": {
         "description": "Total Real power",
         "unit": "W",
         "enum_kind": "MV_STD",

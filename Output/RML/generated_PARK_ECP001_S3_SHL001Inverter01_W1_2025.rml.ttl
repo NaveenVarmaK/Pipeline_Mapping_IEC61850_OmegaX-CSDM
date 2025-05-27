@@ -1,0 +1,4532 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix qual: <https://w3id.org/omega-x/ontology/Quality/> .
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix prop: <https://w3id.org/omega-x/ontology/Property/> .
+@prefix ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/> .
+@prefix eds: <https://w3id.org/omega-x/ontology/EnergyDataSet/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix solar: <https://w3id.org/omega-x/ontology/Renewables/> .
+@prefix role: <https://w3id.org/omega-x/ontology/EnergyRole/>.
+
+# --------------------------------------------------------------------------
+# The Data Collection of the Device (EnergyDataSet)
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        rr:class ets:DataCollection, eds:EnergyDataSet;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate eds:includesTechnicalContext;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1/TC>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate eds:includesEvaluationPoint;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/PARK_ECP001_S3_SHL001Inverter01_W1_2025>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate eds:isExchangedIn;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/Exchange/W1>
+        ];
+    ].
+
+# Technical Context
+<#TC_PARK_ECP001_S3_SHL001Inverter01_W1_2025>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1/TC>;
+        rr:class eds:TechnicalContext;
+    ].
+
+# EvaluationPoint
+<#EvaluationPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/PARK_ECP001_S3_SHL001Inverter01_W1_2025>;
+        rr:class eds:EvaluationPoint;
+    ].
+
+
+
+# Property definition for s2dinv1_encltmp_mag_f
+<#Property_s2dinv1_encltmp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s2dinv1_encltmp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2dinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2dinv1_encltmp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:EnclosureTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s2dinv1_encltmp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2dinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2dinv1_encltmp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2dinv1_encltmp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:EnclosureTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ].
+
+# DataValue for s2dinv1_encltmp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2dinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2dinv1_encltmp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2dinv1.encltmp.mag.f";
+            rr:condition "[s2dinv1.encltmp.mag.f != 'NULL' && s2dinv1.encltmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s3dinv1_encltmp_mag_f
+<#Property_s3dinv1_encltmp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s3dinv1_encltmp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3dinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3dinv1_encltmp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:EnclosureTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s3dinv1_encltmp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3dinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3dinv1_encltmp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3dinv1_encltmp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:EnclosureTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ].
+
+# DataValue for s3dinv1_encltmp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3dinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3dinv1_encltmp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3dinv1.encltmp.mag.f";
+            rr:condition "[s3dinv1.encltmp.mag.f != 'NULL' && s3dinv1.encltmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s4dinv1_encltmp_mag_f
+<#Property_s4dinv1_encltmp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s4dinv1_encltmp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4dinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4dinv1_encltmp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:EnclosureTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s4dinv1_encltmp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4dinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4dinv1_encltmp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4dinv1_encltmp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:EnclosureTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ].
+
+# DataValue for s4dinv1_encltmp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4dinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4dinv1_encltmp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4dinv1.encltmp.mag.f";
+            rr:condition "[s4dinv1.encltmp.mag.f != 'NULL' && s4dinv1.encltmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s5dinv1_encltmp_mag_f
+<#Property_s5dinv1_encltmp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s5dinv1_encltmp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5dinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5dinv1_encltmp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:EnclosureTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s5dinv1_encltmp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5dinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5dinv1_encltmp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5dinv1_encltmp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:EnclosureTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ].
+
+# DataValue for s5dinv1_encltmp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5dinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5dinv1_encltmp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5dinv1.encltmp.mag.f";
+            rr:condition "[s5dinv1.encltmp.mag.f != 'NULL' && s5dinv1.encltmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmpcntdinv1_encltmp_mag_f
+<#Property_tmpcntdinv1_encltmp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/tmpcntdinv1_encltmp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntdinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntdinv1_encltmp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:EnclosureTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for tmpcntdinv1_encltmp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntdinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntdinv1_encltmp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntdinv1_encltmp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:EnclosureTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ].
+
+# DataValue for tmpcntdinv1_encltmp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntdinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntdinv1_encltmp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntdinv1.encltmp.mag.f";
+            rr:condition "[tmpcntdinv1.encltmp.mag.f != 'NULL' && tmpcntdinv1.encltmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmppctdinv1_encltmp_mag_f
+<#Property_tmppctdinv1_encltmp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/tmppctdinv1_encltmp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctdinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctdinv1_encltmp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:EnclosureTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for tmppctdinv1_encltmp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctdinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctdinv1_encltmp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctdinv1_encltmp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:EnclosureTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ].
+
+# DataValue for tmppctdinv1_encltmp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctdinv1_encltmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctdinv1_encltmp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctdinv1.encltmp.mag.f";
+            rr:condition "[tmppctdinv1.encltmp.mag.f != 'NULL' && tmppctdinv1.encltmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s4dinv1_heatsinktmp_mag_f
+<#Property_s4dinv1_heatsinktmp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s4dinv1_heatsinktmp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4dinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4dinv1_heatsinktmp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:HeatSinkTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s4dinv1_heatsinktmp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4dinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4dinv1_heatsinktmp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4dinv1_heatsinktmp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:HeatSinkTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ].
+
+# DataValue for s4dinv1_heatsinktmp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4dinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4dinv1_heatsinktmp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4dinv1.heatsinktmp.mag.f";
+            rr:condition "[s4dinv1.heatsinktmp.mag.f != 'NULL' && s4dinv1.heatsinktmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s2dinv1_heatsinktmp_mag_f
+<#Property_s2dinv1_heatsinktmp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s2dinv1_heatsinktmp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2dinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2dinv1_heatsinktmp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:HeatSinkTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s2dinv1_heatsinktmp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2dinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2dinv1_heatsinktmp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2dinv1_heatsinktmp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:HeatSinkTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ].
+
+# DataValue for s2dinv1_heatsinktmp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2dinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2dinv1_heatsinktmp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2dinv1.heatsinktmp.mag.f";
+            rr:condition "[s2dinv1.heatsinktmp.mag.f != 'NULL' && s2dinv1.heatsinktmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s3dinv1_heatsinktmp_mag_f
+<#Property_s3dinv1_heatsinktmp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s3dinv1_heatsinktmp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3dinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3dinv1_heatsinktmp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:HeatSinkTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s3dinv1_heatsinktmp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3dinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3dinv1_heatsinktmp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3dinv1_heatsinktmp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:HeatSinkTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ].
+
+# DataValue for s3dinv1_heatsinktmp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3dinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3dinv1_heatsinktmp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3dinv1.heatsinktmp.mag.f";
+            rr:condition "[s3dinv1.heatsinktmp.mag.f != 'NULL' && s3dinv1.heatsinktmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s5dinv1_heatsinktmp_mag_f
+<#Property_s5dinv1_heatsinktmp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s5dinv1_heatsinktmp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5dinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5dinv1_heatsinktmp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:HeatSinkTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s5dinv1_heatsinktmp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5dinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5dinv1_heatsinktmp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5dinv1_heatsinktmp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:HeatSinkTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ].
+
+# DataValue for s5dinv1_heatsinktmp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5dinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5dinv1_heatsinktmp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5dinv1.heatsinktmp.mag.f";
+            rr:condition "[s5dinv1.heatsinktmp.mag.f != 'NULL' && s5dinv1.heatsinktmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmpcntdinv1_heatsinktmp_mag_f
+<#Property_tmpcntdinv1_heatsinktmp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/tmpcntdinv1_heatsinktmp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntdinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntdinv1_heatsinktmp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:HeatSinkTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for tmpcntdinv1_heatsinktmp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntdinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntdinv1_heatsinktmp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntdinv1_heatsinktmp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:HeatSinkTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ].
+
+# DataValue for tmpcntdinv1_heatsinktmp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntdinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntdinv1_heatsinktmp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntdinv1.heatsinktmp.mag.f";
+            rr:condition "[tmpcntdinv1.heatsinktmp.mag.f != 'NULL' && tmpcntdinv1.heatsinktmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmppctdinv1_heatsinktmp_mag_f
+<#Property_tmppctdinv1_heatsinktmp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/tmppctdinv1_heatsinktmp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctdinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctdinv1_heatsinktmp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:HeatSinkTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for tmppctdinv1_heatsinktmp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctdinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctdinv1_heatsinktmp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctdinv1_heatsinktmp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:HeatSinkTemperature";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:DEG_C";
+        ];
+    ].
+
+# DataValue for tmppctdinv1_heatsinktmp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctdinv1_heatsinktmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctdinv1_heatsinktmp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctdinv1.heatsinktmp.mag.f";
+            rr:condition "[tmppctdinv1.heatsinktmp.mag.f != 'NULL' && tmppctdinv1.heatsinktmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s4mmdc1_amp_mag_f
+<#Property_s4mmdc1_amp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s4mmdc1_amp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4mmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmdc1_amp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:A";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCCurrent";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s4mmdc1_amp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4mmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmdc1_amp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmdc1_amp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCCurrent";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:A";
+        ];
+    ].
+
+# DataValue for s4mmdc1_amp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4mmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmdc1_amp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4mmdc1.amp.mag.f";
+            rr:condition "[s4mmdc1.amp.mag.f != 'NULL' && s4mmdc1.amp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s2mmdc1_amp_mag_f
+<#Property_s2mmdc1_amp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s2mmdc1_amp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2mmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmdc1_amp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:A";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCCurrent";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s2mmdc1_amp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2mmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmdc1_amp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmdc1_amp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCCurrent";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:A";
+        ];
+    ].
+
+# DataValue for s2mmdc1_amp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2mmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmdc1_amp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2mmdc1.amp.mag.f";
+            rr:condition "[s2mmdc1.amp.mag.f != 'NULL' && s2mmdc1.amp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s3mmdc1_amp_mag_f
+<#Property_s3mmdc1_amp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s3mmdc1_amp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3mmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmdc1_amp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:A";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCCurrent";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s3mmdc1_amp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3mmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmdc1_amp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmdc1_amp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCCurrent";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:A";
+        ];
+    ].
+
+# DataValue for s3mmdc1_amp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3mmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmdc1_amp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3mmdc1.amp.mag.f";
+            rr:condition "[s3mmdc1.amp.mag.f != 'NULL' && s3mmdc1.amp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s5mmdc1_amp_mag_f
+<#Property_s5mmdc1_amp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s5mmdc1_amp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5mmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmdc1_amp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:A";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCCurrent";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s5mmdc1_amp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5mmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmdc1_amp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmdc1_amp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCCurrent";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:A";
+        ];
+    ].
+
+# DataValue for s5mmdc1_amp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5mmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmdc1_amp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5mmdc1.amp.mag.f";
+            rr:condition "[s5mmdc1.amp.mag.f != 'NULL' && s5mmdc1.amp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmpcntmmdc1_amp_mag_f
+<#Property_tmpcntmmdc1_amp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/tmpcntmmdc1_amp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntmmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmdc1_amp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:A";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCCurrent";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for tmpcntmmdc1_amp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntmmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmdc1_amp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmdc1_amp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCCurrent";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:A";
+        ];
+    ].
+
+# DataValue for tmpcntmmdc1_amp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntmmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmdc1_amp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntmmdc1.amp.mag.f";
+            rr:condition "[tmpcntmmdc1.amp.mag.f != 'NULL' && tmpcntmmdc1.amp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmppctmmdc1_amp_mag_f
+<#Property_tmppctmmdc1_amp_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/tmppctmmdc1_amp_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctmmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmdc1_amp_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:A";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCCurrent";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for tmppctmmdc1_amp_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctmmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmdc1_amp_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmdc1_amp_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCCurrent";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:A";
+        ];
+    ].
+
+# DataValue for tmppctmmdc1_amp_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctmmdc1_amp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmdc1_amp_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctmmdc1.amp.mag.f";
+            rr:condition "[tmppctmmdc1.amp.mag.f != 'NULL' && tmppctmmdc1.amp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s4mmdc1_vol_mag_f
+<#Property_s4mmdc1_vol_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s4mmdc1_vol_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4mmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmdc1_vol_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:V";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCVoltage";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s4mmdc1_vol_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4mmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmdc1_vol_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmdc1_vol_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCVoltage";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:V";
+        ];
+    ].
+
+# DataValue for s4mmdc1_vol_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4mmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmdc1_vol_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4mmdc1.vol.mag.f";
+            rr:condition "[s4mmdc1.vol.mag.f != 'NULL' && s4mmdc1.vol.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s2mmdc1_vol_mag_f
+<#Property_s2mmdc1_vol_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s2mmdc1_vol_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2mmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmdc1_vol_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:V";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCVoltage";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s2mmdc1_vol_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2mmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmdc1_vol_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmdc1_vol_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCVoltage";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:V";
+        ];
+    ].
+
+# DataValue for s2mmdc1_vol_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2mmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmdc1_vol_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2mmdc1.vol.mag.f";
+            rr:condition "[s2mmdc1.vol.mag.f != 'NULL' && s2mmdc1.vol.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s3mmdc1_vol_mag_f
+<#Property_s3mmdc1_vol_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s3mmdc1_vol_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3mmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmdc1_vol_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:V";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCVoltage";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s3mmdc1_vol_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3mmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmdc1_vol_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmdc1_vol_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCVoltage";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:V";
+        ];
+    ].
+
+# DataValue for s3mmdc1_vol_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3mmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmdc1_vol_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3mmdc1.vol.mag.f";
+            rr:condition "[s3mmdc1.vol.mag.f != 'NULL' && s3mmdc1.vol.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s5mmdc1_vol_mag_f
+<#Property_s5mmdc1_vol_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s5mmdc1_vol_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5mmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmdc1_vol_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:V";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCVoltage";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s5mmdc1_vol_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5mmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmdc1_vol_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmdc1_vol_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCVoltage";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:V";
+        ];
+    ].
+
+# DataValue for s5mmdc1_vol_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5mmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmdc1_vol_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5mmdc1.vol.mag.f";
+            rr:condition "[s5mmdc1.vol.mag.f != 'NULL' && s5mmdc1.vol.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmpcntmmdc1_vol_mag_f
+<#Property_tmpcntmmdc1_vol_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/tmpcntmmdc1_vol_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntmmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmdc1_vol_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:V";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCVoltage";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for tmpcntmmdc1_vol_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntmmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmdc1_vol_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmdc1_vol_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCVoltage";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:V";
+        ];
+    ].
+
+# DataValue for tmpcntmmdc1_vol_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntmmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmdc1_vol_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntmmdc1.vol.mag.f";
+            rr:condition "[tmpcntmmdc1.vol.mag.f != 'NULL' && tmpcntmmdc1.vol.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmppctmmdc1_vol_mag_f
+<#Property_tmppctmmdc1_vol_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/tmppctmmdc1_vol_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctmmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmdc1_vol_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:V";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCVoltage";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for tmppctmmdc1_vol_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctmmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmdc1_vol_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmdc1_vol_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCVoltage";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:V";
+        ];
+    ].
+
+# DataValue for tmppctmmdc1_vol_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctmmdc1_vol_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmdc1_vol_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctmmdc1.vol.mag.f";
+            rr:condition "[tmppctmmdc1.vol.mag.f != 'NULL' && tmppctmmdc1.vol.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s4mmdc1_watt_mag_f
+<#Property_s4mmdc1_watt_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s4mmdc1_watt_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4mmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmdc1_watt_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s4mmdc1_watt_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4mmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmdc1_watt_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmdc1_watt_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ].
+
+# DataValue for s4mmdc1_watt_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4mmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmdc1_watt_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4mmdc1.watt.mag.f";
+            rr:condition "[s4mmdc1.watt.mag.f != 'NULL' && s4mmdc1.watt.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s2mmdc1_watt_mag_f
+<#Property_s2mmdc1_watt_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s2mmdc1_watt_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2mmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmdc1_watt_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s2mmdc1_watt_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2mmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmdc1_watt_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmdc1_watt_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ].
+
+# DataValue for s2mmdc1_watt_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2mmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmdc1_watt_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2mmdc1.watt.mag.f";
+            rr:condition "[s2mmdc1.watt.mag.f != 'NULL' && s2mmdc1.watt.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s3mmdc1_watt_mag_f
+<#Property_s3mmdc1_watt_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s3mmdc1_watt_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3mmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmdc1_watt_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s3mmdc1_watt_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3mmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmdc1_watt_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmdc1_watt_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ].
+
+# DataValue for s3mmdc1_watt_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3mmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmdc1_watt_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3mmdc1.watt.mag.f";
+            rr:condition "[s3mmdc1.watt.mag.f != 'NULL' && s3mmdc1.watt.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s5mmdc1_watt_mag_f
+<#Property_s5mmdc1_watt_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s5mmdc1_watt_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5mmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmdc1_watt_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s5mmdc1_watt_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5mmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmdc1_watt_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmdc1_watt_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ].
+
+# DataValue for s5mmdc1_watt_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5mmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmdc1_watt_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5mmdc1.watt.mag.f";
+            rr:condition "[s5mmdc1.watt.mag.f != 'NULL' && s5mmdc1.watt.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmpcntmmdc1_watt_mag_f
+<#Property_tmpcntmmdc1_watt_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/tmpcntmmdc1_watt_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntmmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmdc1_watt_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for tmpcntmmdc1_watt_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntmmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmdc1_watt_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmdc1_watt_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ].
+
+# DataValue for tmpcntmmdc1_watt_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntmmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmdc1_watt_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntmmdc1.watt.mag.f";
+            rr:condition "[tmpcntmmdc1.watt.mag.f != 'NULL' && tmpcntmmdc1.watt.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmppctmmdc1_watt_mag_f
+<#Property_tmppctmmdc1_watt_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/tmppctmmdc1_watt_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctmmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmdc1_watt_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for tmppctmmdc1_watt_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctmmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmdc1_watt_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmdc1_watt_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:DCPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ].
+
+# DataValue for tmppctmmdc1_watt_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctmmdc1_watt_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmdc1_watt_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctmmdc1.watt.mag.f";
+            rr:condition "[tmppctmmdc1.watt.mag.f != 'NULL' && tmppctmmdc1.watt.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s4mmxu1_totw_mag_f
+<#Property_s4mmxu1_totw_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s4mmxu1_totw_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4mmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmxu1_totw_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:TotalRealPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s4mmxu1_totw_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4mmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmxu1_totw_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmxu1_totw_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:TotalRealPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ].
+
+# DataValue for s4mmxu1_totw_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s4mmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s4mmxu1_totw_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4mmxu1.totw.mag.f";
+            rr:condition "[s4mmxu1.totw.mag.f != 'NULL' && s4mmxu1.totw.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s2mmxu1_totw_mag_f
+<#Property_s2mmxu1_totw_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s2mmxu1_totw_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2mmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmxu1_totw_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:TotalRealPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s2mmxu1_totw_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2mmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmxu1_totw_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmxu1_totw_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:TotalRealPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ].
+
+# DataValue for s2mmxu1_totw_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s2mmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s2mmxu1_totw_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2mmxu1.totw.mag.f";
+            rr:condition "[s2mmxu1.totw.mag.f != 'NULL' && s2mmxu1.totw.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s3mmxu1_totw_mag_f
+<#Property_s3mmxu1_totw_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s3mmxu1_totw_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3mmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmxu1_totw_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:TotalRealPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s3mmxu1_totw_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3mmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmxu1_totw_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmxu1_totw_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:TotalRealPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ].
+
+# DataValue for s3mmxu1_totw_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s3mmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s3mmxu1_totw_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3mmxu1.totw.mag.f";
+            rr:condition "[s3mmxu1.totw.mag.f != 'NULL' && s3mmxu1.totw.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s5mmxu1_totw_mag_f
+<#Property_s5mmxu1_totw_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/s5mmxu1_totw_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5mmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmxu1_totw_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:TotalRealPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for s5mmxu1_totw_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5mmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmxu1_totw_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmxu1_totw_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:TotalRealPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ].
+
+# DataValue for s5mmxu1_totw_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_s5mmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/s5mmxu1_totw_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5mmxu1.totw.mag.f";
+            rr:condition "[s5mmxu1.totw.mag.f != 'NULL' && s5mmxu1.totw.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmpcntmmxu1_totw_mag_f
+<#Property_tmpcntmmxu1_totw_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/tmpcntmmxu1_totw_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntmmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmxu1_totw_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:TotalRealPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for tmpcntmmxu1_totw_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntmmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmxu1_totw_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmxu1_totw_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:TotalRealPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ].
+
+# DataValue for tmpcntmmxu1_totw_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmpcntmmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmpcntmmxu1_totw_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntmmxu1.totw.mag.f";
+            rr:condition "[tmpcntmmxu1.totw.mag.f != 'NULL' && tmpcntmmxu1.totw.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmppctmmxu1_totw_mag_f
+<#Property_tmppctmmxu1_totw_mag_f>
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/tmppctmmxu1_totw_mag_f>;
+        rr:class prop:Property;
+    ].
+
+
+# Unit definition for A
+<#Unit_A>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/A>;
+    ].
+
+# Unit definition for DEG_C
+<#Unit_DEG_C>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/DEG_C>;
+    ].
+
+# Unit definition for V
+<#Unit_V>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/V>;
+    ].
+
+# Unit definition for W
+<#Unit_W>
+    rr:subjectMap [
+        rr:constant <http://qudt.org/vocab/unit/W>;
+    ].
+
+
+
+# DataCollection for Property
+<#DataCollection_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctmmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmxu1_totw_mag_f/W1>;
+        rr:class ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:TotalRealPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>
+        ];
+    ].
+
+# DataPoint for tmppctmmxu1_totw_mag_f
+<#DataPoint_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctmmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmxu1_totw_mag_f/W1/DP{id}";
+        rr:class ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmxu1_totw_mag_f/W1/DP{id}/DV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant "prop:TotalRealPower";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant "unit:W";
+        ];
+    ].
+
+# DataValue for tmppctmmxu1_totw_mag_f
+<#DataValue_PARK_ECP001_S3_SHL001Inverter01_W1_2025_tmppctmmxu1_totw_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/PARK_ECP001_S3_SHL001Inverter01_W1_2025.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKInverterDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01_W1_2025/tmppctmmxu1_totw_mag_f/W1/DP{id}/PV{id}";
+        rr:class ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctmmxu1.totw.mag.f";
+            rr:condition "[tmppctmmxu1.totw.mag.f != 'NULL' && tmppctmmxu1.totw.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
