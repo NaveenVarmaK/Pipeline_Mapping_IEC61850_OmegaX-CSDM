@@ -98,24 +98,41 @@ Creates individual CSV files for each device:
 ### Step 2: Transform
 **RML Generation**
 
-Generate RML files that define how CSV data maps to RDF triples. 
+Generate RML files that define how CSV data maps to RDF triples using command-line arguments for flexible configuration.
 
-#### Usage
+#### Command Line Usage
 
-```python
-python RML_Generation.py
+```bash
+python RML_Generation.py csv_path [options]
 ```
 
-#### Configuration
+#### Required Arguments
 
-Edit the script to specify:
+- `csv_path`: Path to the input CSV file (output from Step 1)
 
-```python
-# Input CSV path (output from Step 1)
-csv_path = 'Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/METEOSTA001_W1.csv'
+#### Optional Arguments
 
-# Output RML file path
-output_filename = '../OmegaX-Pipeline/Output/RML/generated_METEOSTA001_W1.rml.ttl'
+- `-t, --template`: Path to the Jinja2 template file (default: `Jinja_RML-Template_PerDevice.j2`)
+- `-o, --output-dir`: Output directory for generated RML files (default: `../OmegaX-Pipeline/Output/RML/`)
+- `-p, --prefix`: Ontology prefix URL (default: `https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets`)
+- `-w, --wid`: Window ID (default: `W1`)
+- `-v, --verbose`: Enable verbose output
+- `--version`: Show version information
+
+#### Examples
+
+```bash
+# Basic usage with single CSV file
+python RML_Generation.py Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/METEOSTA001_W1.csv
+
+# With custom template and output directory
+python RML_Generation.py METEOSTA001_W1.csv -t custom_template.j2 -o ./rml_output
+
+# Full customization with verbose output
+python RML_Generation.py /path/to/INVERTER01_W1.csv --template my_template.j2 --output-dir /tmp/rml --prefix "https://example.org/ontology" --wid W2 --verbose
+
+# Get help
+python RML_Generation.py -h
 ```
 
 #### What it does:
@@ -125,13 +142,15 @@ output_filename = '../OmegaX-Pipeline/Output/RML/generated_METEOSTA001_W1.rml.tt
 - ✅ Generates RML mapping files using Jinja2 templates
 - ✅ Creates QUDT-compliant unit mappings
 - ✅ Profiles execution time and memory usage
-
+- ✅ Validates input files and template existence
+- ✅ Provides flexible configuration through command-line arguments
 
 #### Output
 
-Creates RML files like:
+Creates RML files with configurable naming and location:
 - `generated_METEOSTA001_W1.rml.ttl`
 - `generated_INVERTER01_W1.rml.ttl`
+- `generated_WEATHER_STATION_W1.rml.ttl`
 
 ### Step 3: RDF Generation with SDM-RDFizer
 
