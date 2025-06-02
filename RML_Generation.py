@@ -22,7 +22,8 @@ def normalize_path_for_rml(path):
     return normalized
 
 
-def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=None, wid=None, timestamp_column=None):
+
+def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=None, wid=None):
     """Measure execution time and memory usage for RML generation process"""
 
     tracemalloc.start()
