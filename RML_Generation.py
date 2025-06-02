@@ -9,6 +9,18 @@ from jinja2 import Environment, FileSystemLoader
 
 from Resources.CSV_Header_Dictionary import MEASUREMENTS, get_qudt_unit
 
+def normalize_path_for_rml(path):
+    """Convert Windows paths to proper format for RML"""
+    # Convert to forward slashes and ensure proper escaping
+    normalized = path.replace('\\', '/')
+    # For RML, we often need file:// prefix for local files
+    if not normalized.startswith(('http://', 'https://', 'file://')):
+
+        # Convert to absolute path and add file:// prefix
+        abs_path = os.path.abspath(path).replace('\\', '/')
+        normalized = f"{abs_path}"
+    return normalized
+
 
 def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=None, wid=None, timestamp_column=None):
     """Measure execution time and memory usage for RML generation process"""
