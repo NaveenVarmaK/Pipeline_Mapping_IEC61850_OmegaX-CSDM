@@ -10,7 +10,7 @@ from jinja2 import Environment, FileSystemLoader
 from Resources.CSV_Header_Dictionary import MEASUREMENTS, get_qudt_unit
 
 
-def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=None, wid=None):
+def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=None, wid=None, timestamp_column=None):
     """Measure execution time and memory usage for RML generation process"""
 
     tracemalloc.start()
@@ -30,9 +30,36 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
         headers = next(reader)
     csv_load_time = time.time() - csv_load_start
 
+    # Auto-detect timestamp column if not provided
+    if timestamp_column is None:
+        timestamp_candidates = ["timestamp", "time", "ts", "timestamp_gmt", "Time", "date", "datetime"]
+        for candidate in timestamp_candidates:
+            if candidate in headers:
+                timestamp_column = candidate
+                print(f"Auto-detected timestamp column: '{timestamp_column}'")
+                break
+
+        if timestamp_column is None:
+            # Default to first column that contains 'time' or 'date'
+            for header in headers:
+                if 'time' in header.lower() or 'date' in header.lower():
+                    timestamp_column = header
+                    print(f"Auto-detected timestamp column based on pattern: '{timestamp_column}'")
+                    break
+
+            if timestamp_column is None:
+                timestamp_column = "timestamp"  # fallback default
+                print(f"Warning: No timestamp column detected. Using default: '{timestamp_column}'")
+    else:
+        # Validate provided timestamp column exists in headers
+        if timestamp_column not in headers:
+            raise ValueError(f"Specified timestamp column '{timestamp_column}' not found in CSV headers: {headers}")
+        print(f"Using specified timestamp column: '{timestamp_column}'")
+
     # Enhanced parse_header function with better property mapping
     def parse_header(header):
-        skip_columns = {"timestamp", "id", "device", "ts", "timestamp_gmt", "site", "Time"}
+        skip_columns = {"timestamp", "id", "device", "ts", "timestamp_gmt", "site", "Time", "date", "datetime",
+                        timestamp_column}
         if header in skip_columns or not header.strip():
             return None
 
@@ -103,13 +130,18 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
         "myprefix": myprefix,
         "properties": properties,
         "unique_units": unique_units,
-        "wid": wid
+        "wid": wid,
+        "timestamp_column": timestamp_column  # Add timestamp column to context
     }
     context_create_time = time.time() - context_create_start
 
     # Debug: Print properties for verification
     print(f"\nParsed Properties:")
     print(f"{'=' * 80}")
+    print(f"Timestamp column: {timestamp_column}")
+    print(f"Total properties: {len(properties)}")
+    print(f"Device ID: {device_id}")
+    print("-" * 40)
     for prop in properties[:5]:  # Show first 5 for debugging
         print(f"Property ID: {prop['property_id']}")
         print(f"CSV Column: {prop['csv_column']}")
@@ -153,6 +185,7 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
     print(f"{'=' * 50}")
     print(f"RML file generated at '{output_filename}'")
     print(f"Total properties processed: {len(properties)}")
+    print(f"Timestamp column used: {timestamp_column}")
     print(f"\nTime Metrics:")
     print(f"  - CSV loading time:       {csv_load_time:.4f} seconds")
     print(f"  - Header parsing time:    {header_parse_time:.4f} seconds")
@@ -172,7 +205,8 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
         'total_time': total_time,
         'peak_memory_mb': peak / 1024 / 1024,
         'memory_increase_mb': memory_used,
-        'output_file': output_filename
+        'output_file': output_filename,
+        'timestamp_column': timestamp_column
     }
 
 
@@ -184,7 +218,8 @@ def main():
 Examples:
   %(prog)s input.csv
   %(prog)s input.csv -t custom_template.j2 -o ./output -p "https://example.org/ontology" -w W2
-  %(prog)s /path/to/data.csv --output-dir /tmp/rml --wid W3
+  %(prog)s /path/to/data.csv --output-dir /tmp/rml --wid W3 --timestamp-column "datetime"
+  %(prog)s input.csv --timestamp-column "ts"
         """
     )
 
@@ -219,6 +254,11 @@ Examples:
     )
 
     parser.add_argument(
+        '--timestamp-column',
+        help='Name of the timestamp column in the CSV file (default: auto-detect from common names like "timestamp", "time", "ts", etc.)'
+    )
+
+    parser.add_argument(
         '-v', '--verbose',
         action='store_true',
         help='Enable verbose output'
@@ -227,7 +267,7 @@ Examples:
     parser.add_argument(
         '--version',
         action='version',
-        version='RML Generator 1.0'
+        version='RML Generator 1.1'
     )
 
     args = parser.parse_args()
@@ -242,6 +282,7 @@ Examples:
         print(f"Output directory: {args.output_dir or '../OmegaX-Pipeline/Output/RML/'}")
         print(f"Prefix: {args.prefix}")
         print(f"Window ID: {args.wid}")
+        print(f"Timestamp column: {args.timestamp_column or 'auto-detect'}")
         print("-" * 50)
 
     try:
@@ -250,14 +291,19 @@ Examples:
             template_path=args.template,
             output_dir=args.output_dir,
             myprefix=args.prefix,
-            wid=args.wid
+            wid=args.wid,
+            timestamp_column=args.timestamp_column
         )
 
         if args.verbose:
             print(f"\nExecution completed successfully!")
             print(f"Output file: {result['output_file']}")
+            print(f"Timestamp column used: {result['timestamp_column']}")
 
     except FileNotFoundError as e:
+        print(f"Error: {e}")
+        return 1
+    except ValueError as e:
         print(f"Error: {e}")
         return 1
     except Exception as e:
