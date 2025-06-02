@@ -1,0 +1,2110 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix qual: <https://w3id.org/omega-x/ontology/Quality/> .
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix prop: <https://w3id.org/omega-x/ontology/Property/> .
+@prefix ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/> .
+@prefix eds: <https://w3id.org/omega-x/ontology/EnergyDataSet/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix solar: <https://w3id.org/omega-x/ontology/Renewables/> .
+@prefix role: <https://w3id.org/omega-x/ontology/EnergyRole/>.
+
+# --------------------------------------------------------------------------
+# The Data Collection of the Device (EnergyDataSet)
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection, eds:EnergyDataSet;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate eds:includesTechnicalContext;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1/TC>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate eds:includesEvaluationPoint;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/PARK_ECP001_S3_METEOSTA001_W1>
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate eds:isExchangedIn;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/Exchange/W1>
+        ];
+    ].
+
+# Technical Context
+<#TC_PARK_ECP001_S3_METEOSTA001_W1>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1/TC>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object eds:TechnicalContext;
+    ].
+
+# EvaluationPoint
+<#EvaluationPoint_PARK_ECP001_S3_METEOSTA001_W1>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/PARK_ECP001_S3_METEOSTA001_W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object eds:EvaluationPoint;
+    ].
+
+
+# Property definition for s4mmet1_envtmp_mag_f
+<#Property_s4mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/s4mmet1_envtmp_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property s4mmet1_envtmp_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_s4mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s4mmet1_envtmp_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:AirTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for s4mmet1_envtmp_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_s4mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s4mmet1_envtmp_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s4mmet1_envtmp_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:AirTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ].
+
+# DataValue for s4mmet1_envtmp_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_s4mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s4mmet1_envtmp_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4mmet1.envtmp.mag.f";
+            rr:condition "[s4mmet1.envtmp.mag.f != 'NULL' && s4mmet1.envtmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s2mmet1_envtmp_mag_f
+<#Property_s2mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/s2mmet1_envtmp_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property s2mmet1_envtmp_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_s2mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s2mmet1_envtmp_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:AirTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for s2mmet1_envtmp_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_s2mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s2mmet1_envtmp_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s2mmet1_envtmp_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:AirTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ].
+
+# DataValue for s2mmet1_envtmp_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_s2mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s2mmet1_envtmp_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2mmet1.envtmp.mag.f";
+            rr:condition "[s2mmet1.envtmp.mag.f != 'NULL' && s2mmet1.envtmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s3mmet1_envtmp_mag_f
+<#Property_s3mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/s3mmet1_envtmp_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property s3mmet1_envtmp_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_s3mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s3mmet1_envtmp_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:AirTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for s3mmet1_envtmp_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_s3mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s3mmet1_envtmp_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s3mmet1_envtmp_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:AirTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ].
+
+# DataValue for s3mmet1_envtmp_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_s3mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s3mmet1_envtmp_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3mmet1.envtmp.mag.f";
+            rr:condition "[s3mmet1.envtmp.mag.f != 'NULL' && s3mmet1.envtmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s5mmet1_envtmp_mag_f
+<#Property_s5mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/s5mmet1_envtmp_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property s5mmet1_envtmp_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_s5mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s5mmet1_envtmp_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:AirTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for s5mmet1_envtmp_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_s5mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s5mmet1_envtmp_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s5mmet1_envtmp_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:AirTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ].
+
+# DataValue for s5mmet1_envtmp_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_s5mmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s5mmet1_envtmp_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5mmet1.envtmp.mag.f";
+            rr:condition "[s5mmet1.envtmp.mag.f != 'NULL' && s5mmet1.envtmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmpcntmmet1_envtmp_mag_f
+<#Property_tmpcntmmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/tmpcntmmet1_envtmp_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property tmpcntmmet1_envtmp_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_tmpcntmmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmpcntmmet1_envtmp_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:AirTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for tmpcntmmet1_envtmp_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_tmpcntmmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmpcntmmet1_envtmp_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmpcntmmet1_envtmp_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:AirTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ].
+
+# DataValue for tmpcntmmet1_envtmp_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_tmpcntmmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmpcntmmet1_envtmp_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntmmet1.envtmp.mag.f";
+            rr:condition "[tmpcntmmet1.envtmp.mag.f != 'NULL' && tmpcntmmet1.envtmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmppctmmet1_envtmp_mag_f
+<#Property_tmppctmmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/tmppctmmet1_envtmp_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property tmppctmmet1_envtmp_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_tmppctmmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmppctmmet1_envtmp_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:AirTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for tmppctmmet1_envtmp_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_tmppctmmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmppctmmet1_envtmp_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmppctmmet1_envtmp_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:AirTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ].
+
+# DataValue for tmppctmmet1_envtmp_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_tmppctmmet1_envtmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmppctmmet1_envtmp_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctmmet1.envtmp.mag.f";
+            rr:condition "[tmppctmmet1.envtmp.mag.f != 'NULL' && tmppctmmet1.envtmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s2mmet1_poainsol1_mag_f
+<#Property_s2mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/s2mmet1_poainsol1_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property s2mmet1_poainsol1_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_s2mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s2mmet1_poainsol1_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:W-PER-M2;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:PlaneOfArrayIrradiance;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for s2mmet1_poainsol1_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_s2mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s2mmet1_poainsol1_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s2mmet1_poainsol1_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:PlaneOfArrayIrradiance;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:W-PER-M2;
+        ];
+    ].
+
+# DataValue for s2mmet1_poainsol1_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_s2mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s2mmet1_poainsol1_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2mmet1.poainsol1.mag.f";
+            rr:condition "[s2mmet1.poainsol1.mag.f != 'NULL' && s2mmet1.poainsol1.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s3mmet1_poainsol1_mag_f
+<#Property_s3mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/s3mmet1_poainsol1_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property s3mmet1_poainsol1_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_s3mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s3mmet1_poainsol1_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:W-PER-M2;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:PlaneOfArrayIrradiance;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for s3mmet1_poainsol1_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_s3mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s3mmet1_poainsol1_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s3mmet1_poainsol1_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:PlaneOfArrayIrradiance;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:W-PER-M2;
+        ];
+    ].
+
+# DataValue for s3mmet1_poainsol1_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_s3mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s3mmet1_poainsol1_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3mmet1.poainsol1.mag.f";
+            rr:condition "[s3mmet1.poainsol1.mag.f != 'NULL' && s3mmet1.poainsol1.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s4mmet1_poainsol1_mag_f
+<#Property_s4mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/s4mmet1_poainsol1_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property s4mmet1_poainsol1_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_s4mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s4mmet1_poainsol1_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:W-PER-M2;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:PlaneOfArrayIrradiance;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for s4mmet1_poainsol1_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_s4mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s4mmet1_poainsol1_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s4mmet1_poainsol1_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:PlaneOfArrayIrradiance;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:W-PER-M2;
+        ];
+    ].
+
+# DataValue for s4mmet1_poainsol1_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_s4mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s4mmet1_poainsol1_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4mmet1.poainsol1.mag.f";
+            rr:condition "[s4mmet1.poainsol1.mag.f != 'NULL' && s4mmet1.poainsol1.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s5mmet1_poainsol1_mag_f
+<#Property_s5mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/s5mmet1_poainsol1_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property s5mmet1_poainsol1_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_s5mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s5mmet1_poainsol1_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:W-PER-M2;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:PlaneOfArrayIrradiance;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for s5mmet1_poainsol1_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_s5mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s5mmet1_poainsol1_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s5mmet1_poainsol1_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:PlaneOfArrayIrradiance;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:W-PER-M2;
+        ];
+    ].
+
+# DataValue for s5mmet1_poainsol1_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_s5mmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s5mmet1_poainsol1_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5mmet1.poainsol1.mag.f";
+            rr:condition "[s5mmet1.poainsol1.mag.f != 'NULL' && s5mmet1.poainsol1.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmpcntmmet1_poainsol1_mag_f
+<#Property_tmpcntmmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/tmpcntmmet1_poainsol1_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property tmpcntmmet1_poainsol1_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_tmpcntmmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmpcntmmet1_poainsol1_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:W-PER-M2;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:PlaneOfArrayIrradiance;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for tmpcntmmet1_poainsol1_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_tmpcntmmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmpcntmmet1_poainsol1_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmpcntmmet1_poainsol1_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:PlaneOfArrayIrradiance;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:W-PER-M2;
+        ];
+    ].
+
+# DataValue for tmpcntmmet1_poainsol1_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_tmpcntmmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmpcntmmet1_poainsol1_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntmmet1.poainsol1.mag.f";
+            rr:condition "[tmpcntmmet1.poainsol1.mag.f != 'NULL' && tmpcntmmet1.poainsol1.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmppctmmet1_poainsol1_mag_f
+<#Property_tmppctmmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/tmppctmmet1_poainsol1_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property tmppctmmet1_poainsol1_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_tmppctmmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmppctmmet1_poainsol1_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:W-PER-M2;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:PlaneOfArrayIrradiance;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for tmppctmmet1_poainsol1_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_tmppctmmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmppctmmet1_poainsol1_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmppctmmet1_poainsol1_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:PlaneOfArrayIrradiance;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:W-PER-M2;
+        ];
+    ].
+
+# DataValue for tmppctmmet1_poainsol1_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_tmppctmmet1_poainsol1_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmppctmmet1_poainsol1_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctmmet1.poainsol1.mag.f";
+            rr:condition "[tmppctmmet1.poainsol1.mag.f != 'NULL' && tmppctmmet1.poainsol1.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s4pvstmp1_tmp_mag_f
+<#Property_s4pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/s4pvstmp1_tmp_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property s4pvstmp1_tmp_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_s4pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s4pvstmp1_tmp_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:BackOfPanelTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for s4pvstmp1_tmp_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_s4pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s4pvstmp1_tmp_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s4pvstmp1_tmp_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:BackOfPanelTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ].
+
+# DataValue for s4pvstmp1_tmp_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_s4pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s4pvstmp1_tmp_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4pvstmp1.tmp.mag.f";
+            rr:condition "[s4pvstmp1.tmp.mag.f != 'NULL' && s4pvstmp1.tmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s2pvstmp1_tmp_mag_f
+<#Property_s2pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/s2pvstmp1_tmp_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property s2pvstmp1_tmp_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_s2pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s2pvstmp1_tmp_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:BackOfPanelTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for s2pvstmp1_tmp_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_s2pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s2pvstmp1_tmp_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s2pvstmp1_tmp_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:BackOfPanelTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ].
+
+# DataValue for s2pvstmp1_tmp_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_s2pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s2pvstmp1_tmp_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s2pvstmp1.tmp.mag.f";
+            rr:condition "[s2pvstmp1.tmp.mag.f != 'NULL' && s2pvstmp1.tmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s3pvstmp1_tmp_mag_f
+<#Property_s3pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/s3pvstmp1_tmp_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property s3pvstmp1_tmp_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_s3pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s3pvstmp1_tmp_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:BackOfPanelTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for s3pvstmp1_tmp_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_s3pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s3pvstmp1_tmp_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s3pvstmp1_tmp_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:BackOfPanelTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ].
+
+# DataValue for s3pvstmp1_tmp_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_s3pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s3pvstmp1_tmp_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s3pvstmp1.tmp.mag.f";
+            rr:condition "[s3pvstmp1.tmp.mag.f != 'NULL' && s3pvstmp1.tmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for s5pvstmp1_tmp_mag_f
+<#Property_s5pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/s5pvstmp1_tmp_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property s5pvstmp1_tmp_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_s5pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s5pvstmp1_tmp_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:BackOfPanelTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for s5pvstmp1_tmp_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_s5pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s5pvstmp1_tmp_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s5pvstmp1_tmp_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:BackOfPanelTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ].
+
+# DataValue for s5pvstmp1_tmp_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_s5pvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/s5pvstmp1_tmp_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s5pvstmp1.tmp.mag.f";
+            rr:condition "[s5pvstmp1.tmp.mag.f != 'NULL' && s5pvstmp1.tmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmpcntpvstmp1_tmp_mag_f
+<#Property_tmpcntpvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/tmpcntpvstmp1_tmp_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property tmpcntpvstmp1_tmp_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_tmpcntpvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmpcntpvstmp1_tmp_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:BackOfPanelTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for tmpcntpvstmp1_tmp_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_tmpcntpvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmpcntpvstmp1_tmp_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmpcntpvstmp1_tmp_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:BackOfPanelTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ].
+
+# DataValue for tmpcntpvstmp1_tmp_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_tmpcntpvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmpcntpvstmp1_tmp_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmpcntpvstmp1.tmp.mag.f";
+            rr:condition "[tmpcntpvstmp1.tmp.mag.f != 'NULL' && tmpcntpvstmp1.tmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
+
+# Property definition for tmppctpvstmp1_tmp_mag_f
+<#Property_tmppctpvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/tmppctpvstmp1_tmp_mag_f>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object prop:Property;
+    ].
+
+# DataCollection for Property tmppctpvstmp1_tmp_mag_f
+<#DataCollection_PARK_ECP001_S3_METEOSTA001_W1_tmppctpvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmppctpvstmp1_tmp_mag_f/W1>;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataCollection;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:BackOfPanelTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>
+        ];
+    ].
+
+# DataPoint for tmppctpvstmp1_tmp_mag_f
+<#DataPoint_PARK_ECP001_S3_METEOSTA001_W1_tmppctpvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmppctpvstmp1_tmp_mag_f/W1/DP{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataPoint;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/W1>;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "timestamp";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmppctpvstmp1_tmp_mag_f/W1/DP{id}/PV{id}";
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:isAboutProperty;
+        rr:objectMap [
+            rr:constant prop:BackOfPanelTemperature;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prop:hasUnit;
+        rr:objectMap [
+            rr:constant unit:DEG_C;
+        ];
+    ].
+
+# DataValue for tmppctpvstmp1_tmp_mag_f
+<#DataValue_PARK_ECP001_S3_METEOSTA001_W1_tmppctpvstmp1_tmp_mag_f>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/PARK_ECP001_S3_METEOSTA001_W1.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001_W1/tmppctpvstmp1_tmp_mag_f/W1/DP{id}/PV{id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:object ets:DataValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "tmppctpvstmp1.tmp.mag.f";
+            rr:condition "[tmppctpvstmp1.tmp.mag.f != 'NULL' && tmppctpvstmp1.tmp.mag.f != '']";
+            rr:datatype xsd:double;
+        ];
+    ].
