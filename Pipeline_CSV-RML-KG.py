@@ -56,7 +56,7 @@ class CSVToRMLPipeline:
             level=self.log_level,
             format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
             handlers=[
-                logging.FileHandler(log_file),
+                logging.FileHandler(log_file, encoding='utf-8'),  # Use UTF-8 encoding for file
                 logging.StreamHandler()
             ]
         )
@@ -134,10 +134,10 @@ class CSVToRMLPipeline:
                     'timestamp_column': result['timestamp_column']
                 })
 
-                self.logger.info(f"✓ Successfully generated RML: {result['output_file']}")
+                self.logger.info(f"[SUCCESS] Successfully generated RML: {result['output_file']}")
 
             except Exception as e:
-                self.logger.error(f"✗ Failed to generate RML for {csv_file}: {str(e)}")
+                self.logger.error(f"[FAILED] Failed to generate RML for {csv_file}: {str(e)}")
                 failed_generations.append({
                     'csv_file': csv_file,
                     'error': str(e)
@@ -193,7 +193,7 @@ class CSVToRMLPipeline:
 
                             if is_absolute and file_exists and has_forward_slashes:
                                 self.logger.info(
-                                    f"✓ {os.path.basename(rml_file)}: Valid absolute path with forward slashes")
+                                    f"[OK] {os.path.basename(rml_file)}: Valid absolute path with forward slashes")
                             else:
                                 issues = []
                                 if not is_absolute:
@@ -204,7 +204,7 @@ class CSVToRMLPipeline:
                                     issues.append("contains backslashes")
 
                                 self.logger.warning(
-                                    f"⚠ {os.path.basename(rml_file)}: Path issues - {', '.join(issues)}")
+                                    f"[ISSUE] {os.path.basename(rml_file)}: Path issues - {', '.join(issues)}")
                                 self.logger.warning(f"  Path: {source_path}")
 
             except Exception as e:
@@ -276,20 +276,21 @@ class CSVToRMLPipeline:
                                         # Replace the path in the line
                                         new_line = line.replace(f'"{current_path}"', f'"{rml_normalized_path}"')
                                         lines[i] = new_line
-                                        self.logger.info(f"Fixed path in {os.path.basename(rml_file)}")
+                                        self.logger.info(f"[FIXED] Fixed path in {os.path.basename(rml_file)}")
                                         self.logger.info(f"  From: {current_path}")
                                         self.logger.info(f"  To:   {rml_normalized_path}")
                                         fixes_applied += 1
                                         break
                                 else:
-                                    self.logger.warning(f"Could not find absolute path for: {current_path}")
+                                    self.logger.warning(f"[WARNING] Could not find absolute path for: {current_path}")
 
                             # Also fix existing absolute paths that have backslashes
                             elif '\\' in current_path and os.path.exists(current_path):
                                 rml_normalized_path = self.normalize_path_for_rml(current_path)
                                 new_line = line.replace(f'"{current_path}"', f'"{rml_normalized_path}"')
                                 lines[i] = new_line
-                                self.logger.info(f"Normalized path slashes in {os.path.basename(rml_file)}")
+                                self.logger.info(
+                                    f"[NORMALIZED] Normalized path slashes in {os.path.basename(rml_file)}")
                                 self.logger.info(f"  From: {current_path}")
                                 self.logger.info(f"  To:   {rml_normalized_path}")
                                 fixes_applied += 1
