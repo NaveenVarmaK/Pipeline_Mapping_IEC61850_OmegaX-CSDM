@@ -6,8 +6,15 @@ for use in RML generation with Jinja2 templates.
 # Statistical nodes dictionary
 
 MEASUREMENTS = {
+    "encltmp": {
+        "description": "Enclosure temperature",
+        "unit": "DEG_C",
+        "enum_kind": "MV_EXT",
+        "multiple": True,
+        "property": "EnclosureTemperature"
+    },
     "envtmp": {
-        "description": "Ambient temperature",
+        "description": "Air temperature",
         "unit": "DEG_C",
         "enum_kind": "MV_EXT",
         "multiple": True,
@@ -25,7 +32,7 @@ MEASUREMENTS = {
         "unit": "DEG_C",
         "enum_kind": "MV_EXT",
         "multiple": True,
-        "property": "PVBackOfPanelTemperature"
+        "property": "BackOfPanelTemperature"
     },
     "heatsinktmp": {
         "description": "Heat sink temperature",
@@ -47,16 +54,16 @@ MEASUREMENTS = {
         "property": "DCVoltage"
     },
     "watt": {
-        "description": "Active power",
+        "description": "DC power",
         "unit": "W",
         "enum_kind": "MV_STD",
-        "property": "ActivePower"
+        "property": "DCPower"
     },
-    "TotW": {
-        "description": "Total active power",
+    "totw": {
+        "description": "Total Real power",
         "unit": "W",
         "enum_kind": "MV_STD",
-        "property": "TotalActivePower"
+        "property": "TotalRealPower"
     },
 
 }
@@ -71,11 +78,10 @@ UNIT_TO_QUDT = {
     "VA": "V.A",
     "VAR": "V.A_R",
     "HZ": "HZ",
-    "PER_UNIT": "UNITLESS",
     "PERCENT": "PERCENT",
     "kW_HR": "KiloW-HR",
     "OHM": "OHM",
-    "W_PER_M2": "W/M2",
+    "W_PER_M2": "W-PER-M2",
     "W_PER_M2_HR": "W.HR/M2",
     "MM": "MM",
     "PA": "PA",

@@ -21,7 +21,8 @@ from Resources.CSV_Header_Dictionary import MEASUREMENTS, get_qudt_unit
 #         normalized = f"{abs_path}"
 #     return normalized
 
-def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=None, wid=None, timestamp_column=None):
+
+def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=None, wid=None):
     """Measure execution time and memory usage for RML generation process"""
 
     tracemalloc.start()
