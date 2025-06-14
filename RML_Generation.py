@@ -69,7 +69,7 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
 
     # Enhanced parse_header function with better property mapping
     def parse_header(header):
-        skip_columns = {"timestamp", "id", "device", "ts", "timestamp_gmt", "site", "Time", "date", "datetime",
+        skip_columns = {"timestamp", "id", "device", "ts", "timestamp_gmt", "site", "Time", "date", "datetime","ID","TS_ID",
                         timestamp_column}
         if header in skip_columns or not header.strip():
             return None
