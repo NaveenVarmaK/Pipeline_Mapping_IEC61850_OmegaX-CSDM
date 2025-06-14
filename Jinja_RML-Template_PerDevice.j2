@@ -1,190 +1,142 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#>.
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
-@prefix qual: <https://w3id.org/omega-x/ontology/Quality/> .
-@prefix unit: <http://qudt.org/vocab/unit/>.
-@prefix prop: <https://w3id.org/omega-x/ontology/Property/> .
-@prefix ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix eds: <https://w3id.org/omega-x/ontology/EnergyDataSet/> .
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix solar: <https://w3id.org/omega-x/ontology/Renewables/> .
-@prefix role: <https://w3id.org/omega-x/ontology/EnergyRole/>.
+@prefix ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/> .
+@prefix prop: <https://w3id.org/omega-x/ontology/Property/> .
+@prefix role: <https://w3id.org/omega-x/ontology/EnergyRole/> .
+@prefix unit: <http://qudt.org/vocab/unit/>.
 
-# --------------------------------------------------------------------------
-# The Data Collection of the Device (EnergyDataSet)
-<#DataCollection_{{ device_id }}>
+# =========================================================================
+# MAPPING 1: The Main EnergyDataSet (Top-level container)
+# =========================================================================
+
+<#EnergyDataSetMapping>
     rml:logicalSource [
         rml:source "{{ csv_path }}";
-        rml:referenceFormulation ql:CSV
+        rml:referenceFormulation ql:CSV;
     ];
+
     rr:subjectMap [
-        rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ wid }}>;
+        rr:constant <{{ myprefix }}/EnergyDataSet/{{ device_id }}/{{ wid }}>;
+        rr:class eds:EnergyDataSet;
     ];
-    rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:object ets:DataCollection, eds:EnergyDataSet;
-    ];
-    rr:predicateObjectMap [
-        rr:predicate eds:includesTechnicalContext;
-        rr:objectMap [
-            rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ wid }}/TC>
-        ];
-    ];
+
+    # Link to the EvaluationPoint
     rr:predicateObjectMap [
         rr:predicate eds:includesEvaluationPoint;
-        rr:objectMap [
-            rr:constant <{{ myprefix }}/{{ device_id }}>
-        ];
+        rr:objectMap [ rr:constant <{{ myprefix }}/EvaluationPoint/{{ device_id }}>; ];
     ];
+
+    # Link to the ExchangeContext
     rr:predicateObjectMap [
         rr:predicate eds:isExchangedIn;
-        rr:objectMap [
-            rr:constant <{{ myprefix }}/DataCollection/Exchange/{{ wid }}>
-        ];
+        rr:objectMap [ rr:constant <{{ myprefix }}/ExchangeContext/{{ wid }}>; ];
+    ];
+
+    # This EnergyDataSet comprises one DataCollection for each property
+    {% for row in properties %}
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [ rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}>; ];
+    ];
+    {% endfor %}
+.
+
+# =========================================================================
+# MAPPING 2: Static Context Entities
+# =========================================================================
+
+<#EvaluationPointMapping>
+    rml:logicalSource [ rml:source "{{ csv_path }}"; rml:referenceFormulation ql:CSV; ];
+    rr:subjectMap [
+        rr:constant <{{ myprefix }}/EvaluationPoint/{{ device_id }}>;
+        rr:class eds:EvaluationPoint;
     ].
 
-# Technical Context
-<#TC_{{ device_id }}>
-    rml:logicalSource [
-        rml:source "{{ csv_path }}";
-        rml:referenceFormulation ql:CSV
-    ];
+<#ExchangeContextMapping>
+    rml:logicalSource [ rml:source "{{ csv_path }}"; rml:referenceFormulation ql:CSV; ];
     rr:subjectMap [
-        rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ wid }}/TC>;
+        rr:constant <{{ myprefix }}/ExchangeContext/{{ wid }}>;
+        rr:class eds:ExchangeContext;
     ];
     rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:object eds:TechnicalContext;
+        rr:predicate eds:fromSource;
+        rr:objectMap [ rr:constant <{{ myprefix }}/MarketParticipant/SourceParticipant>; ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate eds:toTarget;
+        rr:objectMap [ rr:constant <{{ myprefix }}/MarketParticipant/TargetParticipant>; ];
     ].
 
-# EvaluationPoint
-<#EvaluationPoint_{{ device_id }}>
-    rml:logicalSource [
-        rml:source "{{ csv_path }}";
-        rml:referenceFormulation ql:CSV
-    ];
-    rr:subjectMap [
-        rr:constant <{{ myprefix }}/{{ device_id }}>;
-    ];
-    rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:object eds:EvaluationPoint;
-    ].
+# =========================================================================
+# LOOP: Property-specific DataCollections and DataPoints
+# =========================================================================
 
 {% for row in properties %}
-# Property definition for {{ row.property_id }}
-<#Property_{{ row.property_id }}>
-    rml:logicalSource [
-        rml:source "{{ csv_path }}";
-        rml:referenceFormulation ql:CSV
-    ];
-    rr:subjectMap [
-        rr:constant <{{ myprefix }}/{{ row.property_id }}>;
-    ];
-    rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:object prop:Property;
-    ].
+# -------------------------------------------------------------------------
+# DataCollection for Property '{{ row.property_id }}'
+# -------------------------------------------------------------------------
 
-# DataCollection for Property {{ row.property_id }}
-<#DataCollection_{{ device_id }}_{{ row.property_id }}>
-    rml:logicalSource [
-        rml:source "{{ csv_path }}";
-        rml:referenceFormulation ql:CSV
-    ];
+<#DataCollectionMapping_{{ row.property_id }}>
+    rml:logicalSource [ rml:source "{{ csv_path }}"; rml:referenceFormulation ql:CSV; ];
+
     rr:subjectMap [
         rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}>;
+        rr:class ets:DataCollection;
     ];
+
+    # Property context
     rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:object ets:DataCollection;
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [ rr:constant prop:{{ row.property }}; ];
     ];
     rr:predicateObjectMap [
         rr:predicate ets:hasUnit;
-        rr:objectMap [
-            rr:constant unit:{{ row.unit }};
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate ets:isAboutProperty;
-        rr:objectMap [
-            rr:constant prop:{{ row.property }};
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate ets:comprises;
-        rr:objectMap [
-            rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ wid }}>
-        ];
+        rr:objectMap [ rr:constant unit:{{ row.unit }}; ];
     ].
 
-# DataPoint for {{ row.property_id }}
-<#DataPoint_{{ device_id }}_{{ row.property_id }}>
+# -------------------------------------------------------------------------
+# DataPoint for '{{ row.property_id }}' - ONE MAPPING PER PROPERTY
+# -------------------------------------------------------------------------
+
+<#DataPointMapping_{{ row.property_id }}>
     rml:logicalSource [
         rml:source "{{ csv_path }}";
-        rml:referenceFormulation ql:CSV
+        rml:referenceFormulation ql:CSV;
     ];
+
     rr:subjectMap [
-        rr:template "{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}/DP{id}";
+        rr:template "{{ myprefix }}/DataPoint/{{ device_id }}/{{ row.property_id }}/{{ '{' }}{{ timestamp_column }}{{ '}' }}";
+        rr:class ets:DataPoint;
     ];
-    rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:object ets:DataPoint;
-    ];
+
+    # Link back to the DataCollection
     rr:predicateObjectMap [
         rr:predicate ets:belongsTo;
         rr:objectMap [
-            rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ wid }}>;
+            rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}>;
         ];
     ];
+
+    # Timestamp for this data point
     rr:predicateObjectMap [
         rr:predicate ets:dataTime;
         rr:objectMap [
             rml:reference "{{ timestamp_column }}";
-            rr:datatype xsd:dateTime
+            rr:datatype xsd:dateTime;
         ];
     ];
-    rr:predicateObjectMap [
-        rr:predicate ets:hasDataValue;
-        rr:objectMap [
-            rr:template "{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}/DP{id}/PV{id}";
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate prop:isAboutProperty;
-        rr:objectMap [
-            rr:constant prop:{{ row.property }};
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate prop:hasUnit;
-        rr:objectMap [
-            rr:constant unit:{{ row.unit }};
-        ];
-    ].
 
-# DataValue for {{ row.property_id }}
-<#DataValue_{{ device_id }}_{{ row.property_id }}>
-    rml:logicalSource [
-        rml:source "{{ csv_path }}";
-        rml:referenceFormulation ql:CSV
-    ];
-    rr:subjectMap [
-        rr:template "{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}/DP{id}/PV{id}";
-    ];
+    # Direct value with condition to avoid NULL/empty values
     rr:predicateObjectMap [
-        rr:predicate rdf:type;
-        rr:object ets:DataValue;
-    ];
-    rr:predicateObjectMap [
-        rr:predicate ets:value;
+        rr:predicate rdf:value;
         rr:objectMap [
             rml:reference "{{ row.csv_column }}";
-            rr:condition "[{{ row.csv_column }} != 'NULL' && {{ row.csv_column }} != '']";
             rr:datatype xsd:double;
         ];
     ].
+
 {% endfor %}
