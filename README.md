@@ -1,16 +1,8 @@
 # Energy Dataset Processing Pipeline
 
-A comprehensive pipeline for creating Knoweldge Graph from CSV files tagged with IEC 61850 standard.
+A comprehensive pipeline for creating Knowledge Graphs from CSV files tagged with IEC 61850 standard, featuring automated evaluation and performance monitoring.
 
-
-##  Pipeline Overview
-The pipeline is depicted in Figure ![image](https://github.com/user-attachments/assets/d717ad2a-ea9c-4ccb-9373-0023633858e7).
-
-It consists of Three main steps:
-1. **Extract** - Convert time to UTC, extract the list of devices and split  CSV files by device.
-2. **Transform** - Use Jinja template to generate RML mapping files for each device. These mapping files are used in SDM-RDFizer to convert CSV data to RDF knowledge graphs.
-3. **Load** - Store the knoweldge graphs in GrapghDB and query it using SPARQL.
-## 📋 Prerequisites
+## Prerequisites
 
 ### Required Dependencies
 
@@ -21,231 +13,256 @@ pip install tqdm
 pip install psutil
 pip install jinja2
 pip install requests
+pip install rdflib
 ```
 
 ### External Tools
 
-- **SDM-RDFizer**: Download and install from [SDM-RDFizer GitHub](https://github.com/SDM-TIB/SDM-RDFizer)
-- **GraphDB**: Install GraphDB for knowledge graph storage and querying
+- **SDM-RDFizer**: Automatically installed by the pipeline, or install manually from [SDM-RDFizer GitHub](https://github.com/SDM-TIB/SDM-RDFizer)
+- **GraphDB**: Install GraphDB for knowledge graph storage and querying (optional)
 
 ### Directory Structure
 
-Create the following directory structure before running:
+The pipeline automatically creates the following structure:
 
 ```
-project/
-├── Input_CSV_Datasets/
-│   └── Input_CSV_Datasets_by_Devices/
-│       └── CSV_PerDevices/
-├── Output/
-│   └── RML/
-├── Resources/
-│   └── CSV_Header_Dictionary.py
-├── Jinja_RML-Template_PerDevice.j2
-├── CSV_Device_Seperator_With_TimeFormat.py
-├── RML_Generation.py
-└── GraphDBConnector.py
+pipeline_output_YYYYMMDD_HHMMSS/
+├── split_csvs/
+├── rml_files/
+├── knowledge_graph/
+├── config/
+├── logs/
+└── evaluation/
 ```
 
-##  Step-by-Step Usage Guide
+## Quick Start
 
-### Step 1: Extract 
-**CSV Device Separation**: Processes your raw energy dataset CSV file and splits it by device while standardizing timestamps.
-
-#### Command Line Usage
+### Basic Usage
 
 ```bash
-python CSV_Device_Seperator_With_TimeFormat.py input_file.csv [options]
+# Run the complete pipeline with timestamped output
+python Pipelilne_CSV_RML_KG.py input_data.csv
+
+# Run with comprehensive evaluation
+python Pipeline_CSV_RML_KG.py input_data.csv --evaluate
+
+# Run with GraphDB import
+python Pipeline_CSV_RML_KG.py input_data.csv --import-to-graphdb --graphdb-repo my-repo-id
 ```
 
-#### Options
+## Pipeline Overview
 
-- `--output-dir`: Output directory for device CSV files (default: `Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices`)
-- `--time-col`: Name of the time column to standardize (default: `Time`)
-- `--device-col`: Name of the column containing device identifiers
-- `--file-id`: ID string to append to output filenames (default: `W1`)
+The enhanced pipeline consists of five main steps with integrated evaluation:
 
-#### Examples
+1. **Extract** - Convert time to UTC, extract device list, and split CSV files by device
+2. **Transform** - Generate RML mapping files using Jinja templates
+3. **Validate** - Verify RML file paths and fix issues automatically
+4. **Load** - Convert CSV data to RDF knowledge graphs using SDM-RDFizer
+5. **Import** - Optionally import to GraphDB repository
+6. **Evaluate** - Comprehensive performance and quality assessment
+
+## Command Line Usage
+
+### Complete Pipeline Script
 
 ```bash
-# Basic usage
-python CSV_Device_Seperator_With_TimeFormat.py my_energy_data.csv
-
-# With custom output directory and file ID
-python CSV_Device_Seperator_With_TimeFormat.py my_energy_data.csv --output-dir ./separated_devices --file-id SITE001
-
-# With specific device column
-python CSV_Device_Seperator_With_TimeFormat.py my_energy_data.csv --device-col DeviceID
+python Pipeline_CSV_RML_KG.py input.csv [options]
 ```
 
-#### What it does:
+### Required Arguments
 
-- ✅ Automatically detects CSV format
-- ✅ Extracts device names from headers or device columns
-- ✅ Standardizes timestamps to ISO 8601 format (`2024-11-02T06:13:20`)
-- ✅ Handles various timestamp formats (Unix, scientific notation, date strings)
-- ✅ Splits data into separate CSV files per device
-- ✅ Monitors performance (CPU, RAM, disk I/O)
-- ✅ Creates detailed logs
+- `input_csv`: Path to the input CSV file to be processed
 
-#### Output
+### Pipeline Output Options
 
-Creates individual CSV files for each device:
-- `METEOSTA001_W1.csv`
-- `INVERTER01_W1.csv`
-- `WEATHER_STATION_W1.csv`
+- `--output-dir`: Base output directory (default: `pipeline_output`)
+- `--no-timestamp`: Disable timestamped output folders
 
-### Step 2: Transform
-**RML Generation**
+### CSV Processing Options
 
-Generate RML files that define how CSV data maps to RDF triples using command-line arguments for flexible configuration.
+- `--time-col`: Name of the time column (default: `Time`)
+- `--device-col`: Name of the column with device identifiers
+- `--file-id`: ID to append to split CSV filenames
 
-#### Command Line Usage
+### RML Generation Options
+
+- `--rml-template`: Path to Jinja2 template file (default: `Jinja_RML-Template_PerDevice.j2`)
+- `--prefix`: Ontology prefix URL
+- `--wid`: Window ID (default: `W1`)
+- `--timestamp-column`: Name of timestamp column for RML
+
+### Knowledge Graph Options
+
+- `--kg-format`: Output format (`turtle`, `n-triples`, `rdf-xml`)
+- `--remove-duplicates/--no-remove-duplicates`: Control duplicate removal
+- `--all-in-one`: Generate all datasets in one file
+- `--no-enrichment`: Disable enrichment
+- `--no-ordered`: Disable ordered processing
+
+### GraphDB Import Options
+
+- `--import-to-graphdb`: Enable GraphDB import
+- `--graphdb-url`: GraphDB instance URL (default: `http://localhost:7200`)
+- `--graphdb-repo`: Repository ID (required for import)
+- `--graphdb-user`: Username for authentication
+- `--graphdb-password`: Password for authentication
+
+### Evaluation Options
+
+- `--evaluate`: Run comprehensive evaluation after pipeline completion
+
+### General Options
+
+- `--log-level`: Logging level (`DEBUG`, `INFO`, `WARNING`, `ERROR`)
+- `--verbose`: Enable verbose output
+
+## Examples
+
+### Basic Pipeline Execution
+
+```bash
+# Simple run with default settings
+python Pipeline_CSV_RML_KG.py energy_data.csv
+
+# Custom output directory with evaluation
+python Pipeline_CSV_RML_KG.py energy_data.csv --output-dir ./results --evaluate
+```
+
+### Advanced Configuration
+
+```bash
+# Full pipeline with custom settings
+python Pipeline_CSV_RML_KG.py energy_data.csv \
+  --evaluate \
+  --prefix "https://example.org/ontology" \
+  --remove-duplicates
+```
+
+### GraphDB Integration
+
+```bash
+# Pipeline with GraphDB import
+python Pipeline_CSV_RML_KG.py energy_data.csv \
+  --evaluate \
+  --import-to-graphdb \
+  --graphdb-repo energy-kg \
+  --graphdb-url http://localhost:7200 \
+  --graphdb-user admin \
+  --graphdb-password password
+```
+
+## Evaluation Features
+
+The integrated evaluation system provides comprehensive analysis:
+
+### Performance Metrics
+- **Total pipeline execution time**
+- **Per-stage timing breakdown**
+- **Throughput (triples per second)**
+- **Resource usage monitoring** (CPU, memory)
+
+### Knowledge Graph Analysis
+- **Accurate triple counting** using rdflib
+- **File size analysis**
+- **Format distribution**
+- **Quality assessment**
+
+### Output Reports
+- **JSON evaluation reports** with detailed metrics
+- **Console summary** with key statistics
+- **Timestamped logs** for debugging
+
+## Output Structure
+
+Each pipeline run creates a timestamped directory containing:
+
+```
+pipeline_output_20250614_163000/
+├── split_csvs/                    # Device-separated CSV files
+│   ├── METEOSTA001_W1.csv
+│   └── INVERTER01_W1.csv
+├── rml_files/                     # Generated RML mappings
+│   ├── generated_METEOSTA001_W1.rml.ttl
+│   └── generated_INVERTER01_W1.rml.ttl
+├── knowledge_graph/               # Generated RDF files
+│   ├── knowledge_graph_METEOSTA001_W1.ttl
+│   └── knowledge_graph_INVERTER01_W1.ttl
+├── config/                        # SDM-RDFizer configuration
+│   └── rdfizer_config.ini
+├── logs/                          # Detailed execution logs
+│   └── pipeline_20250614_163000.log
+└── evaluation/                    # Performance reports
+    ├── evaluation_20250614_163000.log
+    └── evaluation_report_20250614_163000.json
+```
+
+## Individual Components
+
+### CSV Device Separator
+
+```bash
+python CSV_Device_Seperator_With_TimeFormat.py input.csv [options]
+```
+
+**Features:**
+- Automatic CSV format detection
+- Multiple timestamp format support
+- Device extraction from headers or columns
+- Performance monitoring
+- Detailed logging
+
+### RML Generator
 
 ```bash
 python RML_Generation.py csv_path [options]
 ```
 
-#### Required Arguments
+**Features:**
+- Flexible command-line configuration
+- Jinja2 template system
+- QUDT-compliant unit mappings
+- Semantic property mapping
+- Execution profiling
 
-- `csv_path`: Path to the input CSV file (output from Step 1)
-
-#### Optional Arguments
-
-- `-t, --template`: Path to the Jinja2 template file (default: `Jinja_RML-Template_PerDevice.j2`)
-- `-o, --output-dir`: Output directory for generated RML files (default: `../OmegaX-Pipeline/Output/RML/`)
-- `-p, --prefix`: Ontology prefix URL (default: `https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets`)
-- `-w, --wid`: Window ID (default: `W1`)
-- `-v, --verbose`: Enable verbose output
-- `--version`: Show version information
-
-#### Examples
+### Pipeline Evaluator
 
 ```bash
-# Basic usage with single CSV file
-python RML_Generation.py Input_CSV_Datasets/Input_CSV_Datasets_by_Devices/CSV_PerDevices/METEOSTA001_W1.csv
-
-# With custom template and output directory
-python RML_Generation.py METEOSTA001_W1.csv -t custom_template.j2 -o ./rml_output
-
-# Full customization with verbose output
-python RML_Generation.py /path/to/INVERTER01_W1.csv --template my_template.j2 --output-dir /tmp/rml --prefix "https://example.org/ontology" --wid W2 --verbose
-
-# Get help
-python RML_Generation.py -h
+python Pipeline_CSV_RML_KG.py --evaluate
 ```
 
-#### What it does:
+**Features:**
+- Accurate triple counting with rdflib
+- Performance timing analysis
+- Resource usage monitoring
+- Comprehensive reporting
 
-- ✅ Parses CSV headers and maps them to semantic properties
-- ✅ Uses measurement dictionary to identify data types and units
-- ✅ Generates RML mapping files using Jinja2 templates
-- ✅ Creates QUDT-compliant unit mappings
-- ✅ Profiles execution time and memory usage
-- ✅ Validates input files and template existence
-- ✅ Provides flexible configuration through command-line arguments
+## Configuration Files
 
-#### Output
+### RDFizer Configuration
 
-Creates RML files with configurable naming and location:
-- `generated_METEOSTA001_W1.rml.ttl`
-- `generated_INVERTER01_W1.rml.ttl`
-- `generated_WEATHER_STATION_W1.rml.ttl`
-
-### Step 3: RDF Generation with SDM-RDFizer
-
-Use SDM-RDFizer to convert CSV data to RDF using the generated RML mappings.
-
-#### Prerequisites
-
-1. Install SDM-RDFizer following their [installation guide](https://github.com/SDM-TIB/SDM-RDFizer)
-2. Create a configuration file for SDM-RDFizer
-
-#### Configuration File Example (`config.ini`)
+The pipeline automatically generates `rdfizer_config.ini`:
 
 ```ini
-[DEFAULT]
-main_directory: /path/to/your/project/
+[default]
+main_directory = /path/to/pipeline/output
 
-[DataSources]
-number_of_datasets: 1
-output_folder: /path/to/output/
-all_in_one_file: yes
-remove_duplicate: yes
-enrichment: no
-name: dataset1
-mapping: /path/to/generated_METEOSTA001_W1.rml.ttl
+[datasets]
+number_of_datasets = 1
+output_folder = /path/to/knowledge_graph
+remove_duplicate = yes
+all_in_one_file = no
+enrichment = yes
+ordered = yes
+output_format = turtle
+
+[dataset1]
+name = METEOSTA001_W1
+mapping = /path/to/generated_METEOSTA001_W1.rml.ttl
 ```
 
-#### Command
+### Measurement Dictionary
 
-```bash
-python -m rdfizer -c config.ini
-```
-
-#### What it does:
-
-- ✅ Reads CSV data and RML mappings
-- ✅ Generates RDF triples in Turtle format
-- ✅ Creates knowledge graph representations
-
-#### Output
-
-Creates RDF files:
-- `knowledge_graph_METEOSTA001_W1.ttl`
-- `knowledge_graph_INVERTER01_W1.ttl`
-
-### Step 3: Load
-
-Load and query the generated knowledge graphs using GraphDB.
-
-#### Setup GraphDB
-
-1. Install and start GraphDB
-2. Create a new repository (e.g., "EnergyDataKG")
-3. Import the generated RDF files
-
-#### Usage
-
-```python
-from GraphDBConnector import GraphDBConnector
-
-# Initialize connector
-graphdb = GraphDBConnector("http://localhost:7200", "EnergyDataKG")
-
-# Example query
-query = """
-PREFIX prop: <https://w3id.org/omega-x/ontology/Property/>
-PREFIX ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/>
-
-SELECT ?dataPoint ?dataTime ?dataValue ?property ?unit
-WHERE {
-    ?dataPoint rdf:type ets:DataPoint ;
-               ets:dataTime ?dataTime ;
-               ets:hasDataValue ?dataValue ;
-               prop:isAboutProperty ?property ;
-               prop:hasUnit ?unit .
-}
-LIMIT 100
-"""
-
-# Execute and display results
-results = graphdb.execute_query(query)
-graphdb.print_query_results(results)
-```
-
-#### What it does:
-
-- ✅ Connects to GraphDB repositories
-- ✅ Executes SPARQL queries
-- ✅ Formats and displays results
-- ✅ Handles connection errors gracefully
-
-## Resources
-
-### CSV_Header_Dictionary.py
-
-Contains property definitions and unit mappings:
+Customize `Resources/CSV_Header_Dictionary.py`:
 
 ```python
 MEASUREMENTS = {
@@ -257,66 +274,72 @@ MEASUREMENTS = {
         "description": "Power measurement", 
         "qudt_unit": "http://qudt.org/vocab/unit/W"
     }
-    # Add more measurements as needed
 }
 ```
 
-### Jinja2 Template
+## Performance Monitoring
 
-The RML template defines the mapping structure. Customize it based on your ontology requirements.
+The enhanced pipeline includes comprehensive monitoring:
 
-## 📊 Performance Monitoring
+- **Real-time resource tracking** (CPU, RAM, disk I/O)
+- **Per-stage execution timing**
+- **Progress indicators** for long operations
+- **Memory usage optimization**
+- **Detailed performance reports**
 
-The pipeline includes comprehensive performance monitoring:
 
-- **Execution time** for each processing step
-- **Memory usage** tracking
-- **CPU and disk I/O** monitoring
-- **Progress bars** for long-running operations
-- **Detailed logging** with timestamps
-
-##  Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
-1. **CSV Parsing Errors**
-   - Check for misaligned columns
-   - Verify delimiter (comma vs semicolon)
-   - Use `--on-bad-lines=skip` option
+1. **Missing Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-2. **Memory Issues with Large Files**
-   - Process files in chunks
-   - Monitor RAM usage
-   - Close unused file handles
+2. **SDM-RDFizer Installation**
+   ```bash
+   python3 -m pip install rdfizer
+   ```
 
-3. **RML Generation Failures**
-   - Check Jinja2 template syntax
-   - Ensure proper file paths
+3. **Memory Issues with Large Files**
+   - Use `--no-all-in-one` for separate files
+   - Monitor with `--evaluate` flag
+   - Process in smaller batches
 
 4. **GraphDB Connection Issues**
-   - Verify GraphDB is running
-   - Check repository name and URL
-   - Confirm network connectivity
+   - Verify GraphDB is running: `http://localhost:7200`
+   - Check repository exists
+   - Validate credentials
 
-### Logging
+5. **RML Path Issues**
+   - Pipeline automatically fixes relative paths
+   - Check logs for validation results
+   - Ensure CSV files are accessible
 
-Check log files in the `logs/` directory for detailed error information:
-- `csv_splitter_YYYYMMDD_HHMMSS.log`
+### Logging and Debugging
 
-## 🤝 Contributing
+- **Verbose output**: Use `--verbose` flag
+- **Debug logging**: Use `--log-level DEBUG`
+- **Check logs**: Review files in `logs/` directory
+- **Evaluation reports**: Examine `evaluation/` directory
+
+## Contributing
 
 To extend the pipeline:
 
-1. Add new measurement types to `CSV_Header_Dictionary.py`
-2. Customize the Jinja2 template for different ontologies
-3. Extend device name extraction patterns
-4. Add new CSV format support
+1. **Add measurement types** to `CSV_Header_Dictionary.py`
+2. **Customize RML templates** for different ontologies
+3. **Extend device extraction** patterns
+4. **Add new output formats**
+5. **Enhance evaluation metrics**
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](./License) file for details.
+This project is licensed under the MIT License.
 
-## Acknoweldgment
-[Electricité De France (EDF)](https://www.edf.fr/) team and partners 
-[Ecole des mines de Saint-Etienne](https://www.mines-stetienne.fr/)
-The European projetc Omega-X [Omega-X website](https://omega-x.eu/)
+## Acknowledgments
+
+- [Electricité De France (EDF)](https://www.edf.fr/) team and partners
+- [École des mines de Saint-Étienne](https://www.mines-stetienne.fr/)
+- The European project [Omega-X](https://omega-x.eu/)
