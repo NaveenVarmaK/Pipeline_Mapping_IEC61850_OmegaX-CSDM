@@ -508,7 +508,7 @@ class CSVToKnowledgeGraphPipeline:
             self.logger.error(f"Error in CSV splitting step: {str(e)}")
             raise
 
-    def run_rml_generator(self, template_path=None, myprefix=None, wid=None, timestamp_column=None):
+    def run_rml_generator(self, template_path=None, myprefix=None, wid=None, timestamp_column=None,source_participant=None, target_participant=None):
         """Step 2: Generate RML files for each split CSV"""
         self.logger.info("=" * 60)
         self.logger.info("STEP 2: GENERATING RML FILES")
@@ -538,7 +538,9 @@ class CSVToKnowledgeGraphPipeline:
                     output_dir=self.rml_output_dir,
                     myprefix=myprefix,
                     wid=wid,
-                    timestamp_column=timestamp_column
+                    timestamp_column=timestamp_column,
+                    source_participant=source_participant,
+                    target_participant=target_participant
                 )
 
                 successful_generations.append({
@@ -830,7 +832,9 @@ class CSVToKnowledgeGraphPipeline:
                 template_path=kwargs.get('template_path'),
                 myprefix=kwargs.get('myprefix'),
                 wid=kwargs.get('wid'),
-                timestamp_column=kwargs.get('timestamp_column')
+                timestamp_column=kwargs.get('timestamp_column'),
+                source_participant=kwargs.get('source_participant'),
+                target_participant=kwargs.get('target_participant')
             )
 
             validation_results = self.validate_rml_paths()
@@ -962,6 +966,8 @@ Examples:
                         help='Ontology prefix URL')
     parser.add_argument('--wid', default='W1', help='Window ID (default: W1)')
     parser.add_argument('--timestamp-column', help='Name of the timestamp column for RML (default: auto-detect)')
+    parser.add_argument('--source-participant', help='Source participant for RML generation')
+    parser.add_argument('--target-participant', help='Target participant for RML generation')
 
     # Knowledge Graph arguments
     parser.add_argument('--kg-format', choices=['turtle', 'n-triples', 'rdf-xml'], default='turtle',
@@ -1041,6 +1047,8 @@ Examples:
             myprefix=args.prefix,
             wid=args.wid,
             timestamp_column=args.timestamp_column,
+            source_participant=args.source_participant,
+            target_participant=args.target_participant,
             remove_duplicate=args.remove_duplicates,
             all_in_one_file=args.all_in_one,
             enrichment=args.enrichment,

@@ -7,7 +7,7 @@ import psutil
 import argparse
 from jinja2 import Environment, FileSystemLoader
 
-from Resources.CSV_Header_Dictionary import MEASUREMENTS, get_qudt_unit
+from Resources.CSV_Header_Dictionary import MEASUREMENTS, get_qudt_unit, STAT_NODES
 
 
 # def normalize_path_for_rml(path):
@@ -21,7 +21,7 @@ from Resources.CSV_Header_Dictionary import MEASUREMENTS, get_qudt_unit
 #         normalized = f"{abs_path}"
 #     return normalized
 
-def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=None, wid=None, timestamp_column=None):
+def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=None, wid=None, timestamp_column=None, source_participant=None, target_participant=None):
     """Measure execution time and memory usage for RML generation process"""
 
     tracemalloc.start()
@@ -69,7 +69,8 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
 
     # Enhanced parse_header function with better property mapping
     def parse_header(header):
-        skip_columns = {"timestamp", "id", "device", "ts", "timestamp_gmt", "site", "Time", "date", "datetime","ID","TS_ID",
+        skip_columns = {"timestamp", "id", "device", "ts", "timestamp_gmt", "site", "Time", "date", "datetime", "ID",
+                        "TS_ID",
                         timestamp_column}
         if header in skip_columns or not header.strip():
             return None
@@ -80,25 +81,25 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
             "csv_column": header,
             "unit": "UNITLESS",
             "property": f"Property for {header}",  # Default property
-            "measurement_type": None
+            "measurement_type": None,
+            "aggregation_kind": None  # Default aggregation kind
         }
 
-        # Try to find matching measurement type and extract property
-        for part in parts:
-            # Remove numbers from the end to get base measurement type
-            base_part = re.sub(r'\d+$', '', part)
+        # Check for statistical node prefix (first 2 characters)
+        stat_prefix = header[:2].lower()
+        if stat_prefix in STAT_NODES:
+            result["aggregation_kind"] = STAT_NODES[stat_prefix]["aggregation_kind"]
 
+        for part in parts:
+            base_part = re.sub(r'\d+$', '', part)
             if base_part in MEASUREMENTS:
                 result["measurement_type"] = base_part
                 result["property"] = MEASUREMENTS[base_part]["property"]
-
-                # Get unit information
                 unit = get_qudt_unit(base_part)
                 if unit:
                     result["unit"] = unit
                 elif MEASUREMENTS[base_part].get("unit"):
                     result["unit"] = MEASUREMENTS[base_part]["unit"]
-
                 break
 
         # If no direct match found, try partial matching
@@ -108,7 +109,6 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
                 if measurement_key in header_clean or header_clean.startswith(measurement_key):
                     result["measurement_type"] = measurement_key
                     result["property"] = measurement_data["property"]
-
                     unit = get_qudt_unit(measurement_key)
                     if unit:
                         result["unit"] = unit
@@ -142,7 +142,9 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
         "properties": properties,
         "unique_units": unique_units,
         "wid": wid,
-        "timestamp_column": timestamp_column  # Add timestamp column to context
+        "timestamp_column": timestamp_column,  # Add timestamp column to context,
+        "source_participant": source_participant,
+        "target_participant": target_participant
     }
     context_create_time = time.time() - context_create_start
 
@@ -231,6 +233,7 @@ Examples:
   %(prog)s input.csv -t custom_template.j2 -o ./output -p "https://example.org/ontology" -w W2
   %(prog)s /path/to/data.csv --output-dir /tmp/rml --wid W3 --timestamp-column "datetime"
   %(prog)s input.csv --timestamp-column "ts"
+    %(prog)s input.csv --source-participant "SourceDevice" --target-participant "TargetDevice"
         """
     )
 
@@ -280,6 +283,15 @@ Examples:
         action='version',
         version='RML Generator 1.1'
     )
+    parser.add_argument(
+        '--source-participant',
+        help='Source participant name for the RML generation'
+    )
+    parser.add_argument(
+        '--target-participant',
+        help='Target participant name for the RML generation'
+    )
+
 
     args = parser.parse_args()
 
@@ -294,6 +306,7 @@ Examples:
         print(f"Prefix: {args.prefix}")
         print(f"Window ID: {args.wid}")
         print(f"Timestamp column: {args.timestamp_column or 'auto-detect'}")
+
         print("-" * 50)
 
     try:
@@ -303,7 +316,9 @@ Examples:
             output_dir=args.output_dir,
             myprefix=args.prefix,
             wid=args.wid,
-            timestamp_column=args.timestamp_column
+            timestamp_column=args.timestamp_column,
+            source_participant=args.source_participant,
+            target_participant=args.target_participant
         )
 
         if args.verbose:
