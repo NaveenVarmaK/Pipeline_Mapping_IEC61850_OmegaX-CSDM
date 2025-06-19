@@ -422,6 +422,21 @@ def split_csv_by_device(input_file, output_dir='Input_CSV_Datasets/Input_CSV_Dat
             df[col] = standardize_datetime(df[col])
             pbar.update(1)
 
+    # =================== START: NEW LOGIC TO ADD SANITIZED TIMESTAMP ===================
+    if time_col in df.columns:
+        sanitized_col_name = 'sanitized_timestamp_for_iri'
+        logger.info(f"Creating sanitized timestamp column '{sanitized_col_name}' from '{time_col}'.")
+
+        # Ensure the timestamp column is string type before applying string operations,
+        # then replace characters '-', 'T', and ':' with an empty string.
+        df[sanitized_col_name] = df[time_col].astype(str).str.replace('[-T:]', '', regex=True)
+
+        logger.info(f"New column '{sanitized_col_name}' created successfully.")
+    else:
+        logger.warning(
+            f"Could not create sanitized timestamp column because the primary time column '{time_col}' was not found.")
+    # ==================== END: NEW LOGIC TO ADD SANITIZED TIMESTAMP ====================
+
     # Process according to the format type
     if format_type in ["format3", "format4"] and device_col in df.columns:
         # Format 3/4: Device names are in a separate column
@@ -498,8 +513,22 @@ def split_by_header_format(df, output_dir, file_id=''):
     device_columns = {}
     common_cols = []
 
+    # =================== START: FIX ===================
+    # Define the name of your new column to ensure it's handled correctly.
+    sanitized_col_name = 'sanitized_timestamp_for_iri'
+    # ==================== END: FIX ====================
+
+
     # Process all columns
     for col in df.columns:
+        # =================== START: FIX ===================
+        # Explicitly treat the sanitized timestamp column as a common column
+        # to prevent it from being mis-classified by extract_device_name.
+        if col == sanitized_col_name:
+            common_cols.append(col)
+            continue  # Skip to the next column
+        # ==================== END: FIX ====================
+
         device_name = extract_device_name(col)
 
         if device_name != "unknown":
@@ -517,14 +546,16 @@ def split_by_header_format(df, output_dir, file_id=''):
     device_dataframes = {}
 
     # Create initial dataframes with common columns
-    for device_name in set(device_info[0] for device_info in device_columns.values()):
+    unique_devices = sorted(list(set(device_info[0] for device_info in device_columns.values())))
+    for device_name in unique_devices:
         # Start with common columns (time, id, device, etc.)
         device_df = df[common_cols].copy()
         device_dataframes[device_name] = device_df
 
     # Add device-specific columns to appropriate dataframes
     for original_col, (device, clean_col) in device_columns.items():
-        device_dataframes[device][clean_col] = df[original_col]
+        if device in device_dataframes:
+            device_dataframes[device][clean_col] = df[original_col]
 
     # Save each device's data to a separate CSV file
     for device, device_df in device_dataframes.items():
