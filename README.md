@@ -1,6 +1,41 @@
 # Energy Dataset Processing Pipeline
 
-A comprehensive pipeline for creating Knowledge Graphs from CSV files tagged with IEC 61850 standard, featuring automated evaluation and performance monitoring.
+A comprehensive pipeline for creating Knowledge Graphs from CSV files tagged with IEC 61850 standard, featuring automated evaluation and performance monitoring. This pipeline follows the **Omega-X ontology** framework for energy data modeling and semantic interoperability.
+
+## Architecture Overview
+
+The pipeline processes energy data following the Omega-X ontology structure, which defines the semantic relationships between energy datasets, data collections, and market participants:
+
+![Diagram Metodology-pattern drawio](https://github.com/user-attachments/assets/1c960fc1-7078-4e20-b843-7efe3a90e78c)
+
+
+**Key Ontology Components:**
+- **DeviceID**: Identifier of the device in the IEC 61850 tag
+- **myprefix**: Namespace of the Knowledge Graph chosen by the data provider  
+- **WID**: Week identifier (e.g., w2 for week 2 in 2025)
+- **PropertyA**: Property defined in the IEC 61850 tag (e.g., encltmp)
+- **n**: Incremental number to identify points in the data collection
+
+The ontology uses standardized prefixes:
+- `eds`: https://w3id.org/omega-x/ontology/EnergyDataSet/
+- `ets`: https://w3id.org/omega-x/ontology/EventsTimeSeries/
+- `prop`: https://w3id.org/omega-x/ontology/Property/
+- `role`: https://w3id.org/omega-x/ontology/EnergyRole/
+
+## IEC 61850 Device Modeling
+
+The pipeline processes IEC 61850 compliant energy devices, mapping their logical structure to semantic representations:
+
+![iectags](https://github.com/user-attachments/assets/cc1b84cf-f901-484b-9def-7874f9dc0943)
+
+
+**Device Hierarchy Processing:**
+- **Physical Device**: Top-level device identifier (e.g., PARK)
+- **Logical Device**: Specific device instance (e.g., ECP001_S3_SHL001_Inverter01)
+- **Logical Nodes**: Functional components (sddinv1, MMXU1)
+- **Data Attributes**: Measurement properties (heatsinktmp, encltmp, TotW, W)
+
+The pipeline automatically extracts and maps these hierarchical relationships to create semantically rich knowledge graphs compatible with the Omega-X energy ontology.
 
 ## Prerequisites
 
@@ -41,7 +76,7 @@ pipeline_output_YYYYMMDD_HHMMSS/
 
 ```bash
 # Run the complete pipeline with timestamped output
-python Pipelilne_CSV_RML_KG.py input_data.csv
+python Pipeline_CSV_RML_KG.py input_data.csv
 
 # Run with comprehensive evaluation
 python Pipeline_CSV_RML_KG.py input_data.csv --evaluate
@@ -52,14 +87,31 @@ python Pipeline_CSV_RML_KG.py input_data.csv --import-to-graphdb --graphdb-repo 
 
 ## Pipeline Overview
 
-The enhanced pipeline consists of five main steps with integrated evaluation:
+The enhanced pipeline consists of five main steps with integrated evaluation, all following the Omega-X ontology specifications:
 
 1. **Extract** - Convert time to UTC, extract device list, and split CSV files by device
-2. **Transform** - Generate RML mapping files using Jinja templates
+2. **Transform** - Generate RML mapping files using Jinja templates with Omega-X ontology compliance
 3. **Validate** - Verify RML file paths and fix issues automatically
 4. **Load** - Convert CSV data to RDF knowledge graphs using SDM-RDFizer
 5. **Import** - Optionally import to GraphDB repository
 6. **Evaluate** - Comprehensive performance and quality assessment
+
+## Omega-X Ontology Integration
+
+The pipeline is specifically designed to work with the **Omega-X ontology** for energy data interoperability:
+
+### Semantic Mapping Features
+- **Automatic IEC 61850 tag parsing** and mapping to Omega-X classes
+- **Energy device hierarchy preservation** in RDF structure
+- **Standardized property mappings** using QUDT units
+- **Market participant role assignments** 
+- **Time series data modeling** following ETS (EventsTimeSeries) patterns
+
+### Ontology Compliance
+- All generated RDF follows Omega-X namespace conventions
+- Device properties are mapped to appropriate ontology classes
+- Temporal data is structured according to ETS specifications
+- Energy roles and market participant relationships are preserved
 
 ## Command Line Usage
 
@@ -87,9 +139,11 @@ python Pipeline_CSV_RML_KG.py input.csv [options]
 ### RML Generation Options
 
 - `--rml-template`: Path to Jinja2 template file (default: `Jinja_RML-Template_PerDevice.j2`)
-- `--prefix`: Ontology prefix URL
+- `--prefix`: Ontology prefix URL (default: Omega-X namespace)
 - `--wid`: Window ID (default: `W1`)
 - `--timestamp-column`: Name of timestamp column for RML
+- `--source-participant`: Name of the source participant
+- `--target-participant`: Name of the target participant
 
 ### Knowledge Graph Options
 
@@ -121,7 +175,7 @@ python Pipeline_CSV_RML_KG.py input.csv [options]
 ### Basic Pipeline Execution
 
 ```bash
-# Simple run with default settings
+# Simple run with default settings (Omega-X ontology)
 python Pipeline_CSV_RML_KG.py energy_data.csv
 
 # Custom output directory with evaluation
@@ -131,21 +185,21 @@ python Pipeline_CSV_RML_KG.py energy_data.csv --output-dir ./results --evaluate
 ### Advanced Configuration
 
 ```bash
-# Full pipeline with custom settings
+# Full pipeline with custom Omega-X settings
 python Pipeline_CSV_RML_KG.py energy_data.csv \
   --evaluate \
-  --prefix "https://example.org/ontology" \
+  --prefix "https://w3id.org/omega-x/ontology" \
   --remove-duplicates
 ```
 
 ### GraphDB Integration
 
 ```bash
-# Pipeline with GraphDB import
+# Pipeline with GraphDB import for Omega-X knowledge graphs
 python Pipeline_CSV_RML_KG.py energy_data.csv \
   --evaluate \
   --import-to-graphdb \
-  --graphdb-repo energy-kg \
+  --graphdb-repo omega-x-energy-kg \
   --graphdb-url http://localhost:7200 \
   --graphdb-user admin \
   --graphdb-password password
@@ -153,7 +207,7 @@ python Pipeline_CSV_RML_KG.py energy_data.csv \
 
 ## Evaluation Features
 
-The integrated evaluation system provides comprehensive analysis:
+The integrated evaluation system provides comprehensive analysis of Omega-X compliant knowledge graphs:
 
 ### Performance Metrics
 - **Total pipeline execution time**
@@ -163,6 +217,7 @@ The integrated evaluation system provides comprehensive analysis:
 
 ### Knowledge Graph Analysis
 - **Accurate triple counting** using rdflib
+- **Omega-X ontology compliance validation**
 - **File size analysis**
 - **Format distribution**
 - **Quality assessment**
@@ -174,17 +229,17 @@ The integrated evaluation system provides comprehensive analysis:
 
 ## Output Structure
 
-Each pipeline run creates a timestamped directory containing:
+Each pipeline run creates a timestamped directory containing Omega-X compliant knowledge graphs:
 
 ```
 pipeline_output_20250614_163000/
 ├── split_csvs/                    # Device-separated CSV files
 │   ├── METEOSTA001_W1.csv
 │   └── INVERTER01_W1.csv
-├── rml_files/                     # Generated RML mappings
+├── rml_files/                     # Generated RML mappings (Omega-X compliant)
 │   ├── generated_METEOSTA001_W1.rml.ttl
 │   └── generated_INVERTER01_W1.rml.ttl
-├── knowledge_graph/               # Generated RDF files
+├── knowledge_graph/               # Generated RDF files (Omega-X format)
 │   ├── knowledge_graph_METEOSTA001_W1.ttl
 │   └── knowledge_graph_INVERTER01_W1.ttl
 ├── config/                        # SDM-RDFizer configuration
@@ -207,7 +262,7 @@ python CSV_Device_Seperator_With_TimeFormat.py input.csv [options]
 **Features:**
 - Automatic CSV format detection
 - Multiple timestamp format support
-- Device extraction from headers or columns
+- IEC 61850 device extraction from headers or columns
 - Performance monitoring
 - Detailed logging
 
@@ -219,9 +274,9 @@ python RML_Generation.py csv_path [options]
 
 **Features:**
 - Flexible command-line configuration
-- Jinja2 template system
+- Jinja2 template system with Omega-X ontology support
 - QUDT-compliant unit mappings
-- Semantic property mapping
+- Semantic property mapping for energy data
 - Execution profiling
 
 ### Pipeline Evaluator
@@ -232,6 +287,7 @@ python Pipeline_CSV_RML_KG.py --evaluate
 
 **Features:**
 - Accurate triple counting with rdflib
+- Omega-X ontology compliance checking
 - Performance timing analysis
 - Resource usage monitoring
 - Comprehensive reporting
@@ -240,7 +296,7 @@ python Pipeline_CSV_RML_KG.py --evaluate
 
 ### RDFizer Configuration
 
-The pipeline automatically generates `rdfizer_config.ini`:
+The pipeline automatically generates `rdfizer_config.ini` with Omega-X settings:
 
 ```ini
 [default]
@@ -262,31 +318,38 @@ mapping = /path/to/generated_METEOSTA001_W1.rml.ttl
 
 ### Measurement Dictionary
 
-Customize `Resources/CSV_Header_Dictionary.py`:
+Customize `Resources/CSV_Header_Dictionary.py` with Omega-X compatible mappings:
 
 ```python
 MEASUREMENTS = {
-    "temp": {
-        "description": "Temperature measurement",
+    "heatsinktmp": {
+        "description": "Heat sink temperature measurement",
         "qudt_unit": "http://qudt.org/vocab/unit/DEG_C",
+        "omega_x_property": "prop:Temperature"
     },
-    "pow": {
-        "description": "Power measurement", 
-        "qudt_unit": "http://qudt.org/vocab/unit/W"
+    "encltmp": {
+        "description": "Enclosure temperature measurement", 
+        "qudt_unit": "http://qudt.org/vocab/unit/DEG_C",
+        "omega_x_property": "prop:Temperature"
+    },
+    "TotW": {
+        "description": "Total active power measurement",
+        "qudt_unit": "http://qudt.org/vocab/unit/W",
+        "omega_x_property": "prop:ActivePower"
     }
 }
 ```
 
 ## Performance Monitoring
 
-The enhanced pipeline includes comprehensive monitoring:
+The enhanced pipeline includes comprehensive monitoring for Omega-X knowledge graph generation:
 
 - **Real-time resource tracking** (CPU, RAM, disk I/O)
 - **Per-stage execution timing**
 - **Progress indicators** for long operations
 - **Memory usage optimization**
 - **Detailed performance reports**
-
+- **Ontology compliance metrics**
 
 ## Troubleshooting
 
@@ -317,22 +380,28 @@ The enhanced pipeline includes comprehensive monitoring:
    - Check logs for validation results
    - Ensure CSV files are accessible
 
+6. **Omega-X Ontology Issues**
+   - Verify namespace prefixes in generated RDF
+   - Check IEC 61850 tag parsing in logs
+   - Validate property mappings
+
 ### Logging and Debugging
 
 - **Verbose output**: Use `--verbose` flag
 - **Debug logging**: Use `--log-level DEBUG`
 - **Check logs**: Review files in `logs/` directory
 - **Evaluation reports**: Examine `evaluation/` directory
+- **Ontology validation**: Check RDF syntax and Omega-X compliance
 
 ## Contributing
 
-To extend the pipeline:
+To extend the pipeline for enhanced Omega-X ontology support:
 
-1. **Add measurement types** to `CSV_Header_Dictionary.py`
-2. **Customize RML templates** for different ontologies
-3. **Extend device extraction** patterns
-4. **Add new output formats**
-5. **Enhance evaluation metrics**
+1. **Add measurement types** to `CSV_Header_Dictionary.py` with Omega-X mappings
+2. **Customize RML templates** for different energy device types
+3. **Extend IEC 61850 device extraction** patterns
+4. **Add new output formats** while maintaining ontology compliance
+5. **Enhance evaluation metrics** for semantic quality assessment
 
 ## License
 
@@ -342,4 +411,4 @@ This project is licensed under the MIT License.
 
 - [Electricité De France (EDF)](https://www.edf.fr/) team and partners
 - [École des mines de Saint-Étienne](https://www.mines-stetienne.fr/)
-- The European project [Omega-X](https://omega-x.eu/)
+- The European project [Omega-X](https://omega-x.eu/) for ontology specifications and energy data interoperability standards
