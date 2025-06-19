@@ -1,16 +1,195 @@
-### Table: Competency Questions (CQs) grouped by Infrastructure and Dynamic Data
+# SPARQL Queries for Omega-X Knowledge Graph
 
-| ID | Competency Question (CQ) | SPARQL | Example |
-|:---|:---|:---|:---|
-| **Group 1: Infrastructure Data** | | | |
-| CQ1 | What are the main components of a given PV plant? | |`PARK_ECP001_S3_SHL001_Inverter01` is a component of *PARK* PV plant. |
-| CQ2 | What are the connected equipment to a particular substation? | |For `PARK_ECP001_S3`, the connected equipment are `PARK_ECP001_S3_METEO01` and `PARK_ECP001_S3_METEO02`. |
-| CQ3 | What is the number of combiner boxes level 1 connected to a particular inverter? | | For `PARK_ECP001_S3_SHL001_Inverter01`, four combiner boxes level 1 are connected to the inverter. |
-| CQ4 | What are the subsystems of a particular inverter station? | | For `PARK_ECP001_S3_SHL001`, `PARK_ECP001_S3_SHL001_Inverter01`, `PARK_ECP001_S3_SHL001_Inverter02`, and `PARK_ECP001_S3_SHL001_Inverter03` are subsystems of the inverter station. |
-| CQ5 | What are the combiner box level 2 in the topology? | | `PARK_ECP001_S3_SHL001_CA001_CB003` is a combiner box level 2 in the *PARK* topology. |
-| **Group 2: Dynamic Data** | | | |
-| CQ6 | What is the DC current for a specific inverter for an hour? | ```sparql<br>PREFIX eds: [https://w3id.org/omega-x/ontology/EnergyDataSet/](https://w3id.org/omega-x/ontology/EnergyDataSet/)<br>PREFIX ets: [https://w3id.org/omega-x/ontology/EventTimeSeries/](https://w3id.org/omega-x/ontology/EventTimeSeries/)<br>PREFIX prop: [https://w3id.org/omega-x/ontology/Property/](https://w3id.org/omega-x/ontology/Property/)<br>PREFIX xsd: [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#)<br><br>SELECT ?dateTime ?value<br>WHERE {<br>  BIND([https://w3id.org/omega-x/ontology/KG/ParkonneDatasets/EvaluationPoint/PARK_ECP002_S3_SHL002_CA001](https://w3id.org/omega-x/ontology/KG/ParkonneDatasets/EvaluationPoint/PARK_ECP002_S3_SHL002_CA001) AS ?evaluationPoint)<br><br>  ?energyDataSet eds:includesEvaluationPoint ?evaluationPoint .<br>  ?energyDataSet ets:comprises ?dataCollection .<br>  ?dataCollection ets:isAboutProperty prop:DCCurrent .<br>  ?dataPoint ets:belongsTo ?dataCollection .<br>  ?dataPoint ets:dataTime ?dateTime ;<br>             ets:hasDataValue ?dataValue .<br>  ?dataValue ets:value ?value .<br><br>  FILTER (?dateTime >= "2024-06-26T15:00:00"^^xsd:dateTime && ?dateTime < "2024-06-26T16:00:00"^^xsd:dateTime)<br>}<br>ORDER BY ?dateTime<br>``` | Retrieves all DC current values and their timestamps for the inverter `PARK_ECP002_S3_SHL002_CA001` between 15:00 and 16:00 on June 26, 2024. |
-| CQ7 | What is the heat sink temperature of a specific device for a specific day? | ```sparql<br>PREFIX eds: [https://w3id.org/omega-x/ontology/EnergyDataSet/](https://w3id.org/omega-x/ontology/EnergyDataSet/)<br>PREFIX ets: [https://w3id.org/omega-x/ontology/EventTimeSeries/](https://w3id.org/omega-x/ontology/EventTimeSeries/)<br>PREFIX prop: [https://w3id.org/omega-x/ontology/Property/](https://w3id.org/omega-x/ontology/Property/)<br>PREFIX xsd: [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#)<br><br>SELECT ?dateTime ?value<br>WHERE {<br>  BIND([https://w3id.org/omega-x/ontology/KG/PARKDatasets/EvaluationPoint/PARK_ECP001_S3_SHL001Inverter01](https://w3id.org/omega-x/ontology/KG/PARKDatasets/EvaluationPoint/PARK_ECP001_S3_SHL001Inverter01) AS ?evaluationPoint)<br><br>  ?energyDataSet eds:includesEvaluationPoint ?evaluationPoint .<br>  ?energyDataSet ets:comprises ?dataCollection .<br>  ?dataCollection ets:isAboutProperty prop:HeatSinkTemperature .<br>  ?dataPoint ets:belongsTo ?dataCollection .<br>  ?dataPoint ets:dataTime ?dateTime ;<br>             ets:hasDataValue ?dataValue .<br>  ?dataValue ets:value ?value .<br><br>  FILTER (STRSTARTS(STR(?dateTime), "2024-06-26"))<br>}<br>ORDER BY ?dateTime<br>``` | Fetches all heat sink temperature readings for the device `PARK_ECP001_S3_SHL001Inverter01` for the entire day of June 26, 2024. |
-| CQ8 | What is the minimum DC current attached to a specific device? | ```sparql<br>PREFIX eds: [https://w3id.org/omega-x/ontology/EnergyDataSet/](https://w3id.org/omega-x/ontology/EnergyDataSet/)<br>PREFIX ets: [https://w3id.org/omega-x/ontology/EventTimeSeries/](https://w3id.org/omega-x/ontology/EventTimeSeries/)<br>PREFIX prop: [https://w3id.org/omega-x/ontology/Property/](https://w3id.org/omega-x/ontology/Property/)<br><br>SELECT (MIN(?value) AS ?minDCCurrent)<br>WHERE {<br>  BIND([https://w3id.org/omega-x/ontology/KG/ParkonneDatasets/EvaluationPoint/PARK_ECP002_S3_SHL002_CA001](https://w3id.org/omega-x/ontology/KG/ParkonneDatasets/EvaluationPoint/PARK_ECP002_S3_SHL002_CA001) AS ?evaluationPoint)<br><br>  ?energyDataSet eds:includesEvaluationPoint ?evaluationPoint .<br>  ?energyDataSet ets:comprises ?dataCollection .<br>  ?dataCollection ets:isAboutProperty prop:DCCurrent .<br>  ?dataPoint ets:belongsTo ?dataCollection .<br>  ?dataPoint ets:hasDataValue ?dataValue .<br>  ?dataValue ets:value ?value .<br>}<br>``` | Calculates the single minimum DC current value recorded for the device `PARK_ECP002_S3_SHL002_CA001` across all available data. |
-| CQ9 | What are the properties in the KG? | ```sparql<br>PREFIX ets: [https://w3id.org/omega-x/ontology/EventTimeSeries/](https://w3id.org/omega-x/ontology/EventTimeSeries/)<br><br>SELECT DISTINCT ?property<br>WHERE {<br>  ?dataCollection ets:isAboutProperty ?property .<br>}<br>``` | Lists all unique measurement properties (e.g., `prop:DCCurrent`, `prop:PlaneOfArrayIrradiance`) defined in the knowledge graph. |
-| CQ10 | What is the average value of a device? | ```sparql<br>PREFIX ets: [https://w3id.org/omega-x/ontology/EventTimeSeries/](https://w3id.org/omega-x/ontology/EventTimeSeries/)<br>PREFIX xsd: [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#)<br><br>SELECT (AVG(?numericValue) AS ?averageValue)<br>WHERE {<br>  BIND([https://w3id.org/omega-x/ontology/KG/PARKDatasets/DataCollection/PARK_ECP002_S3_SHL002_CA001/s4MMDCAmpmagf/W1](https://w3id.org/omega-x/ontology/KG/PARKDatasets/DataCollection/PARK_ECP002_S3_SHL002_CA001/s4MMDCAmpmagf/W1) AS ?dataCollection)<br><br>  ?dataPoint ets:belongsTo ?dataCollection ;<br>             ets:hasDataValue ?dataValue .<br>  ?dataValue ets:value ?value .<br>  BIND(xsd:double(?value) AS ?numericValue)<br>}<br>``` | Calculates the single average value for a specific data stream, in this case, the DC Current (`s4MMDCAmpmagf`) from a specific device. |
+This document contains a collection of SPARQL queries designed to interrogate an Omega-X based knowledge graph. Each section includes a natural language question, the corresponding SPARQL query, and a placeholder for the results screenshot.
+
+## 1. What is the DC current for a specific inverter for an hour?
+
+This query retrieves DC current measurements for a specific inverter within a one-hour time window.
+
+```sparql
+PREFIX eds: <https://w3id.org/omega-x/ontology/EnergyDataSet/>
+PREFIX ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/>
+PREFIX prop: <https://w3id.org/omega-x/ontology/Property/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?dateTime ?value
+WHERE {
+  # Define the specific evaluation point (inverter)
+  BIND(<https://w3id.org/omega-x/ontology/KG/PARKDatasets/EvaluationPoint/PARK_ECP002_S3_SHL002_CA001> AS ?evaluationPoint)
+
+  # Find the EnergyDataSet that includes this evaluation point
+  ?energyDataSet eds:includesEvaluationPoint ?evaluationPoint .
+
+  # Find the DataCollections comprised in this EnergyDataSet
+  ?energyDataSet ets:comprises ?dataCollection .
+
+  # Filter for the DataCollection that is about DC Current
+  ?dataCollection ets:isAboutProperty prop:DCCurrent .
+
+  # Get the DataPoints belonging to this DataCollection
+  ?dataPoint ets:belongsTo ?dataCollection .
+
+  # Get the timestamp and the data value link for each DataPoint
+  ?dataPoint ets:dataTime ?dateTime ;
+             ets:hasDataValue ?dataValue .
+
+  # Get the actual numerical value
+  ?dataValue ets:value ?value .
+
+  # Filter for a specific one-hour time window
+  FILTER (?dateTime >= "2024-06-26T15:00:00"^^xsd:dateTime && ?dateTime < "2024-06-26T16:00:00"^^xsd:dateTime)
+}
+ORDER BY ?dateTime
+```
+
+**Result:**
+
+![Screenshot 2025-06-19 144533](https://github.com/user-attachments/assets/8d93f7aa-d88e-48b4-b6cf-8e7b7bd84fa9)
+
+
+---
+
+## 2. What is the heat sink temperature of a specific device for a specific day?
+
+This query retrieves heat sink temperature measurements for a specific device over the course of a full day.
+
+```sparql
+PREFIX eds: <https://w3id.org/omega-x/ontology/EnergyDataSet/>
+PREFIX ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/>
+PREFIX prop: <https://w3id.org/omega-x/ontology/Property/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?dateTime ?value
+WHERE {
+  # Define the specific evaluation point (device)
+  BIND(<https://w3id.org/omega-x/ontology/KG/PARKDatasets/EvaluationPoint/PARK_ECP001_S3_SHL001Inverter01> AS ?evaluationPoint)
+
+  # Find the EnergyDataSet that includes this evaluation point
+  ?energyDataSet eds:includesEvaluationPoint ?evaluationPoint .
+
+  # Find the DataCollections comprised in this EnergyDataSet
+  ?energyDataSet ets:comprises ?dataCollection .
+
+  # Filter for the DataCollection that is about Heat Sink Temperature
+  # NOTE: 'prop:HeatSinkTemperature' is an assumed property URI
+  ?dataCollection ets:isAboutProperty prop:HeatSinkTemperature .
+
+  # Get the DataPoints belonging to this DataCollection
+  ?dataPoint ets:belongsTo ?dataCollection .
+
+  # Get the timestamp and the data value link for each DataPoint
+  ?dataPoint ets:dataTime ?dateTime ;
+             ets:hasDataValue ?dataValue .
+
+  # Get the actual numerical value
+  ?dataValue ets:value ?value .
+
+  # Filter for a specific day
+  FILTER (STRSTARTS(STR(?dateTime), "2024-06-26"))
+}
+ORDER BY ?dateTime
+```
+
+**Result:**
+
+![Screenshot 2025-06-19 144824](https://github.com/user-attachments/assets/883ffc49-6ee4-4fcf-a54a-c4309c554adf)
+
+
+---
+
+## 3. What is the minimum DC current attached to a specific device?
+
+This query finds the minimum DC current value recorded for a specific device across all available data points.
+
+```sparql
+PREFIX eds: <https://w3id.org/omega-x/ontology/EnergyDataSet/>
+PREFIX ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/>
+PREFIX prop: <https://w3id.org/omega-x/ontology/Property/>
+
+SELECT (MIN(?value) AS ?minDCCurrent)
+WHERE {
+  # Define the specific evaluation point (device)
+  BIND(<https://w3id.org/omega-x/ontology/KG/PARKDatasets/EvaluationPoint/PARK_ECP002_S3_SHL002_CA001> AS ?evaluationPoint)
+
+  # Find the EnergyDataSet that includes this evaluation point
+  ?energyDataSet eds:includesEvaluationPoint ?evaluationPoint .
+
+  # Find the DataCollections comprised in this EnergyDataSet
+  ?energyDataSet ets:comprises ?dataCollection .
+
+  # Filter for the DataCollection that is about DC Current
+  ?dataCollection ets:isAboutProperty prop:DCCurrent .
+
+  # Get the DataPoints belonging to this DataCollection
+  ?dataPoint ets:belongsTo ?dataCollection .
+
+  # Get the data value link for each DataPoint
+  ?dataPoint ets:hasDataValue ?dataValue .
+
+  # Get the actual numerical value
+  ?dataValue ets:value ?value .
+}
+```
+
+**Result:**
+
+![Screenshot 2025-06-19 144902](https://github.com/user-attachments/assets/5790a1bf-4a49-46a1-b443-921289b92e00)
+
+
+---
+
+## 4. What are the properties in the KG?
+
+This query discovers all distinct properties that are referenced in the knowledge graph's data collections.
+
+```sparql
+PREFIX ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/>
+
+SELECT DISTINCT ?property
+WHERE {
+  ?dataCollection ets:isAboutProperty ?property .
+}
+```
+
+**Result:**
+
+![Screenshot 2025-06-19 145004](https://github.com/user-attachments/assets/b1eeae24-98e9-4ad5-b0c6-3168bf7d75e4)
+
+
+---
+
+## 5. What is the average value of a device?
+
+This query calculates the average value for all data points in a specific data collection. The data collection URI should be replaced with the desired collection.
+
+```sparql
+PREFIX ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT (AVG(?numericValue) AS ?averageValue)
+WHERE {
+  # --- REPLACE THIS URI with the DataCollection you want to average ---
+  BIND(<https://w3id.org/omega-x/ontology/KG/PARKDatasets/DataCollection/PARK_ECP002_S3_SHL002_CA001/s4MMDCAmpmagf/W1> AS ?dataCollection)
+
+  ?dataPoint ets:belongsTo ?dataCollection ;
+             ets:hasDataValue ?dataValue .
+
+  ?dataValue ets:value ?value .
+
+  # Ensure the value is treated as a number (double) for the AVG function
+  BIND(xsd:double(?value) AS ?numericValue)
+}
+```
+
+**Result:**
+
+![Screenshot 2025-06-19 145101](https://github.com/user-attachments/assets/9e4baa81-9212-4ebb-818c-110947435b59)
+
+
+
+## Notes
+
+- All queries use the Omega-X ontology prefixes for consistency
+- Time-based filters use XSD datetime format
+- Property URIs may need adjustment based on your specific ontology implementation
+- Screenshots should show the actual query results from your SPARQL endpoint
