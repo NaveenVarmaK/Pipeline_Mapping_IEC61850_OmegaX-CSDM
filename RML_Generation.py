@@ -21,7 +21,8 @@ from Resources.CSV_Header_Dictionary import MEASUREMENTS, get_qudt_unit, STAT_NO
 #         normalized = f"{abs_path}"
 #     return normalized
 
-def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=None, wid=None, timestamp_column=None, source_participant=None, target_participant=None):
+def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=None, wid=None, timestamp_column=None,
+                      source_participant=None, target_participant=None):
     """Measure execution time and memory usage for RML generation process"""
 
     tracemalloc.start()
@@ -67,11 +68,14 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
             raise ValueError(f"Specified timestamp column '{timestamp_column}' not found in CSV headers: {headers}")
         print(f"Using specified timestamp column: '{timestamp_column}'")
 
+    # Define the name for the new sanitized timestamp column
+    sanitized_timestamp_column_name = "sanitized_timestamp_for_iri"
+
     # Enhanced parse_header function with better property mapping
     def parse_header(header):
         skip_columns = {"timestamp", "id", "device", "ts", "timestamp_gmt", "site", "Time", "date", "datetime", "ID",
-                        "TS_ID",
-                        timestamp_column}
+                        "TS_ID" "sanitized_timestamp_for_iri",
+                        timestamp_column, sanitized_timestamp_column_name}  # Also skip our new column
         if header in skip_columns or not header.strip():
             return None
 
@@ -142,7 +146,8 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
         "properties": properties,
         "unique_units": unique_units,
         "wid": wid,
-        "timestamp_column": timestamp_column,  # Add timestamp column to context,
+        "timestamp_column": timestamp_column,
+        "sanitized_timestamp_column": sanitized_timestamp_column_name,  # <-- ADD THIS LINE
         "source_participant": source_participant,
         "target_participant": target_participant
     }
@@ -152,6 +157,7 @@ def profile_execution(csv_path, template_path=None, output_dir=None, myprefix=No
     print(f"\nParsed Properties:")
     print(f"{'=' * 80}")
     print(f"Timestamp column: {timestamp_column}")
+    print(f"Sanitized Timestamp column for IRI: {sanitized_timestamp_column_name}")  # <-- For logging
     print(f"Total properties: {len(properties)}")
     print(f"Device ID: {device_id}")
     print("-" * 40)
