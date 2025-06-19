@@ -132,7 +132,8 @@
     ];
 
     rr:subjectMap [
-        rr:template "{{ myprefix }}/DataPoint/{{ device_id }}/{{ row.property_id }}/{{ '{' }}{{ timestamp_column }}{{ '}' }}";
+        # MODIFIED: Use the sanitized timestamp column for the IRI
+        rr:template "{{ myprefix }}/DataPoint/{{ device_id }}/{{ row.property_id }}/{{ '{' }}{{ sanitized_timestamp_column }}{{ '}' }}";
         rr:class ets:DataPoint;
     ];
 
@@ -145,6 +146,7 @@
     ];
 
     # Timestamp for this data point
+    # UNCHANGED: Use the original timestamp column for the literal value
     rr:predicateObjectMap [
         rr:predicate ets:dataTime;
         rr:objectMap [
@@ -157,7 +159,8 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasDataValue;
         rr:objectMap [
-            rr:template "{{ myprefix }}/DataPoint/{{ device_id }}/{{ row.property_id }}/{{ '{' }}{{ timestamp_column }}{{ '}' }}/DV";
+             # MODIFIED: Use the sanitized timestamp column for the IRI
+            rr:template "{{ myprefix }}/DataPoint/{{ device_id }}/{{ row.property_id }}/{{ '{' }}{{ sanitized_timestamp_column }}{{ '}' }}/DV";
         ];
     ];
 .
@@ -173,7 +176,8 @@
     ];
 
     rr:subjectMap [
-        rr:template "{{ myprefix }}/DataPoint/{{ device_id }}/{{ row.property_id }}/{{ '{' }}{{ timestamp_column }}{{ '}' }}/DV";
+        # MODIFIED: Use the sanitized timestamp column for the IRI
+        rr:template "{{ myprefix }}/DataPoint/{{ device_id }}/{{ row.property_id }}/{{ '{' }}{{ sanitized_timestamp_column }}{{ '}' }}/DV";
         rr:class ets:DataValue;
     ];
 
