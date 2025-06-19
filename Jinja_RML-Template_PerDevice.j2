@@ -8,6 +8,7 @@
 @prefix prop: <https://w3id.org/omega-x/ontology/Property/> .
 @prefix role: <https://w3id.org/omega-x/ontology/EnergyRole/> .
 @prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix qual: <https://w3id.org/omega-x/ontology/Quality/> .
 
 # =========================================================================
 # MAPPING 1: The Main EnergyDataSet (Top-level container)
@@ -30,11 +31,13 @@
         rr:objectMap [ rr:constant <{{ myprefix }}/EvaluationPoint/{{ device_id }}>; ];
     ];
 
-    # Link to the ExchangeContext
+    {% if source_participant and target_participant %}
+    # Link to the ExchangeContext (only if participants are provided)
     rr:predicateObjectMap [
         rr:predicate eds:isExchangedIn;
         rr:objectMap [ rr:constant <{{ myprefix }}/ExchangeContext/{{ wid }}>; ];
     ];
+    {% endif %}
 
     # This EnergyDataSet comprises one DataCollection for each property
     {% for row in properties %}
@@ -50,29 +53,39 @@
 # =========================================================================
 
 <#EvaluationPointMapping>
-    rml:logicalSource [ rml:source "{{ csv_path }}"; rml:referenceFormulation ql:CSV; ];
+    rml:logicalSource [
+        rml:source "{{ csv_path }}";
+        rml:referenceFormulation ql:CSV;
+    ];
     rr:subjectMap [
         rr:constant <{{ myprefix }}/EvaluationPoint/{{ device_id }}>;
         rr:class eds:EvaluationPoint;
-    ].
+    ];
+.
 
+{% if source_participant and target_participant %}
 <#ExchangeContextMapping>
-    rml:logicalSource [ rml:source "{{ csv_path }}"; rml:referenceFormulation ql:CSV; ];
+    rml:logicalSource [
+        rml:source "{{ csv_path }}";
+        rml:referenceFormulation ql:CSV;
+    ];
     rr:subjectMap [
         rr:constant <{{ myprefix }}/ExchangeContext/{{ wid }}>;
         rr:class eds:ExchangeContext;
     ];
     rr:predicateObjectMap [
         rr:predicate eds:fromSource;
-        rr:objectMap [ rr:constant <{{ myprefix }}/MarketParticipant/SourceParticipant>; ];
+        rr:objectMap [ rr:constant <{{ myprefix }}/MarketParticipant/{{ source_participant }}>; ];
     ];
     rr:predicateObjectMap [
         rr:predicate eds:toTarget;
-        rr:objectMap [ rr:constant <{{ myprefix }}/MarketParticipant/TargetParticipant>; ];
-    ].
+        rr:objectMap [ rr:constant <{{ myprefix }}/MarketParticipant/{{ target_participant }}>; ];
+    ];
+.
+{% endif %}
 
 # =========================================================================
-# LOOP: Property-specific DataCollections and DataPoints
+# LOOP: Property-specific DataCollections, DataPoints, and PropertyValues
 # =========================================================================
 
 {% for row in properties %}
@@ -81,7 +94,10 @@
 # -------------------------------------------------------------------------
 
 <#DataCollectionMapping_{{ row.property_id }}>
-    rml:logicalSource [ rml:source "{{ csv_path }}"; rml:referenceFormulation ql:CSV; ];
+    rml:logicalSource [
+        rml:source "{{ csv_path }}";
+        rml:referenceFormulation ql:CSV;
+    ];
 
     rr:subjectMap [
         rr:constant <{{ myprefix }}/DataCollection/{{ device_id }}/{{ row.property_id }}/{{ wid }}>;
@@ -96,7 +112,14 @@
     rr:predicateObjectMap [
         rr:predicate ets:hasUnit;
         rr:objectMap [ rr:constant unit:{{ row.unit }}; ];
-    ].
+    ];
+    {% if row.aggregation_kind %}
+    rr:predicateObjectMap [
+        rr:predicate ets:hasAggregationKind;
+        rr:objectMap [ rr:constant qual:{{ row.aggregation_kind }}; ];
+    ];
+    {% endif %}
+.
 
 # -------------------------------------------------------------------------
 # DataPoint for '{{ row.property_id }}' - ONE MAPPING PER PROPERTY
@@ -109,7 +132,8 @@
     ];
 
     rr:subjectMap [
-        rr:template "{{ myprefix }}/DataPoint/{{ device_id }}/{{ row.property_id }}/{{ '{' }}{{ timestamp_column }}{{ '}' }}";
+        # MODIFIED: Use the sanitized timestamp column for the IRI
+        rr:template "{{ myprefix }}/DataPoint/{{ device_id }}/{{ row.property_id }}/{{ '{' }}{{ sanitized_timestamp_column }}{{ '}' }}";
         rr:class ets:DataPoint;
     ];
 
@@ -122,6 +146,7 @@
     ];
 
     # Timestamp for this data point
+    # UNCHANGED: Use the original timestamp column for the literal value
     rr:predicateObjectMap [
         rr:predicate ets:dataTime;
         rr:objectMap [
@@ -130,13 +155,39 @@
         ];
     ];
 
-    # Direct value with condition to avoid NULL/empty values
+    # Link to DataValue instead of direct value
     rr:predicateObjectMap [
-        rr:predicate rdf:value;
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+             # MODIFIED: Use the sanitized timestamp column for the IRI
+            rr:template "{{ myprefix }}/DataPoint/{{ device_id }}/{{ row.property_id }}/{{ '{' }}{{ sanitized_timestamp_column }}{{ '}' }}/DV";
+        ];
+    ];
+.
+
+# -------------------------------------------------------------------------
+# DataValue for '{{ row.property_id }}'
+# -------------------------------------------------------------------------
+
+<#DataValueMapping_{{ row.property_id }}>
+    rml:logicalSource [
+        rml:source "{{ csv_path }}";
+        rml:referenceFormulation ql:CSV;
+    ];
+
+    rr:subjectMap [
+        # MODIFIED: Use the sanitized timestamp column for the IRI
+        rr:template "{{ myprefix }}/DataPoint/{{ device_id }}/{{ row.property_id }}/{{ '{' }}{{ sanitized_timestamp_column }}{{ '}' }}/DV";
+        rr:class ets:DataValue;
+    ];
+
+    # The actual data value with condition to avoid NULL/empty values
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
         rr:objectMap [
             rml:reference "{{ row.csv_column }}";
             rr:datatype xsd:double;
         ];
-    ].
-
+    ];
+.
 {% endfor %}

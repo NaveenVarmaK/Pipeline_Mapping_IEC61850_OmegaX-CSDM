@@ -1,9 +1,22 @@
+
 """
 Dictionary for IEC 61850 header mapping to units and descriptions
 This dictionary maps header components to their semantic meanings and units
 for use in RML generation with Jinja2 templates.
 """
+
 # Statistical nodes dictionary
+STAT_NODES = {
+    "s2": {"aggregation_kind": "Minimum",
+           "description": "Statistical LN instance S2 represents the minimum value of the data in period of 10 minutes"},
+    "s3": {"aggregation_kind": "Maximum",
+           "description": "Statistical LN instance S3 represents the maximum value of the data in period of 10 minutes"},
+    "s4": {"aggregation_kind": "Average",
+           "description": "Statistical LN instance S4 represents the average value of the data in period of 10 minutes"},
+    "s5": {"aggregation_kind": "Sum",
+           "description":"Statistical LN instance S5 represents the standard deviation of the data in period of 10 minutes"},
+
+}
 
 MEASUREMENTS = {
     "encltmp": {
