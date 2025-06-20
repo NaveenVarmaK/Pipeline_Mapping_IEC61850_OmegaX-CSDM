@@ -322,20 +322,26 @@ Customize `Resources/CSV_Header_Dictionary.py` with Omega-X compatible mappings:
 
 ```python
 MEASUREMENTS = {
-    "heatsinktmp": {
-        "description": "Heat sink temperature measurement",
-        "qudt_unit": "http://qudt.org/vocab/unit/DEG_C",
-        "omega_x_property": "prop:Temperature"
-    },
     "encltmp": {
-        "description": "Enclosure temperature measurement", 
-        "qudt_unit": "http://qudt.org/vocab/unit/DEG_C",
-        "omega_x_property": "prop:Temperature"
+        "description": "Enclosure temperature",
+        "unit": "DEG_C",
+        "enum_kind": "MV_EXT",
+        "multiple": True,
+        "property": "EnclosureTemperature"
     },
-    "TotW": {
-        "description": "Total active power measurement",
-        "qudt_unit": "http://qudt.org/vocab/unit/W",
-        "omega_x_property": "prop:ActivePower"
+    "envtmp": {
+        "description": "Air temperature",
+        "unit": "DEG_C",
+        "enum_kind": "MV_EXT",
+        "multiple": True,
+        "property": "AirTemperature"
+    },
+    "poainsol": {
+        "description": "Plane Of Array Insolation",
+        "unit": "W_PER_M2",
+        "enum_kind": "MV_EXT",
+        "multiple": True,
+        "property": "PlaneOfArrayIrradiance"
     }
 }
 ```
