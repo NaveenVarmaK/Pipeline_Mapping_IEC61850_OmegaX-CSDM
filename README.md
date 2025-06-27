@@ -144,6 +144,7 @@ python Pipeline_CSV_RML_KG.py input.csv [options]
 - `--timestamp-column`: Name of timestamp column for RML
 - `--source-participant`: Name of the source participant
 - `--target-participant`: Name of the target participant
+#### Note: When you try to use --source-participant and --target-participant you must also use --no-remove-duplicates aswell otherwise the graphdb import will fail with parsing error. 
 
 ### Knowledge Graph Options
 
