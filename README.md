@@ -144,7 +144,6 @@ python Pipeline_CSV_RML_KG.py input.csv [options]
 - `--timestamp-column`: Name of timestamp column for RML
 - `--source-participant`: Name of the source participant
 - `--target-participant`: Name of the target participant
-#### Note: When you try to use --source-participant and --target-participant you must also use --no-remove-duplicates aswell otherwise the graphdb import will fail with parsing error. 
 
 ### Knowledge Graph Options
 
@@ -153,6 +152,9 @@ python Pipeline_CSV_RML_KG.py input.csv [options]
 - `--all-in-one`: Generate all datasets in one file
 - `--no-enrichment`: Disable enrichment
 - `--no-ordered`: Disable ordered processing
+
+#### Note: For Now When you try to use arguments --source-participant and --target-participant with --all-in-one you must also use --no-remove-duplicates, if not which results a parsing error in the Output KG
+
 
 ### GraphDB Import Options
 
