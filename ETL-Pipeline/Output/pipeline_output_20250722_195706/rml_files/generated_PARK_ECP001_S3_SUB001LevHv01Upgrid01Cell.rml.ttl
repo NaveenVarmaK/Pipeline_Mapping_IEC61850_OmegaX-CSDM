@@ -1,0 +1,167 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix eds: <https://w3id.org/omega-x/ontology/EnergyDataSet/> .
+@prefix ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/> .
+@prefix prop: <https://w3id.org/omega-x/ontology/Property/> .
+@prefix role: <https://w3id.org/omega-x/ontology/EnergyRole/> .
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix qual: <https://w3id.org/omega-x/ontology/Quality/> .
+
+# =========================================================================
+# MAPPING 1: The Main EnergyDataSet (Top-level container)
+# =========================================================================
+
+<#EnergyDataSetMapping>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/ETL-Pipeline/Output/pipeline_output_20250722_195706/split_csvs/PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell.csv";
+        rml:referenceFormulation ql:CSV;
+    ];
+
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARK-DataSets/EnergyDataSet/PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell/W1>;
+        rr:class eds:EnergyDataSet;
+    ];
+
+    # Link to the EvaluationPoint
+    rr:predicateObjectMap [
+        rr:predicate eds:includesEvaluationPoint;
+        rr:objectMap [ rr:constant <https://w3id.org/omega-x/ontology/KG/PARK-DataSets/EvaluationPoint/PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell>; ];
+    ];
+
+    
+
+    # This EnergyDataSet comprises one DataCollection for each property
+    
+    rr:predicateObjectMap [
+        rr:predicate ets:comprises;
+        rr:objectMap [ rr:constant <https://w3id.org/omega-x/ontology/KG/PARK-DataSets/DataCollection/PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell/s4MMXUTotWmagf/W1>; ];
+    ];
+    
+.
+
+# =========================================================================
+# MAPPING 2: Static Context Entities
+# =========================================================================
+
+<#EvaluationPointMapping>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/ETL-Pipeline/Output/pipeline_output_20250722_195706/split_csvs/PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell.csv";
+        rml:referenceFormulation ql:CSV;
+    ];
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARK-DataSets/EvaluationPoint/PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell>;
+        rr:class eds:EvaluationPoint;
+    ];
+.
+
+
+
+# =========================================================================
+# LOOP: Property-specific DataCollections, DataPoints, and PropertyValues
+# =========================================================================
+
+
+# -------------------------------------------------------------------------
+# DataCollection for Property 's4MMXUTotWmagf'
+# -------------------------------------------------------------------------
+
+<#DataCollectionMapping_s4MMXUTotWmagf>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/ETL-Pipeline/Output/pipeline_output_20250722_195706/split_csvs/PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell.csv";
+        rml:referenceFormulation ql:CSV;
+    ];
+
+    rr:subjectMap [
+        rr:constant <https://w3id.org/omega-x/ontology/KG/PARK-DataSets/DataCollection/PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell/s4MMXUTotWmagf/W1>;
+        rr:class ets:DataCollection;
+    ];
+
+    # Property context
+    rr:predicateObjectMap [
+        rr:predicate ets:isAboutProperty;
+        rr:objectMap [ rr:constant prop:TotalRealPower; ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ets:hasUnit;
+        rr:objectMap [ rr:constant unit:W; ];
+    ];
+    
+    rr:predicateObjectMap [
+        rr:predicate ets:hasAggregationKind;
+        rr:objectMap [ rr:constant qual:Average; ];
+    ];
+    
+.
+
+# -------------------------------------------------------------------------
+# DataPoint for 's4MMXUTotWmagf' - ONE MAPPING PER PROPERTY
+# -------------------------------------------------------------------------
+
+<#DataPointMapping_s4MMXUTotWmagf>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/ETL-Pipeline/Output/pipeline_output_20250722_195706/split_csvs/PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell.csv";
+        rml:referenceFormulation ql:CSV;
+    ];
+
+    rr:subjectMap [
+        # MODIFIED: Use the sanitized timestamp column for the IRI
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARK-DataSets/DataPoint/PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell/s4MMXUTotWmagf/{sanitized_timestamp_for_iri}";
+        rr:class ets:DataPoint;
+    ];
+
+    # Link back to the DataCollection
+    rr:predicateObjectMap [
+        rr:predicate ets:belongsTo;
+        rr:objectMap [
+            rr:constant <https://w3id.org/omega-x/ontology/KG/PARK-DataSets/DataCollection/PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell/s4MMXUTotWmagf/W1>;
+        ];
+    ];
+
+    # Timestamp for this data point
+    # UNCHANGED: Use the original timestamp column for the literal value
+    rr:predicateObjectMap [
+        rr:predicate ets:dataTime;
+        rr:objectMap [
+            rml:reference "Time";
+            rr:datatype xsd:dateTime;
+        ];
+    ];
+
+    # Link to DataValue instead of direct value
+    rr:predicateObjectMap [
+        rr:predicate ets:hasDataValue;
+        rr:objectMap [
+             # MODIFIED: Use the sanitized timestamp column for the IRI
+            rr:template "https://w3id.org/omega-x/ontology/KG/PARK-DataSets/DataPoint/PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell/s4MMXUTotWmagf/{sanitized_timestamp_for_iri}/DV";
+        ];
+    ];
+.
+
+# -------------------------------------------------------------------------
+# DataValue for 's4MMXUTotWmagf'
+# -------------------------------------------------------------------------
+
+<#DataValueMapping_s4MMXUTotWmagf>
+    rml:logicalSource [
+        rml:source "C:/Users/Naveen/Documents/Internship_EMSE2/OmegaX-Pipeline/ETL-Pipeline/Output/pipeline_output_20250722_195706/split_csvs/PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell.csv";
+        rml:referenceFormulation ql:CSV;
+    ];
+
+    rr:subjectMap [
+        # MODIFIED: Use the sanitized timestamp column for the IRI
+        rr:template "https://w3id.org/omega-x/ontology/KG/PARK-DataSets/DataPoint/PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell/s4MMXUTotWmagf/{sanitized_timestamp_for_iri}/DV";
+        rr:class ets:DataValue;
+    ];
+
+    # The actual data value with condition to avoid NULL/empty values
+    rr:predicateObjectMap [
+        rr:predicate ets:value;
+        rr:objectMap [
+            rml:reference "s4MMXU.TotW.mag.f";
+            rr:datatype xsd:double;
+        ];
+    ];
+.

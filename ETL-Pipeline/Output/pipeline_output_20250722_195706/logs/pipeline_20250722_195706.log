@@ -1,0 +1,706 @@
+2025-07-22 19:57:06,633 - CSVToKnowledgeGraphPipeline - INFO - Pipeline output directory: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706
+2025-07-22 19:57:06,633 - CSVToKnowledgeGraphPipeline - INFO - Pipeline timestamp: 20250722_195706
+2025-07-22 19:57:06,634 - CSVToKnowledgeGraphPipeline - INFO - ================================================================================
+2025-07-22 19:57:06,634 - CSVToKnowledgeGraphPipeline - INFO - STARTING COMPLETE CSV TO KNOWLEDGE GRAPH PIPELINE
+2025-07-22 19:57:06,634 - CSVToKnowledgeGraphPipeline - INFO - ================================================================================
+2025-07-22 19:57:06,634 - CSVToKnowledgeGraphPipeline - INFO - Input CSV: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\Input_CSV_Datasets\PARK-2024-09-26_week1.csv
+2025-07-22 19:57:06,634 - CSVToKnowledgeGraphPipeline - INFO - Output Directory: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706
+2025-07-22 19:57:06,634 - CSVToKnowledgeGraphPipeline - INFO - Pipeline Timestamp: 20250722_195706
+2025-07-22 19:57:06,636 - ResourceMonitor - INFO - Resource monitoring started.
+2025-07-22 19:57:06,636 - CSVToKnowledgeGraphPipeline - INFO - Checking SDM-RDFizer installation...
+2025-07-22 19:57:07,207 - CSVToKnowledgeGraphPipeline - INFO - SDM-RDFizer is already installed
+2025-07-22 19:57:07,208 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-07-22 19:57:07,208 - CSVToKnowledgeGraphPipeline - INFO - STEP 1: SPLITTING CSV BY DEVICE
+2025-07-22 19:57:07,208 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-07-22 19:57:07,209 - CSV_Device_Seperator_With_TimeFormat - INFO - Reading CSV file: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\Input_CSV_Datasets\PARK-2024-09-26_week1.csv
+2025-07-22 19:57:07,233 - CSV_Device_Seperator_With_TimeFormat - INFO - Successfully read CSV with 772 rows and 263 columns
+2025-07-22 19:57:07,234 - CSV_Device_Seperator_With_TimeFormat - INFO - Detected format type: format1_2
+2025-07-22 19:57:07,234 - CSV_Device_Seperator_With_TimeFormat - INFO - Standardizing time column format: Time
+2025-07-22 19:57:07,265 - CSV_Device_Seperator_With_TimeFormat - INFO - Creating sanitized timestamp column 'sanitized_timestamp_for_iri' from 'Time'.
+2025-07-22 19:57:07,267 - CSV_Device_Seperator_With_TimeFormat - INFO - New column 'sanitized_timestamp_for_iri' created successfully.
+2025-07-22 19:57:07,268 - CSV_Device_Seperator_With_TimeFormat - INFO - Found 2 common columns: Time, sanitized_timestamp_for_iri
+2025-07-22 19:57:07,268 - CSV_Device_Seperator_With_TimeFormat - INFO - Found 262 device-specific columns
+2025-07-22 19:57:07,299 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_METEOSTA001: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_METEOSTA001.csv with 4 columns
+2025-07-22 19:57:07,302 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_METEOSTA002: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_METEOSTA002.csv with 3 columns
+2025-07-22 19:57:07,305 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_METEOSTA003: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_METEOSTA003.csv with 3 columns
+2025-07-22 19:57:07,308 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_METEOSTA004: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_METEOSTA004.csv with 3 columns
+2025-07-22 19:57:07,312 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL001Inverter01: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL001Inverter01.csv with 8 columns
+2025-07-22 19:57:07,315 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL001Inverter02: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL001Inverter02.csv with 8 columns
+2025-07-22 19:57:07,318 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL001_CA001: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL001_CA001.csv with 3 columns
+2025-07-22 19:57:07,320 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL001_CA002: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL001_CA002.csv with 3 columns
+2025-07-22 19:57:07,323 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL002Inverter01: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL002Inverter01.csv with 8 columns
+2025-07-22 19:57:07,327 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL002Inverter02: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL002Inverter02.csv with 8 columns
+2025-07-22 19:57:07,330 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL002_CA001: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL002_CA001.csv with 3 columns
+2025-07-22 19:57:07,333 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL002_CA002: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL002_CA002.csv with 3 columns
+2025-07-22 19:57:07,335 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL003Inverter01: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL003Inverter01.csv with 8 columns
+2025-07-22 19:57:07,337 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL003Inverter02: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL003Inverter02.csv with 8 columns
+2025-07-22 19:57:07,337 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL003_CA001: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL003_CA001.csv with 3 columns
+2025-07-22 19:57:07,344 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL003_CA002: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL003_CA002.csv with 3 columns
+2025-07-22 19:57:07,349 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL004Inverter01: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL004Inverter01.csv with 8 columns
+2025-07-22 19:57:07,352 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL004Inverter02: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL004Inverter02.csv with 8 columns
+2025-07-22 19:57:07,354 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL004_CA001: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL004_CA001.csv with 3 columns
+2025-07-22 19:57:07,356 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL004_CA002: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SHL004_CA002.csv with 3 columns
+2025-07-22 19:57:07,358 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell.csv with 3 columns
+2025-07-22 19:57:07,361 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_METEOSTA001: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_METEOSTA001.csv with 3 columns
+2025-07-22 19:57:07,363 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_METEOSTA002: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_METEOSTA002.csv with 3 columns
+2025-07-22 19:57:07,365 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_METEOSTA003: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_METEOSTA003.csv with 3 columns
+2025-07-22 19:57:07,366 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_METEOSTA004: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_METEOSTA004.csv with 3 columns
+2025-07-22 19:57:07,370 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL001Inverter01: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL001Inverter01.csv with 8 columns
+2025-07-22 19:57:07,374 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL001Inverter02: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL001Inverter02.csv with 8 columns
+2025-07-22 19:57:07,376 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL001_CA001: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL001_CA001.csv with 3 columns
+2025-07-22 19:57:07,379 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL001_CA002: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL001_CA002.csv with 3 columns
+2025-07-22 19:57:07,382 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL002Inverter01: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL002Inverter01.csv with 8 columns
+2025-07-22 19:57:07,385 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL002Inverter02: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL002Inverter02.csv with 8 columns
+2025-07-22 19:57:07,387 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL002_CA001: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL002_CA001.csv with 3 columns
+2025-07-22 19:57:07,390 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL002_CA002: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL002_CA002.csv with 3 columns
+2025-07-22 19:57:07,394 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL003Inverter01: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL003Inverter01.csv with 8 columns
+2025-07-22 19:57:07,397 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL003Inverter02: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL003Inverter02.csv with 8 columns
+2025-07-22 19:57:07,400 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL003_CA001: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL003_CA001.csv with 3 columns
+2025-07-22 19:57:07,401 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL003_CA002: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL003_CA002.csv with 3 columns
+2025-07-22 19:57:07,404 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL004Inverter01: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL004Inverter01.csv with 8 columns
+2025-07-22 19:57:07,410 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL004Inverter02: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL004Inverter02.csv with 8 columns
+2025-07-22 19:57:07,412 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL004_CA001: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL004_CA001.csv with 3 columns
+2025-07-22 19:57:07,413 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SHL004_CA002: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SHL004_CA002.csv with 3 columns
+2025-07-22 19:57:07,415 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP002_S3_SUB001LevHv01Upgrid01Cell: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs\PARK_ECP002_S3_SUB001LevHv01Upgrid01Cell.csv with 3 columns
+2025-07-22 19:57:07,415 - CSV_Device_Seperator_With_TimeFormat - INFO - Finished processing. Split into 42 device files.
+2025-07-22 19:57:07,416 - CSV_Device_Seperator_With_TimeFormat - INFO - Total processing time: 0.21 seconds
+2025-07-22 19:57:07,720 - CSVToKnowledgeGraphPipeline - INFO - TIMING_METRIC: {"stage": "csv_splitter", "duration_sec": 0.5117621421813965}
+2025-07-22 19:57:07,720 - CSVToKnowledgeGraphPipeline - INFO - Successfully split CSV into 42 device files
+2025-07-22 19:57:07,720 - CSVToKnowledgeGraphPipeline - INFO - Split files saved to: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\split_csvs
+2025-07-22 19:57:07,720 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-07-22 19:57:07,721 - CSVToKnowledgeGraphPipeline - INFO - STEP 2: GENERATING RML FILES
+2025-07-22 19:57:07,721 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-07-22 19:57:07,721 - CSVToKnowledgeGraphPipeline - INFO - Found 42 CSV files to process
+2025-07-22 19:57:07,722 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_METEOSTA001.csv
+2025-07-22 19:57:07,747 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_METEOSTA001.rml.ttl
+2025-07-22 19:57:07,748 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_METEOSTA002.csv
+2025-07-22 19:57:07,769 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_METEOSTA002.rml.ttl
+2025-07-22 19:57:07,771 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_METEOSTA003.csv
+2025-07-22 19:57:07,791 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_METEOSTA003.rml.ttl
+2025-07-22 19:57:07,791 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_METEOSTA004.csv
+2025-07-22 19:57:07,810 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_METEOSTA004.rml.ttl
+2025-07-22 19:57:07,810 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL001Inverter01.csv
+2025-07-22 19:57:07,833 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl
+2025-07-22 19:57:07,834 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL001Inverter02.csv
+2025-07-22 19:57:07,857 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl
+2025-07-22 19:57:07,858 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL001_CA001.csv
+2025-07-22 19:57:07,879 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL001_CA001.rml.ttl
+2025-07-22 19:57:07,879 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL001_CA002.csv
+2025-07-22 19:57:07,902 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL001_CA002.rml.ttl
+2025-07-22 19:57:07,902 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL002Inverter01.csv
+2025-07-22 19:57:07,925 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl
+2025-07-22 19:57:07,925 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL002Inverter02.csv
+2025-07-22 19:57:07,948 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl
+2025-07-22 19:57:07,948 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL002_CA001.csv
+2025-07-22 19:57:07,972 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL002_CA001.rml.ttl
+2025-07-22 19:57:07,972 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL002_CA002.csv
+2025-07-22 19:57:07,992 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL002_CA002.rml.ttl
+2025-07-22 19:57:07,993 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL003Inverter01.csv
+2025-07-22 19:57:08,015 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl
+2025-07-22 19:57:08,015 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL003Inverter02.csv
+2025-07-22 19:57:08,039 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl
+2025-07-22 19:57:08,039 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL003_CA001.csv
+2025-07-22 19:57:08,060 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL003_CA001.rml.ttl
+2025-07-22 19:57:08,061 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL003_CA002.csv
+2025-07-22 19:57:08,080 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL003_CA002.rml.ttl
+2025-07-22 19:57:08,081 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL004Inverter01.csv
+2025-07-22 19:57:08,106 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl
+2025-07-22 19:57:08,107 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL004Inverter02.csv
+2025-07-22 19:57:08,130 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl
+2025-07-22 19:57:08,130 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL004_CA001.csv
+2025-07-22 19:57:08,151 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL004_CA001.rml.ttl
+2025-07-22 19:57:08,151 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL004_CA002.csv
+2025-07-22 19:57:08,172 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SHL004_CA002.rml.ttl
+2025-07-22 19:57:08,172 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell.csv
+2025-07-22 19:57:08,195 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell.rml.ttl
+2025-07-22 19:57:08,195 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_METEOSTA001.csv
+2025-07-22 19:57:08,216 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_METEOSTA001.rml.ttl
+2025-07-22 19:57:08,216 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_METEOSTA002.csv
+2025-07-22 19:57:08,237 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_METEOSTA002.rml.ttl
+2025-07-22 19:57:08,238 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_METEOSTA003.csv
+2025-07-22 19:57:08,259 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_METEOSTA003.rml.ttl
+2025-07-22 19:57:08,259 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_METEOSTA004.csv
+2025-07-22 19:57:08,281 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_METEOSTA004.rml.ttl
+2025-07-22 19:57:08,281 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL001Inverter01.csv
+2025-07-22 19:57:08,305 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl
+2025-07-22 19:57:08,305 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL001Inverter02.csv
+2025-07-22 19:57:08,328 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl
+2025-07-22 19:57:08,328 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL001_CA001.csv
+2025-07-22 19:57:08,351 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL001_CA001.rml.ttl
+2025-07-22 19:57:08,351 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL001_CA002.csv
+2025-07-22 19:57:08,373 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL001_CA002.rml.ttl
+2025-07-22 19:57:08,373 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL002Inverter01.csv
+2025-07-22 19:57:08,397 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl
+2025-07-22 19:57:08,397 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL002Inverter02.csv
+2025-07-22 19:57:08,420 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl
+2025-07-22 19:57:08,421 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL002_CA001.csv
+2025-07-22 19:57:08,443 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL002_CA001.rml.ttl
+2025-07-22 19:57:08,444 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL002_CA002.csv
+2025-07-22 19:57:08,467 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL002_CA002.rml.ttl
+2025-07-22 19:57:08,467 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL003Inverter01.csv
+2025-07-22 19:57:08,493 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl
+2025-07-22 19:57:08,494 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL003Inverter02.csv
+2025-07-22 19:57:08,518 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl
+2025-07-22 19:57:08,518 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL003_CA001.csv
+2025-07-22 19:57:08,541 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL003_CA001.rml.ttl
+2025-07-22 19:57:08,541 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL003_CA002.csv
+2025-07-22 19:57:08,562 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL003_CA002.rml.ttl
+2025-07-22 19:57:08,563 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL004Inverter01.csv
+2025-07-22 19:57:08,586 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl
+2025-07-22 19:57:08,587 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL004Inverter02.csv
+2025-07-22 19:57:08,609 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl
+2025-07-22 19:57:08,609 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL004_CA001.csv
+2025-07-22 19:57:08,633 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL004_CA001.rml.ttl
+2025-07-22 19:57:08,634 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SHL004_CA002.csv
+2025-07-22 19:57:08,654 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SHL004_CA002.rml.ttl
+2025-07-22 19:57:08,655 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP002_S3_SUB001LevHv01Upgrid01Cell.csv
+2025-07-22 19:57:08,675 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\rml_files\generated_PARK_ECP002_S3_SUB001LevHv01Upgrid01Cell.rml.ttl
+2025-07-22 19:57:08,676 - CSVToKnowledgeGraphPipeline - INFO - TIMING_METRIC: {"stage": "rml_generator", "duration_sec": 0.9555397033691406}
+2025-07-22 19:57:08,676 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-07-22 19:57:08,677 - CSVToKnowledgeGraphPipeline - INFO - STEP 3: VALIDATING RML FILE PATHS
+2025-07-22 19:57:08,677 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-07-22 19:57:08,678 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,678 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,678 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,679 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,679 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,679 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,679 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,680 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,680 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,680 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,680 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,680 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,681 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,681 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA003.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,681 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA003.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,681 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA003.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,681 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA003.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,682 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA003.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,682 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA004.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,682 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA004.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,682 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA004.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,682 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA004.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,682 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA004.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,683 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,683 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,683 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,683 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,683 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,683 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,683 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,683 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,683 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,684 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,684 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,684 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,684 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,684 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,684 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,684 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,684 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,684 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,684 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,685 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,685 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,685 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,685 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,685 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,685 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,685 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,688 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,688 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,689 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,689 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,689 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,689 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,690 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,690 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,690 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,690 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,691 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,691 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,691 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,691 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,692 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,692 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,692 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,692 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,692 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,693 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,693 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,693 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,693 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,693 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,694 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,694 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,694 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,695 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,695 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,695 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,695 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,695 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,695 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,696 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,696 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,696 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,696 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,696 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,696 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,696 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,696 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,696 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,696 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,697 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,697 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,697 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,697 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,697 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,698 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,698 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,698 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,698 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,698 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,698 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,698 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,698 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,699 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,699 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,699 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,699 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,699 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,699 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,699 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,699 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,700 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,700 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,700 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,700 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,700 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,700 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,700 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,700 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,700 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,701 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL002_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,701 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,701 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,701 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,701 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,701 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,701 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,702 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,702 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,702 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,702 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,702 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,702 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,702 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,702 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,702 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,703 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,703 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,703 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,703 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,703 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,703 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,704 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,704 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,704 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,704 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,704 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,704 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,704 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,705 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,705 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,705 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,705 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,705 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,705 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,706 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,706 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,706 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,706 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,706 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,706 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,706 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,707 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,707 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,707 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,707 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,707 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,707 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,707 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,708 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,708 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL003_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,708 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,708 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,708 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,708 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,708 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,709 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,709 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,709 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,709 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,710 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,710 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,710 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,710 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,710 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,710 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,710 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,710 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,710 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,710 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,711 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,711 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,711 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,711 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,711 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,711 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,712 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,712 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,712 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,712 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,712 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,712 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,712 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,712 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,712 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,712 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,713 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,713 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,713 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,713 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,713 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,713 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,713 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,714 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,714 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,714 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,714 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,714 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,714 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,714 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,715 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL004_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,715 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,715 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,715 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,715 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,715 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,721 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,721 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,721 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,721 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,721 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,721 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,722 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,722 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,722 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,722 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,722 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA003.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,722 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA003.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,722 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA003.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,722 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA003.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,723 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA003.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,723 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA004.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,723 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA004.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,723 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA004.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,723 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA004.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,723 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_METEOSTA004.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,723 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,724 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,724 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,724 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,724 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,724 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,724 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,724 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,724 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,725 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,725 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,725 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,725 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,726 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,726 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,726 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,726 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,726 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,727 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,727 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,727 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,728 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,728 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,728 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,728 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,728 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,728 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,728 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,729 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,729 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,729 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,729 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,729 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,729 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,729 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,729 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,729 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,730 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,730 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,730 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,730 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,730 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,730 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,730 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,730 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,731 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,731 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,731 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,731 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,731 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL001_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,731 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,732 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,732 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,732 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,732 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,732 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,732 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,732 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,732 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,732 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,733 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,733 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,733 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,733 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,733 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,733 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,733 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,733 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,733 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,733 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,734 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,734 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,734 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,734 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,734 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,734 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,735 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,735 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,735 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,735 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,735 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,735 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,735 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,735 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,735 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,736 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,736 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,736 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,736 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,737 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,737 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,737 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,737 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,737 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,737 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,738 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,738 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,738 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,738 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,738 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL002_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,739 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,739 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,739 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,739 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,739 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,740 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,740 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,740 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,740 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,740 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,740 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,740 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,740 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,740 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,741 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,741 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,741 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,741 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,741 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,741 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,742 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,742 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,742 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,742 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,742 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,742 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,743 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,743 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,743 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,743 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,743 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,743 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,743 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,743 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,744 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,744 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,744 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,744 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,744 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,744 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,744 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,744 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,745 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,745 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,745 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,745 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,745 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,745 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,745 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,745 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL003_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,746 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,746 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,746 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,746 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,746 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,746 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,746 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,746 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,747 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,747 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,747 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,747 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,747 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,747 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,747 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,752 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,752 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,752 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,752 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,753 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter01.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,753 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,753 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,753 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,753 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,753 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,754 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,754 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,754 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,754 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,754 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,754 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,754 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,754 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,755 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,755 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,755 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,755 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,755 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,755 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,755 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004Inverter02.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,755 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,756 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,756 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,756 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,756 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004_CA001.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,756 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,756 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,756 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,756 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,756 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SHL004_CA002.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,757 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SUB001LevHv01Upgrid01Cell.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,757 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SUB001LevHv01Upgrid01Cell.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,757 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SUB001LevHv01Upgrid01Cell.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,757 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SUB001LevHv01Upgrid01Cell.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,757 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP002_S3_SUB001LevHv01Upgrid01Cell.rml.ttl: Valid absolute path
+2025-07-22 19:57:08,759 - CSVToKnowledgeGraphPipeline - INFO - TIMING_METRIC: {"stage": "rml_validation", "duration_sec": 0.08162355422973633}
+2025-07-22 19:57:08,759 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-07-22 19:57:08,759 - CSVToKnowledgeGraphPipeline - INFO - STEP 4: GENERATING SDM-RDFIZER CONFIGURATION
+2025-07-22 19:57:08,759 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-07-22 19:57:08,760 - CSVToKnowledgeGraphPipeline - INFO - Found 42 RML files for knowledge graph generation
+2025-07-22 19:57:08,760 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 1: PARK_ECP001_S3_METEOSTA001
+2025-07-22 19:57:08,760 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 2: PARK_ECP001_S3_METEOSTA002
+2025-07-22 19:57:08,760 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 3: PARK_ECP001_S3_METEOSTA003
+2025-07-22 19:57:08,760 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 4: PARK_ECP001_S3_METEOSTA004
+2025-07-22 19:57:08,760 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 5: PARK_ECP001_S3_SHL001Inverter01
+2025-07-22 19:57:08,760 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 6: PARK_ECP001_S3_SHL001Inverter02
+2025-07-22 19:57:08,761 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 7: PARK_ECP001_S3_SHL001_CA001
+2025-07-22 19:57:08,761 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 8: PARK_ECP001_S3_SHL001_CA002
+2025-07-22 19:57:08,761 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 9: PARK_ECP001_S3_SHL002Inverter01
+2025-07-22 19:57:08,761 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 10: PARK_ECP001_S3_SHL002Inverter02
+2025-07-22 19:57:08,761 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 11: PARK_ECP001_S3_SHL002_CA001
+2025-07-22 19:57:08,761 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 12: PARK_ECP001_S3_SHL002_CA002
+2025-07-22 19:57:08,761 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 13: PARK_ECP001_S3_SHL003Inverter01
+2025-07-22 19:57:08,762 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 14: PARK_ECP001_S3_SHL003Inverter02
+2025-07-22 19:57:08,762 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 15: PARK_ECP001_S3_SHL003_CA001
+2025-07-22 19:57:08,762 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 16: PARK_ECP001_S3_SHL003_CA002
+2025-07-22 19:57:08,762 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 17: PARK_ECP001_S3_SHL004Inverter01
+2025-07-22 19:57:08,762 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 18: PARK_ECP001_S3_SHL004Inverter02
+2025-07-22 19:57:08,762 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 19: PARK_ECP001_S3_SHL004_CA001
+2025-07-22 19:57:08,762 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 20: PARK_ECP001_S3_SHL004_CA002
+2025-07-22 19:57:08,762 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 21: PARK_ECP001_S3_SUB001LevHv01Upgrid01Cell
+2025-07-22 19:57:08,762 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 22: PARK_ECP002_S3_METEOSTA001
+2025-07-22 19:57:08,762 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 23: PARK_ECP002_S3_METEOSTA002
+2025-07-22 19:57:08,762 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 24: PARK_ECP002_S3_METEOSTA003
+2025-07-22 19:57:08,762 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 25: PARK_ECP002_S3_METEOSTA004
+2025-07-22 19:57:08,763 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 26: PARK_ECP002_S3_SHL001Inverter01
+2025-07-22 19:57:08,763 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 27: PARK_ECP002_S3_SHL001Inverter02
+2025-07-22 19:57:08,763 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 28: PARK_ECP002_S3_SHL001_CA001
+2025-07-22 19:57:08,763 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 29: PARK_ECP002_S3_SHL001_CA002
+2025-07-22 19:57:08,763 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 30: PARK_ECP002_S3_SHL002Inverter01
+2025-07-22 19:57:08,763 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 31: PARK_ECP002_S3_SHL002Inverter02
+2025-07-22 19:57:08,763 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 32: PARK_ECP002_S3_SHL002_CA001
+2025-07-22 19:57:08,763 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 33: PARK_ECP002_S3_SHL002_CA002
+2025-07-22 19:57:08,763 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 34: PARK_ECP002_S3_SHL003Inverter01
+2025-07-22 19:57:08,763 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 35: PARK_ECP002_S3_SHL003Inverter02
+2025-07-22 19:57:08,763 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 36: PARK_ECP002_S3_SHL003_CA001
+2025-07-22 19:57:08,764 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 37: PARK_ECP002_S3_SHL003_CA002
+2025-07-22 19:57:08,764 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 38: PARK_ECP002_S3_SHL004Inverter01
+2025-07-22 19:57:08,764 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 39: PARK_ECP002_S3_SHL004Inverter02
+2025-07-22 19:57:08,764 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 40: PARK_ECP002_S3_SHL004_CA001
+2025-07-22 19:57:08,764 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 41: PARK_ECP002_S3_SHL004_CA002
+2025-07-22 19:57:08,764 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 42: PARK_ECP002_S3_SUB001LevHv01Upgrid01Cell
+2025-07-22 19:57:08,765 - CSVToKnowledgeGraphPipeline - INFO - Generated RDFizer configuration: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\config\rdfizer_config.ini
+2025-07-22 19:57:08,765 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-07-22 19:57:08,765 - CSVToKnowledgeGraphPipeline - INFO - STEP 4: GENERATING KNOWLEDGE GRAPH
+2025-07-22 19:57:08,765 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-07-22 19:57:08,765 - CSVToKnowledgeGraphPipeline - INFO - Running SDM-RDFizer with config: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\config\rdfizer_config.ini
+2025-07-22 19:57:08,765 - CSVToKnowledgeGraphPipeline - INFO - Executing command: C:\Users\Naveen\AppData\Local\Programs\Python\Python310\python.exe -m rdfizer -c C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\config\rdfizer_config.ini
+2025-07-22 19:58:59,156 - CSVToKnowledgeGraphPipeline - INFO - TIMING_METRIC: {"stage": "kg_generation", "duration_sec": 110.39097213745117}
+2025-07-22 19:58:59,156 - CSVToKnowledgeGraphPipeline - INFO - SDM-RDFizer completed successfully
+2025-07-22 19:58:59,156 - CSVToKnowledgeGraphPipeline - INFO - STDOUT:
+2025-07-22 19:58:59,157 - CSVToKnowledgeGraphPipeline - INFO - Generated 1 knowledge graph files:
+2025-07-22 19:58:59,157 - CSVToKnowledgeGraphPipeline - INFO -   - joinCondition.ttl (63382395 bytes)
+2025-07-22 19:58:59,157 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-07-22 19:58:59,157 - CSVToKnowledgeGraphPipeline - INFO - STEP 5: IMPORTING KNOWLEDGE GRAPH TO GRAPHDB
+2025-07-22 19:58:59,157 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-07-22 19:58:59,157 - CSVToKnowledgeGraphPipeline - INFO - 'requests' library is available.
+2025-07-22 19:58:59,157 - CSVToKnowledgeGraphPipeline - INFO - Targeting GraphDB repository: PARK-2024-09-26-W1 at http://localhost:7200
+2025-07-22 19:58:59,157 - CSVToKnowledgeGraphPipeline - INFO - Uploading joinCondition.ttl to GraphDB...
+2025-07-22 19:59:20,887 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully imported joinCondition.ttl into repository 'PARK-2024-09-26-W1'.
+2025-07-22 19:59:20,887 - CSVToKnowledgeGraphPipeline - INFO - TIMING_METRIC: {"stage": "graphdb_import", "duration_sec": 21.72930121421814}
+2025-07-22 19:59:20,887 - CSVToKnowledgeGraphPipeline - INFO - All knowledge graph files were successfully imported.
+2025-07-22 19:59:20,887 - CSVToKnowledgeGraphPipeline - INFO - TIMING_METRIC: {"stage": "total_pipeline", "duration_sec": 134.25207209587097}
+2025-07-22 19:59:20,943 - ResourceMonitor - INFO - Resource monitoring stopped.
+2025-07-22 19:59:20,943 - PipelineEvaluator - INFO - ============================================================
+2025-07-22 19:59:20,944 - PipelineEvaluator - INFO - STARTING EVALUATION FOR: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706
+2025-07-22 19:59:20,944 - PipelineEvaluator - INFO - ============================================================
+2025-07-22 19:59:20,944 - KGAnalyzer - INFO - Analyzing knowledge graph directory: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\knowledge_graph
+2025-07-22 19:59:41,116 - KGAnalyzer - INFO - KG analysis complete. Found 570,477 triples across 1 files.
+2025-07-22 19:59:41,116 - PipelineEvaluator - INFO - Parsing pipeline log for performance timings...
+2025-07-22 19:59:41,117 - PipelineEvaluator - INFO - Reading timings from: pipeline_20250722_195706.log
+2025-07-22 19:59:41,120 - PipelineEvaluator - INFO - Full evaluation report saved to: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706\evaluation\evaluation_report_20250722_195941.json
+2025-07-22 19:59:41,122 - CSVToKnowledgeGraphPipeline - INFO - ================================================================================
+2025-07-22 19:59:41,122 - CSVToKnowledgeGraphPipeline - INFO - PIPELINE COMPLETION SUMMARY
+2025-07-22 19:59:41,122 - CSVToKnowledgeGraphPipeline - INFO - ================================================================================
+2025-07-22 19:59:41,122 - CSVToKnowledgeGraphPipeline - INFO - Pipeline Timestamp: 20250722_195706
+2025-07-22 19:59:41,123 - CSVToKnowledgeGraphPipeline - INFO - Total pipeline execution time: 134.25 seconds
+2025-07-22 19:59:41,123 - CSVToKnowledgeGraphPipeline - INFO - Devices found: 42
+2025-07-22 19:59:41,123 - CSVToKnowledgeGraphPipeline - INFO - RML files successfully generated: 42
+2025-07-22 19:59:41,123 - CSVToKnowledgeGraphPipeline - INFO - RML generation failures: 0
+2025-07-22 19:59:41,123 - CSVToKnowledgeGraphPipeline - INFO - Knowledge graph generation: SUCCESS
+2025-07-22 19:59:41,123 - CSVToKnowledgeGraphPipeline - INFO - Knowledge graph files generated: 1
+2025-07-22 19:59:41,123 - CSVToKnowledgeGraphPipeline - INFO - GraphDB import: SUCCESS
+2025-07-22 19:59:41,123 - CSVToKnowledgeGraphPipeline - INFO - Evaluation: COMPLETED
+2025-07-22 19:59:41,123 - CSVToKnowledgeGraphPipeline - INFO - 
+All outputs saved to: C:\Users\Naveen\Documents\Internship_EMSE2\OmegaX-Pipeline\ETL-Pipeline\Output\pipeline_output_20250722_195706
+2025-07-22 19:59:41,123 - CSVToKnowledgeGraphPipeline - INFO - ================================================================================
