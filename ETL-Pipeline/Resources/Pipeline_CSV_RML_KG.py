@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Enhanced Seamless Pipeline: CSV Splitter -> RML Generator -> KG Generator -> GraphDB Importer -> Evaluation
+Seamless Pipeline: CSV Splitter -> RML Generator -> KG Generator -> GraphDB Importer -> Evaluation
 This pipeline takes a large CSV file, splits it by device, generates RML files,
 creates a complete knowledge graph using SDM-RDFizer, can optionally import
 the result into a GraphDB repository, and includes comprehensive evaluation.
 
-ENHANCED: Each pipeline run creates a unique timestamped output folder with full evaluation capabilities.
+Each pipeline run creates a unique timestamped output folder with evaluation capabilities.
 """
 
 import os
@@ -308,7 +308,7 @@ class PipelineEvaluator:
         print("=" * 80)
 
         perf = report.get('performance_metrics', {})
-        print("📊 PERFORMANCE METRICS")
+        print(" PERFORMANCE METRICS")
         total_time = perf.get('total_pipeline_time_sec', 0)
         print(f"  - Total Pipeline Execution Time: {total_time:.2f} seconds")
         for stage, duration in perf.get('stages_sec', {}).items():
@@ -318,7 +318,7 @@ class PipelineEvaluator:
 
         if 'resource_metrics' in report:
             resource = report['resource_metrics']
-            print("\n🔧 RESOURCE USAGE")
+            print("\n RESOURCE USAGE")
             if 'cpu_percent' in resource:
                 cpu = resource['cpu_percent']
                 print(f"  - CPU Usage: Avg {cpu['avg']:.1f}%, Max {cpu['max']:.1f}%, Min {cpu['min']:.1f}%")
@@ -326,7 +326,7 @@ class PipelineEvaluator:
                 mem = resource['memory_rss_mb']
                 print(f"  - Memory Usage: Avg {mem['avg']:.1f}MB, Max {mem['max']:.1f}MB, Min {mem['min']:.1f}MB")
 
-        print("\n✨ KNOWLEDGE GRAPH METRICS")
+        print("\n KNOWLEDGE GRAPH METRICS")
         kg = report.get('knowledge_graph_metrics', {})
         print(f"  - Total Triples Generated: {kg.get('total_triples', 0):,}")
         print(f"  - Total KG Size: {kg.get('total_size_mb', 0):.2f} MB")
@@ -949,7 +949,7 @@ Examples:
     parser.add_argument('input_csv', help='Path to the input CSV file to be processed')
 
     # Pipeline output arguments
-    parser.add_argument('--output-dir', default='pipeline_output',
+    parser.add_argument('--output-dir', default='ETL-Pipeline/Output/pipeline_output',
                         help='Base output directory for all pipeline outputs (default: pipeline_output)')
     parser.add_argument('--no-timestamp', action='store_false', dest='use_timestamp',
                         help='Disable timestamped output folders')
@@ -960,7 +960,7 @@ Examples:
     parser.add_argument('--file-id', default='', help='ID to append to split CSV filenames')
 
     # RML Generator arguments
-    parser.add_argument('--rml-template', default='Jinja_RML-Template_PerDevice.j2',
+    parser.add_argument('--rml-template', default='ETL-Pipeline/Resources/Jinja_RML-Template_PerDevice.j2',
                         help='Path to the Jinja2 template file (default: Jinja_RML-Template_PerDevice.j2)')
     parser.add_argument('--prefix', default='https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets',
                         help='Ontology prefix URL')
