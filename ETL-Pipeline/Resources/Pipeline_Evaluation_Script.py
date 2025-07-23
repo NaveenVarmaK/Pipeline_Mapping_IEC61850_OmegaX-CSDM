@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Enhanced Pipeline Evaluation Script
+Pipeline Evaluation Script
 This script evaluates the output of the CSV to Knowledge Graph Pipeline.
 
 ENHANCEMENTS:
@@ -8,7 +8,6 @@ ENHANCEMENTS:
 - Parses the pipeline's log file to get precise per-stage execution times.
 - Provides more detailed logging and a clearer summary report.
 
-FIXED: Corrected attribute initialization order in PipelineEvaluator class.
 """
 import argparse
 import os
