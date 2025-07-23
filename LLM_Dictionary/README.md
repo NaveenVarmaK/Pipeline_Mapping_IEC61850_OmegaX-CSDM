@@ -48,9 +48,8 @@ pip install python-docx openai psutil lxml
 ```
 LLM_Dictionary/
 ├── LLM_DO_Extractor.py              # Main script
-├── Resources/
-│   ├── CSV_Header_Dictionary.py   # Output dictionary file (this is result,Actually it is designed to automatically updates the CSV_Header_Dictionary.py in the ETL-Pipeline Folder)
-│   └── [Word Document].docx       # Input document
+├── CSV_Header_Dictionary.py   # Output dictionary file (this is result,Actually it is designed to automatically updates the CSV_Header_Dictionary.py in the ETL-Pipeline Folder)
+├── [Word Document].docx       # Input document
 └── README.md                      # This file
 ```
 

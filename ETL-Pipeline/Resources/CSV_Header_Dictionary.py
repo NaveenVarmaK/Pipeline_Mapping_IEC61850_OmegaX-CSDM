@@ -95,12 +95,6 @@ UNIT_TO_QUDT = {
     "kW_HR": "KiloW-HR",
     "OHM": "OHM",
     "W_PER_M2": "W-PER-M2",
-    "W_PER_M2_HR": "W.HR/M2",
-    "MM": "MM",
-    "PA": "PA",
-    "M_PER_SEC": "M/SEC",
-    "DEG": "DEG",
-    "G_PER_CM3": "G/CM3"
 }
 
 
