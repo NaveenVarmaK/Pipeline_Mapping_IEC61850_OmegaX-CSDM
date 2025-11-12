@@ -1,0 +1,130 @@
+2025-11-12 12:19:05,561 - CSVToKnowledgeGraphPipeline - INFO - Pipeline output directory: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905
+2025-11-12 12:19:05,561 - CSVToKnowledgeGraphPipeline - INFO - Pipeline timestamp: 20251112_121905
+2025-11-12 12:19:05,561 - CSVToKnowledgeGraphPipeline - INFO - ================================================================================
+2025-11-12 12:19:05,561 - CSVToKnowledgeGraphPipeline - INFO - STARTING COMPLETE CSV TO KNOWLEDGE GRAPH PIPELINE
+2025-11-12 12:19:05,561 - CSVToKnowledgeGraphPipeline - INFO - ================================================================================
+2025-11-12 12:19:05,561 - CSVToKnowledgeGraphPipeline - INFO - Input CSV: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/Input_CSV_Datasets/PARK-sample.csv
+2025-11-12 12:19:05,561 - CSVToKnowledgeGraphPipeline - INFO - Output Directory: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905
+2025-11-12 12:19:05,561 - CSVToKnowledgeGraphPipeline - INFO - Pipeline Timestamp: 20251112_121905
+2025-11-12 12:19:05,561 - ResourceMonitor - INFO - Resource monitoring started.
+2025-11-12 12:19:05,561 - CSVToKnowledgeGraphPipeline - INFO - Checking SDM-RDFizer installation...
+2025-11-12 12:19:05,985 - CSVToKnowledgeGraphPipeline - INFO - SDM-RDFizer is already installed
+2025-11-12 12:19:05,986 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-11-12 12:19:05,986 - CSVToKnowledgeGraphPipeline - INFO - STEP 1: SPLITTING CSV BY DEVICE
+2025-11-12 12:19:05,986 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-11-12 12:19:05,986 - CSV_Device_Seperator_With_TimeFormat - INFO - Reading CSV file: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/Input_CSV_Datasets/PARK-sample.csv
+2025-11-12 12:19:05,988 - CSV_Device_Seperator_With_TimeFormat - INFO - Successfully read CSV with 5 rows and 10 columns
+2025-11-12 12:19:05,989 - CSV_Device_Seperator_With_TimeFormat - INFO - Detected format type: format1_2
+2025-11-12 12:19:05,989 - CSV_Device_Seperator_With_TimeFormat - INFO - Standardizing time column format: Time
+2025-11-12 12:19:05,993 - CSV_Device_Seperator_With_TimeFormat - INFO - Creating sanitized timestamp column 'sanitized_timestamp_for_iri' from 'Time'.
+2025-11-12 12:19:05,994 - CSV_Device_Seperator_With_TimeFormat - INFO - New column 'sanitized_timestamp_for_iri' created successfully.
+2025-11-12 12:19:05,994 - CSV_Device_Seperator_With_TimeFormat - INFO - Found 2 common columns: Time, sanitized_timestamp_for_iri
+2025-11-12 12:19:05,994 - CSV_Device_Seperator_With_TimeFormat - INFO - Found 9 device-specific columns
+2025-11-12 12:19:05,999 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_METEOSTA001: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905/split_csvs/PARK_ECP001_S3_METEOSTA001.csv with 4 columns
+2025-11-12 12:19:06,000 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL001Inverter01: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905/split_csvs/PARK_ECP001_S3_SHL001Inverter01.csv with 8 columns
+2025-11-12 12:19:06,000 - CSV_Device_Seperator_With_TimeFormat - INFO - Created file for device PARK_ECP001_S3_SHL001_CA001: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905/split_csvs/PARK_ECP001_S3_SHL001_CA001.csv with 3 columns
+2025-11-12 12:19:06,001 - CSV_Device_Seperator_With_TimeFormat - INFO - Finished processing. Split into 3 device files.
+2025-11-12 12:19:06,001 - CSV_Device_Seperator_With_TimeFormat - INFO - Total processing time: 0.01 seconds
+2025-11-12 12:19:06,491 - CSVToKnowledgeGraphPipeline - INFO - TIMING_METRIC: {"stage": "csv_splitter", "duration_sec": 0.5049700736999512}
+2025-11-12 12:19:06,491 - CSVToKnowledgeGraphPipeline - INFO - Successfully split CSV into 3 device files
+2025-11-12 12:19:06,491 - CSVToKnowledgeGraphPipeline - INFO - Split files saved to: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905/split_csvs
+2025-11-12 12:19:06,492 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-11-12 12:19:06,492 - CSVToKnowledgeGraphPipeline - INFO - STEP 2: GENERATING RML FILES
+2025-11-12 12:19:06,492 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-11-12 12:19:06,493 - CSVToKnowledgeGraphPipeline - INFO - Found 3 CSV files to process
+2025-11-12 12:19:06,493 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL001_CA001.csv
+2025-11-12 12:19:06,524 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905/rml_files/generated_PARK_ECP001_S3_SHL001_CA001.rml.ttl
+2025-11-12 12:19:06,524 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_METEOSTA001.csv
+2025-11-12 12:19:06,553 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905/rml_files/generated_PARK_ECP001_S3_METEOSTA001.rml.ttl
+2025-11-12 12:19:06,553 - CSVToKnowledgeGraphPipeline - INFO - Generating RML for: PARK_ECP001_S3_SHL001Inverter01.csv
+2025-11-12 12:19:06,578 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully generated RML: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905/rml_files/generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl
+2025-11-12 12:19:06,578 - CSVToKnowledgeGraphPipeline - INFO - TIMING_METRIC: {"stage": "rml_generator", "duration_sec": 0.0862894058227539}
+2025-11-12 12:19:06,578 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-11-12 12:19:06,578 - CSVToKnowledgeGraphPipeline - INFO - STEP 3: VALIDATING RML FILE PATHS
+2025-11-12 12:19:06,578 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-11-12 12:19:06,578 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_METEOSTA001.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001_CA001.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001_CA001.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001_CA001.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001_CA001.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001_CA001.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,579 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - [OK] generated_PARK_ECP001_S3_SHL001Inverter01.rml.ttl: Valid absolute path
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - TIMING_METRIC: {"stage": "rml_validation", "duration_sec": 0.0014145374298095703}
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - STEP 4: GENERATING SDM-RDFIZER CONFIGURATION
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - Found 3 RML files for knowledge graph generation
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 1: PARK_ECP001_S3_METEOSTA001
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 2: PARK_ECP001_S3_SHL001_CA001
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - Added dataset 3: PARK_ECP001_S3_SHL001Inverter01
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - Generated RDFizer configuration: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905/config/rdfizer_config.ini
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - STEP 4: GENERATING KNOWLEDGE GRAPH
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - Running SDM-RDFizer with config: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905/config/rdfizer_config.ini
+2025-11-12 12:19:06,580 - CSVToKnowledgeGraphPipeline - INFO - Executing command: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/venv/bin/python -m rdfizer -c /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905/config/rdfizer_config.ini
+2025-11-12 12:19:14,359 - CSVToKnowledgeGraphPipeline - INFO - TIMING_METRIC: {"stage": "kg_generation", "duration_sec": 7.778115510940552}
+2025-11-12 12:19:14,359 - CSVToKnowledgeGraphPipeline - INFO - SDM-RDFizer completed successfully
+2025-11-12 12:19:14,359 - CSVToKnowledgeGraphPipeline - INFO - STDOUT:
+2025-11-12 12:19:14,359 - CSVToKnowledgeGraphPipeline - INFO - Generated 1 knowledge graph files:
+2025-11-12 12:19:14,359 - CSVToKnowledgeGraphPipeline - INFO -   - joinCondition.ttl (39105 bytes)
+2025-11-12 12:19:14,359 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-11-12 12:19:14,359 - CSVToKnowledgeGraphPipeline - INFO - STEP 5: IMPORTING KNOWLEDGE GRAPH TO GRAPHDB
+2025-11-12 12:19:14,359 - CSVToKnowledgeGraphPipeline - INFO - ============================================================
+2025-11-12 12:19:14,359 - CSVToKnowledgeGraphPipeline - INFO - 'requests' library is available.
+2025-11-12 12:19:14,359 - CSVToKnowledgeGraphPipeline - INFO - Targeting GraphDB repository: TestDay at http://localhost:7200
+2025-11-12 12:19:14,359 - CSVToKnowledgeGraphPipeline - INFO - Uploading joinCondition.ttl to GraphDB...
+2025-11-12 12:19:14,399 - CSVToKnowledgeGraphPipeline - INFO - [SUCCESS] Successfully imported joinCondition.ttl into repository 'TestDay'.
+2025-11-12 12:19:14,399 - CSVToKnowledgeGraphPipeline - INFO - TIMING_METRIC: {"stage": "graphdb_import", "duration_sec": 0.03986048698425293}
+2025-11-12 12:19:14,399 - CSVToKnowledgeGraphPipeline - INFO - All knowledge graph files were successfully imported.
+2025-11-12 12:19:14,399 - CSVToKnowledgeGraphPipeline - INFO - TIMING_METRIC: {"stage": "total_pipeline", "duration_sec": 8.837831020355225}
+2025-11-12 12:19:14,582 - ResourceMonitor - INFO - Resource monitoring stopped.
+2025-11-12 12:19:14,582 - PipelineEvaluator - INFO - ============================================================
+2025-11-12 12:19:14,582 - PipelineEvaluator - INFO - STARTING EVALUATION FOR: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905
+2025-11-12 12:19:14,582 - PipelineEvaluator - INFO - ============================================================
+2025-11-12 12:19:14,582 - KGAnalyzer - INFO - Analyzing knowledge graph directory: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905/knowledge_graph
+2025-11-12 12:19:14,598 - KGAnalyzer - INFO - KG analysis complete. Found 324 triples across 1 files.
+2025-11-12 12:19:14,598 - PipelineEvaluator - INFO - Parsing pipeline log for performance timings...
+2025-11-12 12:19:14,599 - PipelineEvaluator - INFO - Reading timings from: pipeline_20251112_121905.log
+2025-11-12 12:19:14,599 - PipelineEvaluator - INFO - Full evaluation report saved to: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905/evaluation/evaluation_report_20251112_121914.json
+2025-11-12 12:19:14,599 - CSVToKnowledgeGraphPipeline - INFO - ================================================================================
+2025-11-12 12:19:14,599 - CSVToKnowledgeGraphPipeline - INFO - PIPELINE COMPLETION SUMMARY
+2025-11-12 12:19:14,599 - CSVToKnowledgeGraphPipeline - INFO - ================================================================================
+2025-11-12 12:19:14,599 - CSVToKnowledgeGraphPipeline - INFO - Pipeline Timestamp: 20251112_121905
+2025-11-12 12:19:14,599 - CSVToKnowledgeGraphPipeline - INFO - Total pipeline execution time: 8.84 seconds
+2025-11-12 12:19:14,599 - CSVToKnowledgeGraphPipeline - INFO - Devices found: 3
+2025-11-12 12:19:14,599 - CSVToKnowledgeGraphPipeline - INFO - RML files successfully generated: 3
+2025-11-12 12:19:14,599 - CSVToKnowledgeGraphPipeline - INFO - RML generation failures: 0
+2025-11-12 12:19:14,599 - CSVToKnowledgeGraphPipeline - INFO - Knowledge graph generation: SUCCESS
+2025-11-12 12:19:14,599 - CSVToKnowledgeGraphPipeline - INFO - Knowledge graph files generated: 1
+2025-11-12 12:19:14,599 - CSVToKnowledgeGraphPipeline - INFO - GraphDB import: SUCCESS
+2025-11-12 12:19:14,599 - CSVToKnowledgeGraphPipeline - INFO - Evaluation: COMPLETED
+2025-11-12 12:19:14,599 - CSVToKnowledgeGraphPipeline - INFO - 
+All outputs saved to: /home/naveen/PycharmProjects/Pipeline_Mapping_IEC61850_OmegaX-CSDM/Pipeline_Mapping_IEC61850_OmegaX-CSDM/cleaned-repo/ETL-Pipeline/Output/pipeline_output_20251112_121905
+2025-11-12 12:19:14,599 - CSVToKnowledgeGraphPipeline - INFO - ================================================================================
