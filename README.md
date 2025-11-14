@@ -158,14 +158,14 @@ python Pipeline_CSV_RML_KG.py input.csv [options]
 
 ```bash
 # Simple run with default settings
-python .\ETL-Pipeline\Resources\Pipeline_CSV_RML_KG.py '.\Input_CSV_Datasets\PARK-2024-09-26_week1.csv' --prefix https://w3id.org/omega-x/ontology/KG/PARK-DataSets --wid W1 --evaluate
+python .\ETL-Pipeline\Resources\Pipeline_CSV_RML_KG.py '.\Input_CSV_Datasets\PARK-sample.csv' --prefix https://w3id.org/omega-x/ontology/KG/PARK-DataSets --wid W1 --evaluate
 ```
 
 ### Advanced Configuration
 
 ```bash
 # Full pipeline with custom Omega-X settings
-python .\ETL-Pipeline\Resources\Pipeline_CSV_RML_KG.py '.\Input_CSV_Datasets\PARK-2024-09-26_week1.csv' --prefix https://w3id.org/omega-x/ontology/KG/PARK-DataSets --wid W1 --all-in-one --import-to-graphdb --graphdb-repo PARK-Inverter-W1-2025 --graphdb-user admin --graphdb-password pass12345 --evaluate
+python .\ETL-Pipeline\Resources\Pipeline_CSV_RML_KG.py '.\Input_CSV_Datasets\PARK-sample.csv' --prefix https://w3id.org/omega-x/ontology/KG/PARK-DataSets --wid W1 --all-in-one --import-to-graphdb --graphdb-repo PARK-Inverter-W1-2025 --graphdb-user admin --graphdb-password pass12345 --evaluate
 ```
 
 
