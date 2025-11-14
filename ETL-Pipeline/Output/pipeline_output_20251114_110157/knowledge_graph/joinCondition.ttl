@@ -1,0 +1,462 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix eds: <https://w3id.org/omega-x/ontology/EnergyDataSet/> .
+@prefix ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/> .
+@prefix prop: <https://w3id.org/omega-x/ontology/Property/> .
+@prefix role: <https://w3id.org/omega-x/ontology/EnergyRole/> .
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix qual: <https://w3id.org/omega-x/ontology/Quality/> .
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/EnergyDataSet/PARK_ECP001_S3_METEOSTA001/W1> a eds:EnergyDataSet;
+		eds:includesEvaluationPoint <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/EvaluationPoint/PARK_ECP001_S3_METEOSTA001>;
+		ets:comprises <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/W1>;
+		ets:comprises <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/W1>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/EvaluationPoint/PARK_ECP001_S3_METEOSTA001> a eds:EvaluationPoint.
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/W1> a ets:DataCollection;
+		ets:isAboutProperty <https://w3id.org/omega-x/ontology/Property/PlaneOfArrayIrradiance>;
+		ets:hasUnit <http://qudt.org/vocab/unit/W-PER-M2>;
+		ets:hasAggregationKind <https://w3id.org/omega-x/ontology/Quality/Average>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/20240626152900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/W1>;
+		ets:dataTime "2024-06-26T15:29:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/20240626152900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/20240626154000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/W1>;
+		ets:dataTime "2024-06-26T15:40:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/20240626154000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/20240626154900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/W1>;
+		ets:dataTime "2024-06-26T15:49:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/20240626154900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/20240626160000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/W1>;
+		ets:dataTime "2024-06-26T16:00:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/20240626160000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/20240626160900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/W1>;
+		ets:dataTime "2024-06-26T16:09:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/20240626160900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/20240626152900/DV> a ets:DataValue;
+		ets:value "0.793"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/20240626154000/DV> a ets:DataValue;
+		ets:value "0.178"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/20240626154900/DV> a ets:DataValue;
+		ets:value "0.111"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/20240626160000/DV> a ets:DataValue;
+		ets:value "0.151"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4MMETPOAInsol1magf/20240626160900/DV> a ets:DataValue;
+		ets:value "0.101"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/W1> a ets:DataCollection;
+		ets:isAboutProperty <https://w3id.org/omega-x/ontology/Property/BackOfPanelTemperature>;
+		ets:hasUnit <http://qudt.org/vocab/unit/DEG_C>;
+		ets:hasAggregationKind <https://w3id.org/omega-x/ontology/Quality/Average>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/20240626152900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/W1>;
+		ets:dataTime "2024-06-26T15:29:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/20240626152900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/20240626154000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/W1>;
+		ets:dataTime "2024-06-26T15:40:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/20240626154000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/20240626154900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/W1>;
+		ets:dataTime "2024-06-26T15:49:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/20240626154900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/20240626160000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/W1>;
+		ets:dataTime "2024-06-26T16:00:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/20240626160000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/20240626160900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/W1>;
+		ets:dataTime "2024-06-26T16:09:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/20240626160900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/20240626152900/DV> a ets:DataValue;
+		ets:value "30.3"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/20240626154000/DV> a ets:DataValue;
+		ets:value "28.5"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/20240626154900/DV> a ets:DataValue;
+		ets:value "41.5"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/20240626160000/DV> a ets:DataValue;
+		ets:value "37.5"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_METEOSTA001/s4PVSTMPTmpmagf/20240626160900/DV> a ets:DataValue;
+		ets:value "38.5"^^xsd:double.
+
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix eds: <https://w3id.org/omega-x/ontology/EnergyDataSet/> .
+@prefix ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/> .
+@prefix prop: <https://w3id.org/omega-x/ontology/Property/> .
+@prefix role: <https://w3id.org/omega-x/ontology/EnergyRole/> .
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix qual: <https://w3id.org/omega-x/ontology/Quality/> .
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/EnergyDataSet/PARK_ECP001_S3_SHL001_CA001/W1> a eds:EnergyDataSet;
+		eds:includesEvaluationPoint <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/EvaluationPoint/PARK_ECP001_S3_SHL001_CA001>;
+		ets:comprises <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/W1>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/EvaluationPoint/PARK_ECP001_S3_SHL001_CA001> a eds:EvaluationPoint.
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/W1> a ets:DataCollection;
+		ets:isAboutProperty <https://w3id.org/omega-x/ontology/Property/DCCurrent>;
+		ets:hasUnit <http://qudt.org/vocab/unit/A>;
+		ets:hasAggregationKind <https://w3id.org/omega-x/ontology/Quality/Average>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/20240626152900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/W1>;
+		ets:dataTime "2024-06-26T15:29:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/20240626152900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/20240626154000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/W1>;
+		ets:dataTime "2024-06-26T15:40:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/20240626154000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/20240626154900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/W1>;
+		ets:dataTime "2024-06-26T15:49:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/20240626154900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/20240626160000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/W1>;
+		ets:dataTime "2024-06-26T16:00:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/20240626160000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/20240626160900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/W1>;
+		ets:dataTime "2024-06-26T16:09:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/20240626160900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/20240626152900/DV> a ets:DataValue;
+		ets:value "30.1"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/20240626154000/DV> a ets:DataValue;
+		ets:value "51.3"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/20240626154900/DV> a ets:DataValue;
+		ets:value "28.4"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/20240626160000/DV> a ets:DataValue;
+		ets:value "25.9"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001_CA001/s4MMDCAmpmagf/20240626160900/DV> a ets:DataValue;
+		ets:value "12.3"^^xsd:double.
+
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix eds: <https://w3id.org/omega-x/ontology/EnergyDataSet/> .
+@prefix ets: <https://w3id.org/omega-x/ontology/EventTimeSeries/> .
+@prefix prop: <https://w3id.org/omega-x/ontology/Property/> .
+@prefix role: <https://w3id.org/omega-x/ontology/EnergyRole/> .
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix qual: <https://w3id.org/omega-x/ontology/Quality/> .
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/EnergyDataSet/PARK_ECP001_S3_SHL001Inverter01/W1> a eds:EnergyDataSet;
+		eds:includesEvaluationPoint <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/EvaluationPoint/PARK_ECP001_S3_SHL001Inverter01>;
+		ets:comprises <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/W1>;
+		ets:comprises <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/W1>;
+		ets:comprises <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/W1>;
+		ets:comprises <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/W1>;
+		ets:comprises <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/W1>;
+		ets:comprises <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/W1>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/EvaluationPoint/PARK_ECP001_S3_SHL001Inverter01> a eds:EvaluationPoint.
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/W1> a ets:DataCollection;
+		ets:isAboutProperty <https://w3id.org/omega-x/ontology/Property/EnclosureTemperature>;
+		ets:hasUnit <http://qudt.org/vocab/unit/DEG_C>;
+		ets:hasAggregationKind <https://w3id.org/omega-x/ontology/Quality/Average>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/20240626152900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/W1>;
+		ets:dataTime "2024-06-26T15:29:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/20240626152900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/20240626154000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/W1>;
+		ets:dataTime "2024-06-26T15:40:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/20240626154000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/20240626154900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/W1>;
+		ets:dataTime "2024-06-26T15:49:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/20240626154900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/20240626160000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/W1>;
+		ets:dataTime "2024-06-26T16:00:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/20240626160000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/20240626160900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/W1>;
+		ets:dataTime "2024-06-26T16:09:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/20240626160900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/20240626152900/DV> a ets:DataValue;
+		ets:value "0"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/20240626154000/DV> a ets:DataValue;
+		ets:value "0"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/20240626154900/DV> a ets:DataValue;
+		ets:value "0"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/20240626160000/DV> a ets:DataValue;
+		ets:value "0"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVEnclTmpmagf/20240626160900/DV> a ets:DataValue;
+		ets:value "0"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/W1> a ets:DataCollection;
+		ets:isAboutProperty <https://w3id.org/omega-x/ontology/Property/HeatSinkTemperature>;
+		ets:hasUnit <http://qudt.org/vocab/unit/DEG_C>;
+		ets:hasAggregationKind <https://w3id.org/omega-x/ontology/Quality/Average>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/20240626152900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/W1>;
+		ets:dataTime "2024-06-26T15:29:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/20240626152900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/20240626154000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/W1>;
+		ets:dataTime "2024-06-26T15:40:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/20240626154000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/20240626154900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/W1>;
+		ets:dataTime "2024-06-26T15:49:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/20240626154900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/20240626160000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/W1>;
+		ets:dataTime "2024-06-26T16:00:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/20240626160000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/20240626160900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/W1>;
+		ets:dataTime "2024-06-26T16:09:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/20240626160900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/20240626152900/DV> a ets:DataValue;
+		ets:value "5.11"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/20240626154000/DV> a ets:DataValue;
+		ets:value "5.1"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/20240626154900/DV> a ets:DataValue;
+		ets:value "5.09"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/20240626160000/DV> a ets:DataValue;
+		ets:value "3.18"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4DINVHeatSinkTmpmagf/20240626160900/DV> a ets:DataValue;
+		ets:value "5.27"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/W1> a ets:DataCollection;
+		ets:isAboutProperty <https://w3id.org/omega-x/ontology/Property/DCCurrent>;
+		ets:hasUnit <http://qudt.org/vocab/unit/A>;
+		ets:hasAggregationKind <https://w3id.org/omega-x/ontology/Quality/Average>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/20240626152900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/W1>;
+		ets:dataTime "2024-06-26T15:29:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/20240626152900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/20240626154000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/W1>;
+		ets:dataTime "2024-06-26T15:40:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/20240626154000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/20240626154900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/W1>;
+		ets:dataTime "2024-06-26T15:49:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/20240626154900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/20240626160000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/W1>;
+		ets:dataTime "2024-06-26T16:00:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/20240626160000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/20240626160900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/W1>;
+		ets:dataTime "2024-06-26T16:09:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/20240626160900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/20240626152900/DV> a ets:DataValue;
+		ets:value "312"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/20240626154000/DV> a ets:DataValue;
+		ets:value "106"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/20240626154900/DV> a ets:DataValue;
+		ets:value "395"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/20240626160000/DV> a ets:DataValue;
+		ets:value "187"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCAmpmagf/20240626160900/DV> a ets:DataValue;
+		ets:value "139"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/W1> a ets:DataCollection;
+		ets:isAboutProperty <https://w3id.org/omega-x/ontology/Property/DCVoltage>;
+		ets:hasUnit <http://qudt.org/vocab/unit/V>;
+		ets:hasAggregationKind <https://w3id.org/omega-x/ontology/Quality/Average>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/20240626152900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/W1>;
+		ets:dataTime "2024-06-26T15:29:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/20240626152900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/20240626154000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/W1>;
+		ets:dataTime "2024-06-26T15:40:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/20240626154000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/20240626154900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/W1>;
+		ets:dataTime "2024-06-26T15:49:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/20240626154900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/20240626160000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/W1>;
+		ets:dataTime "2024-06-26T16:00:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/20240626160000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/20240626160900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/W1>;
+		ets:dataTime "2024-06-26T16:09:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/20240626160900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/20240626152900/DV> a ets:DataValue;
+		ets:value "601"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/20240626154000/DV> a ets:DataValue;
+		ets:value "324"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/20240626154900/DV> a ets:DataValue;
+		ets:value "117"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/20240626160000/DV> a ets:DataValue;
+		ets:value "702"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCVolmagf/20240626160900/DV> a ets:DataValue;
+		ets:value "305"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/W1> a ets:DataCollection;
+		ets:isAboutProperty <https://w3id.org/omega-x/ontology/Property/DCPower>;
+		ets:hasUnit <http://qudt.org/vocab/unit/W>;
+		ets:hasAggregationKind <https://w3id.org/omega-x/ontology/Quality/Average>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/20240626152900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/W1>;
+		ets:dataTime "2024-06-26T15:29:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/20240626152900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/20240626154000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/W1>;
+		ets:dataTime "2024-06-26T15:40:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/20240626154000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/20240626154900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/W1>;
+		ets:dataTime "2024-06-26T15:49:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/20240626154900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/20240626160000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/W1>;
+		ets:dataTime "2024-06-26T16:00:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/20240626160000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/20240626160900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/W1>;
+		ets:dataTime "2024-06-26T16:09:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/20240626160900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/20240626152900/DV> a ets:DataValue;
+		ets:value "112023"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/20240626154000/DV> a ets:DataValue;
+		ets:value "113468"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/20240626154900/DV> a ets:DataValue;
+		ets:value "125009"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/20240626160000/DV> a ets:DataValue;
+		ets:value "106868"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMDCWattmagf/20240626160900/DV> a ets:DataValue;
+		ets:value "102156"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/W1> a ets:DataCollection;
+		ets:isAboutProperty <https://w3id.org/omega-x/ontology/Property/TotalRealPower>;
+		ets:hasUnit <http://qudt.org/vocab/unit/W>;
+		ets:hasAggregationKind <https://w3id.org/omega-x/ontology/Quality/Average>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/20240626152900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/W1>;
+		ets:dataTime "2024-06-26T15:29:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/20240626152900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/20240626154000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/W1>;
+		ets:dataTime "2024-06-26T15:40:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/20240626154000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/20240626154900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/W1>;
+		ets:dataTime "2024-06-26T15:49:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/20240626154900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/20240626160000> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/W1>;
+		ets:dataTime "2024-06-26T16:00:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/20240626160000/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/20240626160900> a ets:DataPoint;
+		ets:belongsTo <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataCollection/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/W1>;
+		ets:dataTime "2024-06-26T16:09:00"^^xsd:dateTime;
+		ets:hasDataValue <https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/20240626160900/DV>.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/20240626152900/DV> a ets:DataValue;
+		ets:value "11342"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/20240626154000/DV> a ets:DataValue;
+		ets:value "118129"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/20240626154900/DV> a ets:DataValue;
+		ets:value "150907"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/20240626160000/DV> a ets:DataValue;
+		ets:value "101950"^^xsd:double.
+
+<https://w3id.org/omega-x/ontology/KG/PARKMeteostationDataSets/DataPoint/PARK_ECP001_S3_SHL001Inverter01/s4MMXUTotWmagf/20240626160900/DV> a ets:DataValue;
+		ets:value "171511"^^xsd:double.
+
